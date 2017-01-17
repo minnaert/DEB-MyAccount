@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Home With Chart</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- deb.com css -->
+<!--<link rel="stylesheet" type="text/css" href="css/bundle.css">
+
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- ** My Account prototype styles ** -->
+    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">
+
+	<!-- ** Kendo UI charts ** -->
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.common.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.default.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.dataviz.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.dataviz.default.min.css">
+
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.rtl.min.css">
+    <link rel="stylesheet" href="http://cdn.kendostatic.com/2014.1.318/styles/kendo.mobile.all.min.css">
+
+
+  	<!-- Data Tables CSS, Used for table/grid formatting -->
+    <link type="text/css" href="http://cdn.datatables.net/1.10.0-beta.2/css/jquery.dataTables.css" rel="stylesheet" >
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default de-myacct-menu-wrapper" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="high-Nav-DEB-External-Simple.html" title="Direct Energy Business website" target="_self"><img src="img/deb-logo-white.png" alt="logo"></a>
+        </div>
+    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <p class="navbar-text de-navbar-title">My Account</p>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          	<li><a href="#" title="Help"><i class="fa fa-envelope fa-lg"></i> <span class="badge">42</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Javier Smith <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Change Password</a></li>
+                <li class="divider"></li>
+                <li><a href="high-Nav-MyAct-LogIn.html">Log Out</a></li>
+              </ul>
+            </li>
+          	<li><a href="#" title="Help"><i class="fa fa-question-circle fa-lg"></i></a></li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Search</button>
+          </form>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+    
+    <div class="container-fluid de-myacct-main-body">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+          <li><a href="#accounts" data-toggle="tab">Accounts</a></li>
+          <li><a href="#reports" data-toggle="tab">Reports</a></li>
+          <li><a href="#profile" data-toggle="tab">Alerts</a></li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!-- Home Tab pane -->
+          <div class="tab-pane active" id="home">
+          	<div class="container">
+            </div>
+	      	  <h2>Home</h2>
+              <div class="row">
+                <div class="col-sm-12">
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                          <div class="panel-body">
+                            <p>Current Electricity and Natural Gas Usage</p>
+                          </div>
+                            <div class="chart-wrapper">
+                                <div id="chart" ></div>
+                            </div>
+                            <style scoped>
+                                .chart-wrapper, .chart-wrapper .k-chart {
+                                    height: 350px;
+                                }
+                            </style>
+                      </div>
+                </div>
+              </div>
+              <div class="row">
+              	<div class="col-sm-12">
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Billing &amp; Payments</div>
+                          <div class="panel-body">
+                            <p>Recent Invoices and Payments</p>
+                          </div>
+                          <table id="example" class="display table" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Account #</th>
+                                    <th>Invoice #</th>
+                                    <th>Invoice Date</th>
+                                    <th>Due Date</th>
+                                    <th>Start date</th>
+                                    <th>Salary</th>
+                                </tr>
+                            </thead>
+                        
+                            <tbody>
+                                <tr>
+                                    <td>1158048</td>
+                                    <td>133380019653438</td>
+                                    <td>12/4/2013</td>
+                                    <td>12/24/2013</td>
+                                    <td>$900.92</td>
+                                    <td>$900.92</td>
+                                </tr>
+                                <tr>
+                                    <td>1158048</td>
+                                    <td>133080019402779</td>
+                                    <td>11/4/2013</td>
+                                    <td>11/25/2013</td>
+                                    <td>$898.04</td>
+                                    <td>$2,777.11</td>
+                                </tr>
+                                <tr>
+                                    <td>1158048</td>
+                                    <td>132810019169068</td>
+                                    <td>10/8/2013</td>
+                                    <td>10/28/2013</td>
+                                    <td>$1,851.30</td>
+                                    <td>$1,851.30</td>
+                                </tr>
+                                <tr>
+                                    <td>1158048</td>
+                                    <td>132480018883163</td>
+                                    <td>9/5/2013</td>
+                                    <td>9/25/2013</td>
+                                    <td>$1,807.50</td>
+                                    <td>$4,380.38</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!-- Accounts Tab pane -->
+          <div class="tab-pane" id="accounts">
+	      	  <h2>Accounts</h2>
+              <div class="row">
+              	<div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked well">
+                      <li class="active"><a href="#">Statements</a></li>
+                      <li><a href="#">Invoices</a></li>
+                      <li><a href="#">Billing</a></li>
+                      <li><a href="#">Contracts</a></li>
+                      <li><a href="#">Service Locations</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Statements</div>
+                        <div class="panel-body">
+                            <p>The list of statements would go in this section</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!-- Reports Tab pane -->
+          <div class="tab-pane" id="reports">
+	      	  <h2>Reports</h2>
+              <div class="row">
+              	<div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked well">
+                      <li class="active"><a href="#">Usage</a></li>
+                      <li><a href="#">Contract Performance</a></li>
+                      <li><a href="#">Value Price Targets</a></li>
+                      <li><a href="#">Time Price Profile</a></li>
+                      <li><a href="#">Value Price Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                        <div class="panel-body">
+                            <p>The chart and table of usage would go in this section</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!-- Profile Tab pane -->
+          <div class="tab-pane" id="profile">
+	      	  <h2>Alerts</h2>
+              <div class="row">
+              	<div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked well">
+                      <li class="active"><a href="#">Contact Information</a></li>
+                      <li><a href="#">Alerts</a></li>
+                      <li><a href="#">Market Updates</a></li>
+                      <li><a href="#">Service Locations</a></li>
+<!--                      <li><a href="#">Go Paperless</a></li>
+                      <li><a href="#">Change Password</a></li>
+-->                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Contact Information</div>
+                        <div class="panel-body">
+                            <p>The contact information fields would go in this section</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+    </div> <!-- /container -->
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+<!--    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+-->    <script src="http://cdn.kendostatic.com/2014.1.318/js/kendo.all.min.js"></script>
+
+    <script>
+        function createChart() {
+            $("#chart").kendoChart({
+                title: {
+                    text: "Usage"
+                },
+                legend: {
+                    visible: true
+                },
+                seriesDefaults: {
+                    type: "column"
+                },
+                series: [{
+                    name: "Electricity",
+                    data: [56000, 63000, 74000, 91000, 117000, 138000, 126000, 101000, 94000, 87000, 77000, 68000]
+                }, {
+                    name: "Natural Gas",
+                    data: [102000, 124000, 93000, 48000, 67000, 83000, 83000, 83000, 42000, 51000, 73000, 88000]
+                }],
+                valueAxis: {
+                    max: 140000,
+                    line: {
+                        visible: false
+                    },
+                    minorGridLines: {
+                        visible: true
+                    }
+                },
+                categoryAxis: {
+                    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "July", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    majorGridLines: {
+                        visible: false
+                    }
+                },
+                tooltip: {
+                    visible: true,
+                    template: "#= series.name #: #= value #"
+                }
+            });
+        }
+
+        $(document).ready(createChart);
+        $(document).bind("kendo:skinChange", createChart);
+    </script>
+
+ 	<!-- Data Tables Javascript, used for table/grid functionality -->
+	<script type="text/javascript" src="http://cdn.datatables.net/1.10.0-beta.2/js/jquery.dataTables.js" ></script>  
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#example').DataTable();
+		});
+	</script>
+
+  </body>
+</html>

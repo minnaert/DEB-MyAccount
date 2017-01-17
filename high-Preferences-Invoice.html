@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width">
+    <title>My Account Invoice Preferences - Direct Energy Business</title>
+    <link rel="SHORTCUT ICON" href="/Content/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+</head>
+<body class="body">
+
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.business.directenergy.com/" title="Direct Energy Business website" target="_self"><img src="img/deb-logo-white.png" alt="logo" class="img-responsive"></a>
+            </div>
+        </div>
+    </nav>
+    <div id="main-view" class="container">
+        <div class="row top10">
+            <div class="col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="/">My Account</a></li>
+                    <li class="active">Log in</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12"><h1>Preferences</h1></div>
+        </div>
+        <div class="row">
+            <div id="de-alert-invoice-pref-tc" class="col-xs-12 alert alert-danger">
+                <h3>In order to enable paperless billing, you must first accept the terms and conditions</h3>
+                <label class="btn btn-primary btn-lg" id="de-btn-invoice-pref-tc" data-complete-text="<i class='fa fa-check-circle'></i> Accepted" >
+                    <input type="checkbox" autocomplete="off"> I Accept
+                </label>
+            </div>
+        </div>
+    </div>
+    <footer class="de-myact-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="de-copyright col-xs-12">
+                    <p>&copy; 2015 Direct Energy (DC PSC License No. EA-04-4-4; EA-13-12; GA-13-03-1; MD PSC License Nos. IR-719; IR-791; IR-3123; IR-3108; PUCT Cert. No. 10011; CT PURA License Nos. 00-05-14; 00-05-14RE01; MA DPU License Nos. CS-021; GS-052; CS-108; GS-051). Products and services vary depending on region or market.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+    
+
+    <script>
+      $('#de-btn-invoice-pref-tc').on('click', function () {
+        $(this).button('complete'); // button text will be "finished!"
+        $(this).removeClass('btn-primary');
+        $(this).addClass('btn-success');
+
+        $('#de-alert-invoice-pref-tc').removeClass('alert-danger');
+        $('#de-alert-invoice-pref-tc').addClass('alert-success');
+          
+      })
+    </script>    
+  </body>
+</html>

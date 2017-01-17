@@ -1,0 +1,86 @@
+@charset "utf-8";
+/* CSS Document */
+
+.de-myacct-main-body {
+	margin-top: 15px;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #F05D21;
+}
+
+/*********************************************/
+/** Navigation Header Styles **/
+/*********************************************/
+.de-myacct-menu-wrapper, .de-myacct-menu-wrapper-alt {
+/*	height: 62px; 
+*/
+}
+.de-myacct-menu-wrapper {
+	background-color: #F05D21;
+}
+.de-myacct-menu-wrapper-alt {
+	background-color: #ffffff;
+	height: 70px;
+	border-bottom: 2px solid #F05D21;
+}
+.de-myacct-menu-wrapper .navbar-nav > li > a {
+	color: #ffffff;
+}
+.de-myacct-menu-wrapper .navbar-nav > li > a:hover {
+	color: #ffffff;
+}
+.de-myacct-menu-wrapper h2, .de-myacct-menu-wrapper-alt h2, .de-myacct-menu-wrapper .de-navbar-title, .de-myacct-menu-wrapper-alt .de-navbar-title{
+	font-size:24px;
+	font-weight:bold;
+}
+.de-myacct-menu-wrapper h2{
+	color: #ffffff;
+}
+.de-myacct-menu-wrapper-alt h2{
+	color: #F05D21;
+}
+.de-myacct-menu-wrapper .de-navbar-title {
+	color: #ffffff;
+}
+.de-myacct-menu-wrapper-alt .de-navbar-title {
+	color: #e54206;
+}
+.de-myacct-menu-wrapper .brand {
+	padding: 15px 0 10px 10px;
+}
+.de-myacct-menu-wrapper-alt .brand  {
+	padding: 5px 0 5px 10px;
+}
+.de-myacct-menu-wrapper .brand a, .de-myacct-menu-wrapper-alt .brand a  {
+	margin: 0 0 10px 15px;
+}
+.de-myacct-menu-header-logout {
+	padding: 20px 10px 15px 0;
+	vertical-align: middle;
+	text-align: center;
+	font-weight:bold;
+}
+.de-myacct-menu-header-logout a {
+	color: #ffffff;
+	margin-left: 10px;
+	margin-right: 10px;
+
+}
+.de-myacct-menu-wrapper-alt .de-myacct-menu-header-logout a {
+	color: #000000;
+}
+
+/*********************************************/
+/** Task page type Styles **/
+/*********************************************/
+
+.de-task-buttons {
+	border-top: 2px solid #F05D21;
+	padding-top: 5px;
+	width: 100%;
+	text-align:right;
+}
+
+.de-customer-title {
+	background-color: #0000A0;
+}

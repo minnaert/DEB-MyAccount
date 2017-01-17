@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Chart Examples</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- deb.com css -->
+<!--<link rel="stylesheet" type="text/css" href="css/bundle.css">
+
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- ** My Account prototype styles ** -->
+    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">
+
+
+</head>
+
+  <body>
+    
+    <div class="container-fluid de-myacct-main-body">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+          <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+          <li><a href="#accounts" data-toggle="tab">Accounts</a></li>
+          <li><a href="#reports" data-toggle="tab">Reports</a></li>
+          <li><a href="#profile" data-toggle="tab">Alerts</a></li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!-- Home Tab pane -->
+          <div class="tab-pane active" id="home">
+          	<div class="container">
+            </div>
+	      	  <h2>Home</h2>
+              <div class="row">
+                <div class="col-sm-12">
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                          <div class="panel-body">
+							<p>Power Usage</p>
+                            <div class="row">
+                            	<div class="col-sm-9">
+                                    <div class="chart-wrapper">
+                                        <!--Div that will hold the pie chart-->
+                                        <div id="chart_base_electric_div" style="height:450"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+									<form role="form">
+                                        <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox" checked="checked"> Current usage
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox"> Previous year usage
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox"> Current spend
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                              <input type="checkbox"> Previous year spend
+                                            </label>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                          <div class="panel-body">
+                            <p>Power Usage</p>
+                          </div>
+                          <div class="chart-wrapper">
+                            <!--Div that will hold the pie chart-->
+                            <div id="chart_electric_div" style="height:450"></div>
+                          </div>
+                    </div>
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                          <div class="panel-body">
+                            <p>Natural Gas Usage</p>
+                          </div>
+                          <div class="chart-wrapper">
+                            <!--Div that will hold the pie chart-->
+                            <div id="chart_base_gas_div" style="height:450"></div>
+                          </div>
+                    </div>
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                          <div class="panel-body">
+                            <p>Natural Gas Usage</p>
+                          </div>
+                          <div class="chart-wrapper">
+                            <!--Div that will hold the pie chart-->
+                            <div id="chart_gas_div" style="height:450"></div>
+                          </div>
+                    </div>
+                </div>
+              </div>
+              
+          </div>
+          <!-- Accounts Tab pane -->
+          <div class="tab-pane" id="accounts">
+	      	  <h2>Accounts</h2>
+              <div class="row">
+              	<div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked well">
+                      <li class="active"><a href="#">Statements</a></li>
+                      <li><a href="#">Invoices</a></li>
+                      <li><a href="#">Billing</a></li>
+                      <li><a href="#">Contracts</a></li>
+                      <li><a href="#">Service Locations</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Statements</div>
+                        <div class="panel-body">
+                            <p>The list of statements would go in this section</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!-- Reports Tab pane -->
+          <div class="tab-pane" id="reports">
+	      	  <h2>Reports</h2>
+              <div class="row">
+              	<div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked well">
+                      <li class="active"><a href="#">Usage</a></li>
+                      <li><a href="#">Contract Performance</a></li>
+                      <li><a href="#">Value Price Targets</a></li>
+                      <li><a href="#">Time Price Profile</a></li>
+                      <li><a href="#">Value Price Profile</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                        <div class="panel-body">
+                            <p>The chart and table of usage would go in this section</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!-- Profile Tab pane -->
+          <div class="tab-pane" id="profile">
+	      	  <h2>Alerts</h2>
+              <div class="row">
+              	<div class="col-sm-3">
+                    <ul class="nav nav-pills nav-stacked well">
+                      <li class="active"><a href="#">Contact Information</a></li>
+                      <li><a href="#">Alerts</a></li>
+                      <li><a href="#">Market Updates</a></li>
+                      <li><a href="#">Service Locations</a></li>
+<!--                      <li><a href="#">Go Paperless</a></li>
+                      <li><a href="#">Change Password</a></li>
+-->                    </ul>
+                </div>
+                <div class="col-sm-9">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Contact Information</div>
+                        <div class="panel-body">
+                            <p>The contact information fields would go in this section</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+    </div> <!-- /container -->
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+   
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+     
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawBaseElectricChart);
+      google.setOnLoadCallback(drawElectricChart);
+      google.setOnLoadCallback(drawBaseGasChart);
+      google.setOnLoadCallback(drawGasChart);
+
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawBaseElectricChart() {
+
+      // Create the data table.
+        var dataBaseElectric = google.visualization.arrayToDataTable([
+          ['Year', 'Power Usage'],
+//          ['01-11-2013', 56000],
+//          ['02-11-2013', 63000],
+//          ['03-12-2013', 74000],
+//          ['04-11-2013', 91000],
+//          ['05-11-2013', 117000],
+//          ['06-11-2013', 138000],
+//          ['07-12-2013', 126000],
+//          ['08-11-2013', 151000],
+//          ['09-13-2013', 94000],
+//          ['10-12-2013', 87000],
+//          ['11-11-2013', 77000],
+//          ['12-11-2013', 68000],
+//          ['01-11-2014', 59000]
+//          ['Jan 2013', 56000],
+//          ['Feb 2013', 63000],
+//          ['Mar 2013', 74000],
+//          ['Apr 2013', 91000],
+//          ['May 2013', 117000],
+//          ['Jun 2013', 138000],
+//          ['Jul 2013', 126000],
+//          ['Aug 2013', 151000],
+          ['Sep 2014', 94000],
+          ['Oct 2014', 87000],
+          ['Sep 2013', 77000],
+          ['Dec 2013', 68000],
+          ['Nov 2014', 75000],
+          ['Dec 2014', 79000]
+        ]);
+
+
+      // Set chart options
+        var options = {
+		  colors:['#F05D21'],
+		  legend:{position: 'bottom'},
+          seriesType: "bars",
+		  series:{1:{targetAxisIndex:1,type: "line"},3:{targetAxisIndex:1,type: "line"}}, 
+		  height:'300',
+		  hAxis: {title: 'Meter Read Start Date'},
+		  vAxes:{0:{title:'Usage (kWh)',textStyle:{color: '#F05D21'}},1:{title:'Spend ($)',textStyle:{color: '#005776'}}}		  
+        };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_base_electric_div'));
+      chart.draw(dataBaseElectric, options);
+    }
+
+
+
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawElectricChart() {
+
+      // Create the data table.
+        var dataElectric = google.visualization.arrayToDataTable([
+          ['Year', 'Power Usage', 'Previous Year Power Usage', 'Power Spend'],
+          ['Jan 2013', 56000, 57500, 70.00],
+          ['Feb 2013', 63000, 69300, 100.00],
+          ['Mar 2013', 74000, 81400, 120.00],
+          ['Apr 2013', 91000, 100100, 150.00],
+          ['May 2013', 117000, 128700, 170.00],
+          ['Jun 2013', 138000, 124200, 220.00],
+          ['Jul 2013', 126000, 138600, 200.00],
+          ['Aug 2013', 151000, 120800, 260.00],
+          ['Sep 2013', 94000, 112800, 145.00],
+          ['Oct 2013', 87000, 87000, 130.00],
+          ['Nov 2013', 77000, 53900, 120.00],
+          ['Dec 2013', 68000, 74800, 85.00]
+        ]);
+
+      // Set chart options
+        var options = {
+		  colors:['#F05D21', '#f57e24','#005776'],
+		  legend:{position: 'bottom'},
+          seriesType: "bars",
+		  series:{1:{targetAxisIndex:0,type: "column"},2:{targetAxisIndex:1,type: "line"}}, 
+		  height:'300',
+		  hAxis: {title: 'Meter Read Start Date'},
+		  vAxes:{0:{title:'Usage (kWh)',textStyle:{color: '#F05D21'}},1:{title:'Spend ($)',textStyle:{color: '#005776'}}}		  
+        };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_electric_div'));
+      chart.draw(dataElectric, options);
+    }
+	
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawBaseGasChart() {
+
+      // Create the data table.
+        var dataBaseGas = google.visualization.arrayToDataTable([
+          ['Year', 'Natural Gas Usage'],
+          ['Jan 2013', 3200],
+          ['Feb 2013', 4300],
+          ['Mar 2013', 3400],
+          ['Apr 2013', 1910],
+          ['May 2013', 1170],
+          ['Jun 2013', 820],
+          ['Jul 2013', 650],
+          ['Aug 2013', 510],
+          ['Sep 2013', 740],
+          ['Oct 2013', 1270],
+          ['Nov 2013', 2270],
+          ['Dec 2013', 2600],
+          ['Jan 2014', 3800]
+        ]);
+
+      // Create the data table.
+//        var dataGas = google.visualization.arrayToDataTable([
+//          ['Year', 'Power Usage', 'Power Spend', 'Natural Gas Usage', 'Natural Gas Cost'],
+//        ]);
+
+      // Set chart options
+        var options = {
+		  colors:['#F05D21'],
+		  legend:{position: 'bottom'},
+          seriesType: "bars",
+		  series:{1:{targetAxisIndex:0,type: "column"},2:{targetAxisIndex:1,type: "line"}}, 
+		  height:'300',
+		  hAxis: {title: 'Meter Read Start Date'},
+		  vAxes:{0:{title:'Usage (Dth)',textStyle:{color: '#F05D21'}},1:{title:'Spend ($)',textStyle:{color: '#005776'}}}		  
+        };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_base_gas_div'));
+      chart.draw(dataBaseGas, options);
+    }
+
+
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawGasChart() {
+
+      // Create the data table.
+        var dataGas = google.visualization.arrayToDataTable([
+          ['Year', 'Natural Gas Usage', 'Previous Year Natural Gas Usage', 'Natural Gas Spend'],
+          ['Jan 2013', 3200, 3100, 3260.00],
+          ['Feb 2013', 4300, 4400, 4270.00],
+          ['Mar 2013', 3400, 3900, 3080.00],
+          ['Apr 2013', 1910, 1850, 2290.00],
+          ['May 2013', 1170, 1260, 2010.00],
+          ['Jun 2013', 820, 830, 470.00],
+          ['Jul 2013', 650, 630, 260.00],
+          ['Aug 2013', 510, 580, 220.00],
+          ['Sep 2013', 740, 710, 340.00],
+          ['Oct 2013', 1270, 1310, 1220.00],
+          ['Nov 2013', 2270, 2110, 2220.00],
+          ['Dec 2013', 2600, 2800, 2710.00]
+        ]);
+
+      // Create the data table.
+//        var dataGas = google.visualization.arrayToDataTable([
+//          ['Year', 'Power Usage', 'Power Spend', 'Natural Gas Usage', 'Natural Gas Cost'],
+//        ]);
+
+      // Set chart options
+        var options = {
+		  colors:['#F05D21', '#f57e24','#005776'],
+		  legend:{position: 'bottom'},
+          seriesType: "bars",
+		  series:{1:{targetAxisIndex:0,type: "column"},2:{targetAxisIndex:1,type: "line"}}, 
+		  height:'300',
+		  hAxis: {title: 'Meter Read Start Date'},
+		  vAxes:{0:{title:'Usage (Dth)',textStyle:{color: '#F05D21'}},1:{title:'Spend ($)',textStyle:{color: '#005776'}}}		  
+        };
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_gas_div'));
+      chart.draw(dataGas, options);
+    }	
+    </script>
+
+
+
+  </body>
+</html>

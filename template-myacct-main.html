@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - main template</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+
+	
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+    .de-nav-customer-container {
+        color: #000;
+        background-color:transparent;
+        padding: 0.5em;
+    }
+    .de-nav-customer-container label {
+        font-weight: normal;
+    }
+        .de-nav-user2 {
+        padding-right: 1.0em;
+        font-weight: bold;
+    }
+    .de-nav-user2 .navbar-link{
+        font-weight: normal;
+    }
+
+    .de-nav-header-main .badge {
+        background-color: red;
+    }
+    .de-nav-header-main .nav-pills > li > a {
+        color: navy;
+    }
+    /* Custom button for header */
+    .btn-navbar-customer {
+        background-color: #073763;
+        border-color: #073763;
+        color: #ffffff;
+    }
+    .btn-navbar-customer:hover,
+    .btn-navbar-customer:focus,
+    .btn-navbar-customer:active,
+    .btn-navbar-customer.active {
+        background-color: #7A8CA5;
+        border-color: #7A8CA5;
+        color: #ffffff;
+    }
+    .btn-navbar-customer.disabled:hover,
+    .btn-navbar-customer.disabled:focus,
+    .btn-navbar-customer.disabled:active,
+    .btn-navbar-customer.disabled.active,
+    .btn-navbar-customer[disabled]:hover,
+    .btn-navbar-customer[disabled]:focus,
+    .btn-navbar-customer[disabled]:active,
+    .btn-navbar-customer[disabled].active,
+    fieldset[disabled] .btn-navbar-customer:hover,
+    fieldset[disabled] .btn-navbar-customer:focus,
+    fieldset[disabled] .btn-navbar-customer:active,
+    fieldset[disabled] .btn-navbar-customer.active {
+        background-color: #7A8CA5;
+        border-color: #7A8CA5;
+        color: #ffffff;
+    }
+    
+    /* de my account panel - paperless billing */
+    .panel-de-myacct-paperless {
+        background: transparent url('img/paperless_i_leaf_gl.png') no-repeat center; 
+        background-size: contain;  
+        border: 0;
+    }
+    .panel-de-myacct-paperless .panel-heading  {
+        background-color: transparent;
+        color: navy;
+        border-bottom: 0;
+        font-weight: bold;
+        font-size: 18px;
+    } 
+
+    
+    /* de my account panel types */
+    
+    .panel-de-myacct-primary{
+        background-color: #e1e1e1;
+    }
+    .panel-de-myacct-primary .panel-heading {
+        background-color: #F05D21;
+        color: #fff;
+    }
+    .panel-de-myacct-default .panel-heading  {
+        background-color: #999;
+        color: #fff;
+    } 
+    .panel-de-myacct-default .panel-heading h4,.panel-de-myacct-primary .panel-heading h4  {
+        color: #fff;
+        margin-bottom: 0;
+    }
+    .panel-de-myacct-default .panel-heading .btn,.panel-de-myacct-primary .panel-heading .btn  {
+        margin-bottom: 0;
+        margin-top: -7px;
+    }
+    .de-myact-footer {
+        background-color: transparent;
+        padding-bottom: 1.0em;
+    }
+    .de-myact-footer .btn-link {
+        font-weight: bold;
+    }
+    
+    .de-myact-footer .de-social-links {
+/*        border-left: 1px solid #000;
+*/
+    }
+    .de-myact-footer img {
+        margin: 0.5em 0.5em 0.5em 0;
+        max-height: 30px;
+    }
+    .de-copyright {
+        font-size: 10px;
+        line-height: 1.1;
+    }
+    /* updating footer styles for large screens */
+    @media all and (min-width: 990px) {
+        .de-myact-footer .de-social-links {
+            border-left: 1px solid #000;
+        }
+    }
+</style>
+      <style>
+          /*          #de-back-summary.affix {
+              position: fixed !important;
+          }	
+                    #de-back-summary.affix-bottom {
+              position: fixed !important;
+          }	
+          .de-back-summary {
+              position: sticky;
+              bottom:1.0em;
+              left:1.0em;
+              z-index:9999999
+          }
+
+          .de-back-summary a {
+              -webkit-transition:all .3s ease;
+              -moz-transition:all .3s ease;
+              transition:all .3s ease;
+          }
+*/
+          .de-back-summary.affix {
+              position: fixed;
+              bottom: 1.0em;
+/*              left: 62px;
+              width: 360px;
+*/          }
+          .de-back-summary.affix-top {
+              position: static;
+          }
+          .de-back-summary.affix-bottom {
+              position: absolute;
+          }
+          
+          .panel-de-myacct-paperless {
+          }
+      </style>
+      <!-- END : Back to top button by Adu Alex -->    
+    </head>
+
+    
+    <body class="body-de-myacct-main" data-spy="scroll" data-target="de-back-summary" >
+    <nav class="navbar navbar-inverse de-nav-header-main" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#de-nav-header-main-collapse">Menu
+                    <span class="sr-only">Toggle navigation</span>
+<!--                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+-->                </button>
+                <a class="navbar-brand" href="#" title="Direct Energy Business website" target="_self"><img src="img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+                <!--<a class="navbar-brand" href="@Url.Action("MainSummary", "Demo")" title="Direct Energy Business website" target="_self">My Account</a>-->
+            </div>
+            <!-- Need help, user information and secondary navigation get collapsed for toggling -->
+            <div class="collapse navbar-collapse" id="de-nav-header-main-collapse">
+                <ul class="nav navbar-nav de-nav-contact">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Need Help? <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#" title="Send Message"><i class="fa fa-envelope-o fa-lg"></i> Send Message</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#" title="Power Phone"><i class="fa fa-lightbulb-o fa-lg"></i> 1-888-925-9115</a></li>
+                            <li><a href="#" title="Gas Phone"><i class="fa fa-fire fa-lg"></i> 1-888-437-7265</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="nav navbar-nav navbar-right" id="de-nav-secondary">
+                    <ul class="nav nav-pills" role="tablist">
+<!--                        <li class="active"><a href="#" title="Home"><i class="fa fa-home fa-lg"></i></a></li>-->
+                        <li><a href="@Url.Action("MessageCenter", "Demo")" title="Messages" role="tab"><i class="fa fa-envelope-o fa-lg"></i> <span class="badge">42</span></a></li>
+                        <li><a href="@Url.Action("Preferences", "Demo")" title="Preferences" role="tab">Preferences</a></li>
+                        <li><a href="@Url.Action("SupportMain", "Demo")" title="Support" role="tab">Support</a></li>
+                    </ul>
+                </div>
+                <p class="navbar-text navbar-right de-nav-user2">Jane Doe <a href="#" class="navbar-link">Log out</a></p>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+
+	<div class="container de-nav-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6 col-md-offset-1 col-md-4">
+                <label for="selCustomer" class="text-right">Select customer </label>
+                <select id="selCustomer" class="selectpicker" data-live-search="false" data-width="100%" data-style="btn-navbar-customer" ng-model="gridSelectedId" ng-change="display()">
+                    <option selected>All Customers</option>
+                    <optgroup label="Profiles">
+                        <option>First Profile</option>
+                        <option>Second Profile</option>
+                    </optgroup>
+                    <optgroup label="Customers">
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-6 col-md-4">
+                <label for="selAccounts">Select account</label>
+                <select id="selAccounts" class="selectpicker" data-live-search="true" data-width="100%" data-style="btn-navbar-customer" data-show-subtext="true">
+                        <option>All accounts</option>
+                        <option>All power</option>
+                        <option>All natural gas</option>
+                        <optgroup label='Power'>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option>
+                        </optgroup>
+                        <optgroup label='Natural Gas'>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option>
+                            <option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option>
+                            <option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9123131</option>
+                        </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-12 col-md-2">
+            	<div class="row">
+                	<div class="col-sm-12 col-xs-6 text-right">
+                        <p>Power Balance Due   $210.05</p>
+                        <p>Natural Gas Balance Due   $210.05</p>
+                    </div>
+                	<div class="col-sm-12 col-xs-6 text-right">
+                        <p>Last Power Payment   $197.23   12/31/2013</p>
+                        <p>Last Natural Gas Payment   $197.23   12/31/2013</p>
+                    </div>
+                </div>
+	            <button type="button" id="btnPayNow" class="btn btn-primary pull-right"><i class="fa fa-money"></i> Pay Now</button>
+            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container fluid-->
+
+    <!-- begin main tabs -->
+    <div class="container">
+        <div id="de-main-nav-tabs" class="row">
+	        <div class="col-md-offset-1 col-md-10">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs">
+              <li class="active"><a href="#summary" data-toggle="tab">Summary</a></li>
+              <li><a href="#billing" data-toggle="tab">Billing</a></li>
+              <li><a href="#payments" data-toggle="tab">Payments</a></li>
+              <li><a href="#usage" data-toggle="tab">Usage</a></li>
+              <li><a href="#service" data-toggle="tab">Service Locations</a></li>
+              <li><a href="#contracts" data-toggle="tab">Contracts</a></li>
+              <li><a href="#reports" data-toggle="tab">Reports</a></li>
+              <li><a href="#admin" data-toggle="tab">Admin</a></li>
+            </ul>
+            </div>
+        </div>
+    
+        <div class="row">
+	        <div class="col-md-offset-1 col-md-10"
+            
+            <!-- Tab panes -->
+            <div class="tab-content">
+              <!-- Summary Tab pane -->
+              <div class="tab-pane active" id="summary">
+                  <h4>Power Billing &amp; Payments for All Accounts</h4>
+                  <div class="row">
+                        <div class="col-sm-6">
+                            <div class="panel panel-default panel-de-myacct-primary">
+                                <div class="panel-heading">Latest Power Invoices <button type="button" class="btn btn-primary pull-right">More Invoices <i class="fa fa-chevron-right fa-lg"></i></button></div>
+<!--                                <div class="panel-body">-->
+                                <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Invoice #</th>
+                                                <th>Invoice Date</th>
+                                                <th>Amount Due</th>
+                                                <th>Due Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>123456</td>
+                                                <td>11/01/2014</td>
+                                                <td>$100.00</td>
+                                                <td>11/15/2014</td>
+                                            </tr>
+                                            <tr>
+                                                <td>123456</td>
+                                                <td>10/01/2014</td>
+                                                <td>$100.00</td>
+                                                <td>10/15/2014</td>
+                                            </tr>
+                                            <tr>
+                                                <td>123456</td>
+                                                <td>09/01/2014</td>
+                                                <td>$100.00</td>
+                                                <td>09/15/2014</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+<!--                                </div>-->
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+
+                            <div class="panel panel-default panel-de-myacct-primary">
+                                <div class="panel-heading">Payments <button type="button" class="btn btn-primary pull-right">More Payments <i class="fa fa-chevron-right fa-lg"></i></button></div>
+<!--                                <div class="panel-body">-->
+                                <table class="table table-bordered table-striped">
+                                      <thead>
+                                          <tr>
+                                              <th>Account #</th>
+                                              <th>Last Payment</th>
+                                              <th>Next Scheduled Payment</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                          <tr>
+                                              <td>33445566</td>
+                                              <td>$100.00</td>
+                                              <td>11/15/2014</td>
+                                          </tr>
+                                      </tbody>
+                                  </table>
+
+<!--                                </div>-->
+                            </div>    <!-- end -->                    
+                        </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                        <div class="panel panel-default panel-de-myacct-default">
+                            <div class="panel-heading">Power Usage</div>
+                            <div class="panel-body">
+                                This is the usage panel. Usage information would go in this place here. The quick brown fox jumped over the lazy dog.
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Account #</th>
+                                            <th>Last Payment</th>
+                                            <th>Next Scheduled Payment</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>33445566</td>
+                                            <td>$100.00</td>
+                                            <td>11/15/2014</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="alert alert-danger" role="alert">
+                                    The maximum number of rows is displayed. To view all of the results, you must export the data.
+                                </div>
+
+                            </div>
+                        </div>
+
+                      </div>
+                  </div>
+              </div>
+              <!-- Billing Tab pane -->
+              <div class="tab-pane" id="billing">
+                <div class="container">
+                </div>
+                  <h2>Billing</h2>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        This is the billing tab
+                    </div>
+                  </div>
+              </div>
+              <!-- Payments Tab pane -->
+              <div class="tab-pane" id="payments">
+                <div class="container">
+                </div>
+                  <h2>Payments</h2>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        This is the payments tab
+                    </div>
+                  </div>
+              </div>
+              <!-- Usage Tab pane -->
+              <div class="tab-pane" id="usage">
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <br>
+                        <div class="panel panel-default panel-de-myacct">
+                            <div class="panel-heading"><h4>Usage stuff</h4></div>
+                            <div class="panel-body">
+                            This is the usage panel. Usage information would go in this place here. The quick brown fox jumped over the lazy dog.
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+              <!-- Service Locations Tab pane -->
+              <div class="tab-pane" id="service">
+                <div class="container">
+                </div>
+                  <h2>Service Locations</h2>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        This is the service locations tab
+                    </div>
+                  </div>
+              </div>
+              <!-- Contracts Tab pane -->
+              <div class="tab-pane" id="contracts">
+                <div class="container">
+                </div>
+                  <h2>Contracts</h2>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        This is the contracts tab
+                    </div>
+                  </div>
+              </div>
+              <!-- Reports Tab pane -->
+              <div class="tab-pane" id="reports">
+                <div class="container">
+                </div>
+                  <h2>Reports</h2>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        This is the reports tab
+                    </div>
+                  </div>
+              </div>
+              <!-- Admin Tab pane -->
+              <div class="tab-pane" id="admin">
+                <div class="container">
+                </div>
+                  <h2>Admin</h2>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        This is the admin tab
+                    </div>
+                  </div>
+              </div>
+            </div><!-- / tabs container -->
+    
+			</div>
+			</div>    
+        </div> <!-- /container -->
+	</div> <!-- /container-fluid -->
+
+	<div class="container"><!-- Marketing panel -->
+        <div class="row">
+	        <div class="col-md-offset-1 col-md-7 col-sm-8">
+                <div class="panel panel-default panel-de-myacct-marketing">
+                    <div class="panel-heading">A General marketing Message Title Could Go Here</div>
+                    <div class="panel-body">
+                    Some general marketing content for the body of the message would go in this place here. The quick brown fox jumped over the lazy dog.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-4">
+                <div class="panel panel-default panel-de-myacct-paperless"><!-- Paperless billing panel-->
+                    <div class="panel-heading panel-title">Paperless Billing</div>
+                    <div class="panel-body">
+                        This accounts is currently not enabled for paperless billing.
+                        <a href="#" class="btn btn-success pull-right">Go Paperless</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div><!-- /container-fluid -->
+
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+<p>Line</p>
+
+<footer>
+    <div class="container-fluid de-myact-footer">
+        <div class="row">
+            <div class="col-md-9 col-sm-8">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="btn-group-justified btn-group-sm">
+                            <a href="#" class="btn btn-link">Product &amp; Invoice Sheets</a>
+                            <a href="#" class="btn btn-link">Need a form?</a>
+                            <a href="#" class="btn btn-link">Go Paperless</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="btn-group-justified btn-group-sm">
+                            <a href="#" class="btn btn-link">Product &amp; Invoice Sheets</a>
+                            <a href="#" class="btn btn-link">FAQs</a>
+                            <a href="#" class="btn btn-link">Outages &amp; Emergencies</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 de-copyright">&copy;2014 Direct Energy Marketing Limited, a subsidiary of <a href="#">Centrica</a> plc. Direct Energy and the Lightning Bolt design are either registered trademarks or trademarks of Direct Energy Marketing Limited in the United States and/or Canada. Use of such trademarks has been licensed by Direct Energy Marketing Limited to its various subsidiaries and affiliates. Direct Energy Business, LLC (DC PSC License No. EA-04-4-4; MD PSC License Nos. IR-437; IR-719; IR-791; PUCT Cert. No. 10011). Products and services vary depending on region or market.
+                </div>
+            </div>
+        	<div class="col-md-3 col-sm-4">
+            	<div class="row">
+                	<div class="col-xs-6 col-sm-12 col-md-8">
+                        <a href="#"><img src="img/deb-logo-black.png" class="img-responsive" alt=""/></a>
+						<a href="#">Contact us</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 col-md-4 de-social-links">
+                        <a href="#" class="de-social-rss"><i class="fa fa-rss-square"></i></a>
+                        <a href="#" class="de-social-youtube"><i class="fa fa-youtube"></i></a>
+                        <a href="#" class="de-social-linkedin"><i class="fa fa-linkedin-square"></i></a>
+                        <p>Follow us</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    </footer>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="de-back-summary" data-spy="affix" data-offset-top="0" data-offset-bottom="100"><a href="#" title="Home" class="btn btn-primary"><i class="fa fa-home fa-lg"></i>&nbsp;Go to Summary</a></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+    <!-- Bootstrap-select JS files. Custom select functions -->
+    <script type="text/javascript" src="js/libs/bootstrap-select/bootstrap-select.js"></script> 
+	<script>
+	    <!-- Enabling all select pickers -->
+		$(document).ready(function() 
+		{ 
+			$('.selectpicker').selectpicker(); 
+
+		});
+    </script>
+  </body>
+</html>

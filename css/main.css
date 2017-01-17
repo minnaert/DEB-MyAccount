@@ -1,0 +1,858 @@
+/* formerly #e45206 */
+/* DEB Style Guide Variables */
+/* color and other values to use commonly */
+/* formerly #e45206 */
+/* legacy values */
+/*
+$primary-color: #f15d22;
+$secondary-color: #1C3F95;
+$light-secondary-color: #0072bc;
+*/
+/*
+$tertiary-color: #DBDBDB;
+$font-color: #222222;
+$standard-font: Arial, "ITC Conduit", sans-serif;
+$font-size: 14px;
+*/
+/* DEB My Account chart styles */
+/*********************************************/
+/** Containers for DE charts. Google charts require height settings for charts **/
+/*********************************************/
+/*.de-chart-container-summary {
+    height: 450px;
+}
+.de-chart-container-usage {
+    height: 450px;
+}*/
+/* DEB My Account Footer */
+/* Footer styles for the My Account product. */
+/*********************************************/
+/** Footer Styles **/
+/*********************************************/
+.de-myact-footer {
+  background-color: transparent;
+  padding-bottom: 1.0em;
+  color: #000000;
+  font-weight: 500;
+  /* make footer links black */
+  /* padding to footer images */ }
+  .de-myact-footer a {
+    color: #000000; }
+  .de-myact-footer .btn-link {
+    color: #005776;
+    font-weight: bold; }
+  .de-myact-footer img {
+    margin: 0.5em 0.5em 0.5em 0;
+    max-height: 30px; }
+
+/* updating footer button links styles for smallest phones */
+@media all and (max-width: 480px) {
+  .de-myact-footer .btn-group-justified .btn-link {
+    display: block; } }
+/* Footer for unauthenticated pages */
+.body-unauth .de-myact-footer {
+  background-color: #ffffff;
+  border-top: 1px solid #000000;
+  padding-top: 1.0em;
+  margin-top: 1.5em; }
+
+.de-copyright {
+  font-size: 10px;
+  font-weight: normal;
+  color: #555555;
+  line-height: 1.1; }
+
+.de-social-links {
+  text-align: left;
+  /* sizing social links & changing color */ }
+  .de-social-links a {
+    font-size: 1.250em;
+    color: #000000;
+    text-align: center; }
+
+/* updating footer styles for medium (desktop) screens */
+@media all and (min-width: 992px) {
+  .de-myact-footer .de-social-links {
+    border-left: 1px solid #000000; } }
+.de-social-youtube:hover {
+  color: #FF3333; }
+
+.de-social-twitter:hover {
+  color: #33CCFF; }
+
+.de-social-linkedin:hover {
+  color: #4875B4; }
+
+.de-social-rss:hover {
+  color: #FF8000; }
+
+.de-social-facebook:hover {
+  color: #3B5998; }
+
+/* DEB My Account Header */
+/** unauthenticated (log in, register, styles **/
+/* page header styles for most pages */
+.page-header {
+  margin-top: 0.5em; }
+  .page-header h1 {
+    margin-top: 0.1em; }
+
+/* DEB My Account form input styles */
+/*********************************************/
+/* Customer selection list - used in profile creating and editing */
+.de-form-customer-select-list {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  height: 290px;
+  overflow-y: scroll; }
+  .de-form-customer-select-list table {
+    width: 100%;
+    height: auto;
+    cursor: pointer; }
+
+/*********************************************/
+/*Slide Checkbox*/
+.slide-box {
+  width: 80px;
+  height: 26px;
+  background: #f05d21;
+  margin: 1px auto;
+  position: relative;
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2); }
+  .slide-box.disabled {
+    opacity: .65; }
+  .slide-box:after {
+    content: 'OFF';
+    color: white;
+    position: absolute;
+    right: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.15);
+    top: 0; }
+  .slide-box:before {
+    content: 'ON';
+    color: white;
+    position: absolute;
+    left: 10px;
+    z-index: 0;
+    font: 12px/26px Arial, sans-serif;
+    font-weight: bold;
+    top: 0; }
+  .slide-box label {
+    display: block;
+    width: 34px;
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    z-index: 1;
+    background: white;
+    background: 2px solid #f05d21;
+    border-radius: 50px;
+    transition: all 0.4s ease; }
+  .slide-box input[type=checkbox] {
+    visibility: hidden; }
+    .slide-box input[type=checkbox]:checked + label {
+      left: 43px; }
+
+/* end .slide-box */
+/* DEB My Account Navigation */
+/* Heading navigations styles for the My Account product. */
+/* Main top level header. Used in main and secondary template pages */
+.navbar.de-nav-header-main {
+  /* upper limits for brand image */
+  /***********************************************************
+  Secondary navigation - nav pill style override for top secondary navigation
+  ********************************************************/
+  /***********************************************************
+  Need Help dropdown navigation section
+  ********************************************************/ }
+  .navbar.de-nav-header-main .navbar-brand img {
+    max-width: 200px; }
+  .navbar.de-nav-header-main .navbar-toggle {
+    /* menu button when navbar collapses */
+    color: #F05D21; }
+  .navbar.de-nav-header-main .nav-pills {
+    margin-top: 4px;
+    /* message count indicator */ }
+    .navbar.de-nav-header-main .nav-pills .badge {
+      background-color: #d9534f; }
+  .navbar.de-nav-header-main .nav-pills > li > a {
+    color: #222222; }
+  .navbar.de-nav-header-main .nav-pills > li.active > a {
+    /* Selected tabs */
+    color: #ffffff; }
+    .navbar.de-nav-header-main .nav-pills > li.active > a .badge {
+      color: #d9534f;
+      background-color: #ffffff; }
+  .navbar.de-nav-header-main #de-nav-user {
+    /* Logged in user name */
+    font-weight: bold; }
+  .navbar.de-nav-header-main .de-nav-contact > li > a {
+    color: #F05D21; }
+    .navbar.de-nav-header-main .de-nav-contact > li > a:hover {
+      color: #222222; }
+  .navbar.de-nav-header-main .de-nav-contact > li dt, .navbar.de-nav-header-main .de-nav-contact .dropdown-header {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 20px; }
+  .clientinformation{
+      color:#F05D21;
+  }
+
+/***************************************************************/
+/* Customer and account selection header used in main template */
+/***************************************************************/
+.de-nav-customer-container {
+  padding: 1em 1em 1em 0.5em;
+  /* labels for customer and account dropdowns */
+  /* increasing some label heights when dual commodities are shown */
+  /* Styling heading text when displaying single customer name. Users with single customer access */
+  /* Styles and classes for customer select control modified by bootstrap-select control. Creating custom button style */ }
+  .de-nav-customer-container .de-form-customer-label {
+    border-bottom: 1px solid #000000;
+    margin-bottom: 2px;
+    min-height: 22px; }
+    .de-nav-customer-container .de-form-customer-label label {
+      margin-bottom: 1px; }
+  .de-nav-customer-container.dual-commodity .de-form-customer-label label {
+    padding-top: 18px; }
+  .de-nav-customer-container.dual-commodity .de-form-customer-label .de-form-customer-balance {
+    font-weight: bold; }
+  .de-nav-customer-container h4 {
+    margin-left: 1.0em; }
+  .de-nav-customer-container .bootstrap-select.btn-group {
+    width: 100%; }
+    .de-nav-customer-container .bootstrap-select.btn-group .dropdown-menu {
+      /* Group labels in dropdowns */
+      /* updating hover text for subtext information in dropdowns */ }
+      .de-nav-customer-container .bootstrap-select.btn-group .dropdown-menu .dropdown-header {
+        color: #000000;
+        font-size: 14px;
+        font-weight: bold; }
+      .de-nav-customer-container .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small, .de-nav-customer-container .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:focus small {
+        color: #000000; }
+      .de-nav-customer-container .bootstrap-select.btn-group .dropdown-menu li.active:not(.disabled) > a:hover small {
+        color: #ffffff; }
+      .de-nav-customer-container .bootstrap-select.btn-group .dropdown-menu.open {
+        /* look at setting these sizes per viewport size */
+        max-height: 483px;
+        min-height: 131px;
+        overflow: hidden; }
+      .de-nav-customer-container .bootstrap-select.btn-group .dropdown-menu.inner.selectpicker {
+        max-height: 429px;
+        overflow-y: auto; }
+
+/* button style classes to customer selection dropdown. Based on Bootstrap button styling, uses button mixin */
+.btn-nav-customer {
+  color: #fff;
+  background-color: #005776;
+  border-color: #005776; }
+  .btn-nav-customer:hover, .btn-nav-customer:focus, .btn-nav-customer:active, .btn-nav-customer.active, .open > .btn-nav-customer.dropdown-toggle {
+    color: #fff;
+    background-color: #003143;
+    border-color: #002a39; }
+  .btn-nav-customer:active, .btn-nav-customer.active, .open > .btn-nav-customer.dropdown-toggle {
+    background-image: none; }
+  .btn-nav-customer.disabled, .btn-nav-customer.disabled:hover, .btn-nav-customer.disabled:focus, .btn-nav-customer.disabled:active, .btn-nav-customer.disabled.active, .btn-nav-customer[disabled], .btn-nav-customer[disabled]:hover, .btn-nav-customer[disabled]:focus, .btn-nav-customer[disabled]:active, .btn-nav-customer[disabled].active, fieldset[disabled] .btn-nav-customer, fieldset[disabled] .btn-nav-customer:hover, fieldset[disabled] .btn-nav-customer:focus, fieldset[disabled] .btn-nav-customer:active, fieldset[disabled] .btn-nav-customer.active {
+    background-color: #005776;
+    border-color: #005776; }
+  .btn-nav-customer .badge {
+    color: #005776;
+    background-color: #fff; }
+
+/* Tab control on main page */
+#de-main-nav-tabs {
+  background-color: #ffffff;
+  margin-top: 1em; }
+  #de-main-nav-tabs .nav-tabs > li > a {
+    color: #000000; }
+  #de-main-nav-tabs .nav-tabs > li.active > a {
+    color: #F05D21; }
+
+/****************************************************************
+    Unauthenticated pages navigation
+****************************************************************/
+.body-unauth .navbar {
+  min-height: 100px;
+  border-bottom: 1px solid #000000; }
+
+/****************************************************************
+    Breadcrumbs navigation for wizard (Pay Now and Welcome) screens
+****************************************************************/
+/* Ordered number list Start*/
+.orderedList .breadcrumb {
+  background-color: transparent;
+  padding: 0.2em 0.5em 0.2em 0; }
+.orderedList ol {
+  counter-increment: li;
+  list-style: none;
+  *list-style: decimal; }
+  .orderedList ol li {
+    /* breadcrumb steps in wizard screens */
+    counter-increment: customlistcounter;
+    margin: 0.5em 0.5em 0.2em 0;
+    font-weight: bold; }
+    .orderedList ol li:before {
+      /* breadcrumb steps in wizard screens */
+      background-color: transparent;
+      border-radius: 50%;
+      border: 1px solid #000000;
+      color: #000000;
+      content: counter(customlistcounter);
+      margin-right: 0.5em;
+      padding: 5px 11px; }
+    .orderedList ol li.active {
+      /* selected breadcrumb steps in wizard screens */
+      color: #F05D21; }
+      .orderedList ol li.active:before {
+        /* selected breadcrumb steps in wizard screens */
+        background-color: #F05D21;
+        border-color: #F05D21;
+        color: #ffffff; }
+    .orderedList ol li i {
+      /* divider icons in breadcrumb steps in wizard screens */
+      margin-left: 0.7em; }
+@media (min-width: 768px) {
+  .orderedList {
+    /* more padding and margin for larger screens */
+    /* end min=small screens */ }
+    .orderedList .breadcrumb {
+      padding: 0.5em 1.0em 0.5em 0; }
+    .orderedList ol li {
+      /* breadcrumb steps in wizard screens */
+      margin: 1.0em 1.0em 0.5em 0; }
+      .orderedList ol li:before {
+        /* breadcrumb steps in wizard screens */
+        margin-right: 1.0em;
+        padding: 5px 11px; }
+      .orderedList ol li i {
+        /* divider icons in breadcrumb steps in wizard screens */
+        margin-left: 1.5em; } }
+.orderedList ul li {
+  background: url(../images/Orange_Lightning_Bolt.png) no-repeat left top;
+  list-style: none;
+  background-position: left;
+  padding-left: 1.5em; }
+
+/****************************************************************
+    Support pages contents navigation
+****************************************************************/
+#de-support-nav-contents {
+  /* affix behavior for side navigation */
+  /* link appearance */ }
+  #de-support-nav-contents.affix {
+    position: fixed !important;
+    top: 20px;
+    width: 22%; }
+  #de-support-nav-contents .nav > li > a:hover, #de-support-nav-contents .back-to-top {
+    cursor: pointer; }
+
+/* updating affix navigation styles for large screens */
+@media all and (min-width: 1200px) {
+  #de-support-nav-contents {
+    /* affix behavior for side navigation */ }
+    #de-support-nav-contents.affix {
+      width: 16%; } }
+/* Back to summary floating / sticky / stalking button for secondary nav pages (messages, preferences and support) */
+#de-back-summary.affix {
+  position: fixed;
+  bottom: 80px; }
+
+#de-back-summary.affix-top {
+  position: static; }
+
+#de-back-summary.affix-bottom {
+  position: absolute; }
+
+/* pdf icons within Support main pages display */
+/* pdf icons within Billing summary pages display */
+/* pdf document links within tables should be red */
+#SupportMain .panel-body a i.fa-file-pdf-o, #ProductAndInvoiceSheets .panel-body a i.fa-file-pdf-o, #billing .panel-body a i.fa-file-pdf-o {
+  color: #d9534f;
+  margin-left: 0.1em;
+  margin-right: 0.1em; }
+
+/* DEB My Account Panel styles */
+/*********************************************/
+/** General DE Panel Styles **/
+/*********************************************/
+/* Primary and Secondary panel styles */
+/* de my account panel types */
+.panel-de-myacct-primary {
+  background-color: #eeeeee; }
+  .panel-de-myacct-primary .panel-heading {
+    color: white;
+    background-color: #F05D21; }
+    .panel-de-myacct-primary .panel-heading .lead {
+      font-size: 16px; }
+      @media (min-width: 768px) {
+        .panel-de-myacct-primary .panel-heading .lead {
+          font-size: 17.5px; } }
+    .panel-de-myacct-primary .panel-heading a i.fa-file-pdf-o {
+      /* pdf links within the summary. make pdf icon red & link normal color  */
+      color: #d9534f; }
+    .panel-de-myacct-primary .panel-heading .btn-primary {
+      color: #fff;
+      background-color: #F05D21;
+      border-color: #F05D21; }
+      .panel-de-myacct-primary .panel-heading .btn-primary:hover, .panel-de-myacct-primary .panel-heading .btn-primary:focus, .panel-de-myacct-primary .panel-heading .btn-primary:active, .panel-de-myacct-primary .panel-heading .btn-primary.active, .open > .panel-de-myacct-primary .panel-heading .btn-primary.dropdown-toggle {
+        color: #fff;
+        background-color: #d0460e;
+        border-color: #c6430d; }
+      .panel-de-myacct-primary .panel-heading .btn-primary:active, .panel-de-myacct-primary .panel-heading .btn-primary.active, .open > .panel-de-myacct-primary .panel-heading .btn-primary.dropdown-toggle {
+        background-image: none; }
+      .panel-de-myacct-primary .panel-heading .btn-primary.disabled, .panel-de-myacct-primary .panel-heading .btn-primary.disabled:hover, .panel-de-myacct-primary .panel-heading .btn-primary.disabled:focus, .panel-de-myacct-primary .panel-heading .btn-primary.disabled:active, .panel-de-myacct-primary .panel-heading .btn-primary.disabled.active, .panel-de-myacct-primary .panel-heading .btn-primary[disabled], .panel-de-myacct-primary .panel-heading .btn-primary[disabled]:hover, .panel-de-myacct-primary .panel-heading .btn-primary[disabled]:focus, .panel-de-myacct-primary .panel-heading .btn-primary[disabled]:active, .panel-de-myacct-primary .panel-heading .btn-primary[disabled].active, fieldset[disabled] .panel-de-myacct-primary .panel-heading .btn-primary, fieldset[disabled] .panel-de-myacct-primary .panel-heading .btn-primary:hover, fieldset[disabled] .panel-de-myacct-primary .panel-heading .btn-primary:focus, fieldset[disabled] .panel-de-myacct-primary .panel-heading .btn-primary:active, fieldset[disabled] .panel-de-myacct-primary .panel-heading .btn-primary.active {
+        background-color: #F05D21;
+        border-color: #F05D21; }
+      .panel-de-myacct-primary .panel-heading .btn-primary .badge {
+        color: #F05D21;
+        background-color: #fff; }
+  .panel-de-myacct-primary .lead {
+    font-size: 16px; }
+    @media (min-width: 768px) {
+      .panel-de-myacct-primary .lead {
+        font-size: 17.5px; } }
+  .panel-de-myacct-primary a i.fa-file-pdf-o {
+    /* pdf links within the summary. make pdf icon red & link normal color  */
+    color: #d9534f; }
+
+/* primary panel headings and icons */
+h3 a {
+  color: inherit; }
+  h3 a:hover {
+    color: #555555; }
+
+.panel-de-myacct-default .panel-heading {
+  color: #F05D21;
+  background-color: white;
+  font-size: 24px; }
+  .panel-de-myacct-default .panel-heading a {
+    font-size: 14px; }
+    .panel-de-myacct-default .panel-heading a.InvoiceHelpTextIcon {
+      color: #005776; }
+    .panel-de-myacct-default .panel-heading a.UsageHelpTextIcon {
+      color: inherit;
+      font-size: 24px; }
+
+.panel-de-myacct-primary, .panel-de-myacct-default {
+  border-color: #000000;
+  border-radius: 0; }
+  .panel-de-myacct-primary .panel-heading, .panel-de-myacct-default .panel-heading {
+    border-radius: 0;
+    margin: 0.1em; }
+    .panel-de-myacct-primary .panel-heading a, .panel-de-myacct-default .panel-heading a {
+      /* icons within panel headings */
+      color: inherit;
+      margin-left: 0.5em; }
+      .panel-de-myacct-primary .panel-heading a:hover, .panel-de-myacct-default .panel-heading a:hover {
+        color: #555555; }
+    .panel-de-myacct-primary .panel-heading .btn, .panel-de-myacct-default .panel-heading .btn {
+      margin-bottom: 0;
+      margin-top: -7px; }
+    .panel-de-myacct-primary .panel-heading .btn-nav-customer, .panel-de-myacct-primary .panel-heading .btn-nav-customer:hover, .panel-de-myacct-default .panel-heading .btn-nav-customer, .panel-de-myacct-default .panel-heading .btn-nav-customer:hover {
+      color: #ffffff; }
+
+/*********************************************/
+/** Summary Page DE Panel Styles **/
+/*********************************************/
+#summary.tab-pane .panel-default .badge.success {
+  background-color: #4cae4c; }
+#summary.tab-pane .de-summary-spend .panel-heading {
+  color: #005776; }
+#summary.tab-pane .de-summary-spend .btn-primary {
+  color: #fff;
+  background-color: #005776;
+  border-color: #005776; }
+  #summary.tab-pane .de-summary-spend .btn-primary:hover, #summary.tab-pane .de-summary-spend .btn-primary:focus, #summary.tab-pane .de-summary-spend .btn-primary:active, #summary.tab-pane .de-summary-spend .btn-primary.active, .open > #summary.tab-pane .de-summary-spend .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #003143;
+    border-color: #002a39; }
+  #summary.tab-pane .de-summary-spend .btn-primary:active, #summary.tab-pane .de-summary-spend .btn-primary.active, .open > #summary.tab-pane .de-summary-spend .btn-primary.dropdown-toggle {
+    background-image: none; }
+  #summary.tab-pane .de-summary-spend .btn-primary.disabled, #summary.tab-pane .de-summary-spend .btn-primary.disabled:hover, #summary.tab-pane .de-summary-spend .btn-primary.disabled:focus, #summary.tab-pane .de-summary-spend .btn-primary.disabled:active, #summary.tab-pane .de-summary-spend .btn-primary.disabled.active, #summary.tab-pane .de-summary-spend .btn-primary[disabled], #summary.tab-pane .de-summary-spend .btn-primary[disabled]:hover, #summary.tab-pane .de-summary-spend .btn-primary[disabled]:focus, #summary.tab-pane .de-summary-spend .btn-primary[disabled]:active, #summary.tab-pane .de-summary-spend .btn-primary[disabled].active, fieldset[disabled] #summary.tab-pane .de-summary-spend .btn-primary, fieldset[disabled] #summary.tab-pane .de-summary-spend .btn-primary:hover, fieldset[disabled] #summary.tab-pane .de-summary-spend .btn-primary:focus, fieldset[disabled] #summary.tab-pane .de-summary-spend .btn-primary:active, fieldset[disabled] #summary.tab-pane .de-summary-spend .btn-primary.active {
+    background-color: #005776;
+    border-color: #005776; }
+  #summary.tab-pane .de-summary-spend .btn-primary .badge {
+    color: #005776;
+    background-color: #fff; }
+#summary.tab-pane .de-summary-usage .btn-primary {
+  color: #fff;
+  background-color: #F05D21;
+  border-color: #F05D21; }
+  #summary.tab-pane .de-summary-usage .btn-primary:hover, #summary.tab-pane .de-summary-usage .btn-primary:focus, #summary.tab-pane .de-summary-usage .btn-primary:active, #summary.tab-pane .de-summary-usage .btn-primary.active, .open > #summary.tab-pane .de-summary-usage .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #d0460e;
+    border-color: #c6430d; }
+  #summary.tab-pane .de-summary-usage .btn-primary:active, #summary.tab-pane .de-summary-usage .btn-primary.active, .open > #summary.tab-pane .de-summary-usage .btn-primary.dropdown-toggle {
+    background-image: none; }
+  #summary.tab-pane .de-summary-usage .btn-primary.disabled, #summary.tab-pane .de-summary-usage .btn-primary.disabled:hover, #summary.tab-pane .de-summary-usage .btn-primary.disabled:focus, #summary.tab-pane .de-summary-usage .btn-primary.disabled:active, #summary.tab-pane .de-summary-usage .btn-primary.disabled.active, #summary.tab-pane .de-summary-usage .btn-primary[disabled], #summary.tab-pane .de-summary-usage .btn-primary[disabled]:hover, #summary.tab-pane .de-summary-usage .btn-primary[disabled]:focus, #summary.tab-pane .de-summary-usage .btn-primary[disabled]:active, #summary.tab-pane .de-summary-usage .btn-primary[disabled].active, fieldset[disabled] #summary.tab-pane .de-summary-usage .btn-primary, fieldset[disabled] #summary.tab-pane .de-summary-usage .btn-primary:hover, fieldset[disabled] #summary.tab-pane .de-summary-usage .btn-primary:focus, fieldset[disabled] #summary.tab-pane .de-summary-usage .btn-primary:active, fieldset[disabled] #summary.tab-pane .de-summary-usage .btn-primary.active {
+    background-color: #F05D21;
+    border-color: #F05D21; }
+  #summary.tab-pane .de-summary-usage .btn-primary .badge {
+    color: #F05D21;
+    background-color: #fff; }
+
+.panel-body {
+  /* Styling for rows describing reports on main reports tab page. */ }
+  .panel-body .de-report-list-group-item {
+    border-top: 1px solid #ddd;
+    /* Report button and header margin changes for different viewport sizes */ }
+    .panel-body .de-report-list-group-item h5 {
+      color: #000000;
+      font-weight: bold; }
+    .panel-body .de-report-list-group-item a.btn, .panel-body .de-report-list-group-item h5 {
+      margin-bottom: 10px; }
+    @media (min-width: 768px) {
+      .panel-body .de-report-list-group-item a.btn, .panel-body .de-report-list-group-item h5 {
+        margin-top: 10px;
+        margin-bottom: inherit; } }
+    @media (min-width: 992px) {
+      .panel-body .de-report-list-group-item a.btn, .panel-body .de-report-list-group-item h5 {
+        margin-top: 20px;
+        margin-bottom: inherit; } }
+  .panel-body .de-report-list-group-item:first-of-type {
+    /* The first report should not have a top border, others will */
+    border-top-width: 0px; }
+
+.panel-heading .panel-title a:hover {
+  /* settings the cursor to be correct for panel headings */
+  cursor: default; }
+
+.panel-group i {
+  margin-right: 5px; }
+.panel-group a i:hover {
+  color: #777777; }
+
+/* Notice area. Typically at bottom of panel with information icon */
+.de-panel-notice {
+  color: #555555;
+  padding: 15px; }
+  .de-panel-notice i {
+    color: #005776;
+    font-size: 18px; }
+
+/*********************************************/
+/** Marketing DE Panel Styles **/
+/* Marketing and help panel styles for  My Account. These are displayed on the Summary page and contain content edited in Sitecore */
+/*********************************************/
+.panel-de-myacct-marketing {
+  border-width: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+  .panel-de-myacct-marketing .panel-heading {
+    border-width: 0;
+    font-size: 24px; }
+
+/*********************************************/
+/* Support panels */
+#contactNumbers .alert-warning h4.contactname {
+  color: #F05D21; }
+
+/* FAQ Second level individual faq question expandable content  */
+.de-support-faq .de-support-faq-title {
+  /* title sections are links. Adding margins */
+  font-size: 18px;
+  /*display: block;*/
+  text-align: left;
+  margin: 0.2em 0 0 0.1em; }
+  .de-support-faq .de-support-faq-title i {
+    margin-right: 0.2em; }
+  .de-support-faq .de-support-faq-title:hover {
+    cursor: default; }
+.de-support-faq .de-support-faq-body {
+  /* aligning content with title */
+  margin-left: 1.0em; }
+
+/* Event calendar date display */
+.de-event-date {
+  background-color: #dbdbdb;
+  text-align: center;
+  padding-top: 0.4em;
+  padding-bottom: 0.4em;
+  padding-left: 2.0em; }
+
+/*********************************************/
+/** DE Information Well Styles **/
+/*********************************************/
+/* large graphics on unauthenticated pages */
+.de-unauth-img-lg {
+  max-height: 450px; }
+
+.de-well {
+  border-color: #000000;
+  border-radius: 0; }
+  .de-well .de-unauth-img-lg {
+    border: 1px solid #dbdbdb;
+    border-radius: 2px; }
+  .de-well .btn-info {
+    color: #fff;
+    background-color: #F05D21;
+    border-color: #F05D21; }
+    .de-well .btn-info:hover, .de-well .btn-info:focus, .de-well .btn-info:active, .de-well .btn-info.active, .open > .de-well .btn-info.dropdown-toggle {
+      color: #fff;
+      background-color: #d0460e;
+      border-color: #c6430d; }
+    .de-well .btn-info:active, .de-well .btn-info.active, .open > .de-well .btn-info.dropdown-toggle {
+      background-image: none; }
+    .de-well .btn-info.disabled, .de-well .btn-info.disabled:hover, .de-well .btn-info.disabled:focus, .de-well .btn-info.disabled:active, .de-well .btn-info.disabled.active, .de-well .btn-info[disabled], .de-well .btn-info[disabled]:hover, .de-well .btn-info[disabled]:focus, .de-well .btn-info[disabled]:active, .de-well .btn-info[disabled].active, fieldset[disabled] .de-well .btn-info, fieldset[disabled] .de-well .btn-info:hover, fieldset[disabled] .de-well .btn-info:focus, fieldset[disabled] .de-well .btn-info:active, fieldset[disabled] .de-well .btn-info.active {
+      background-color: #F05D21;
+      border-color: #F05D21; }
+    .de-well .btn-info .badge {
+      color: #F05D21;
+      background-color: #fff; }
+
+/* DEB My Account Password */
+/* Password strength meter and validation styles for the My Account product. */
+/* Colors are all from bootstrap color variables */
+/*********************************************/
+/** Footer Styles **/
+/*********************************************/
+#pswd_info ul {
+  /* Styles for the display of password rules */ }
+  #pswd_info ul li {
+    padding: 0 0 0 20px;
+    color: #a94442; }
+    #pswd_info ul li:before {
+      font-family: 'FontAwesome';
+      content: '\f00d';
+      /* X symbol from font awesome */
+      margin: 0 5px 0 -15px; }
+    #pswd_info ul li.valid {
+      color: #3c763d; }
+    #pswd_info ul li.valid:before {
+      font-family: 'FontAwesome';
+      content: '\f00c';
+      /* success checkmark symbol from font awesome */
+      margin: 0 5px 0 -15px; }
+
+/* Styles for the password strength meter */
+#passwordStrength {
+  display: block;
+  height: 5px;
+  margin-bottom: 10px;
+  transition: all 0.4s ease; }
+
+.strength0 {
+  background: none;
+  /* too short */
+  width: 0; }
+
+.strength1 {
+  background: none repeat scroll 0 0 #a94442;
+  /* weak, formerly #FF4545 */
+  width: 25%; }
+
+.strength2 {
+  background: none repeat scroll 0 0 #f0ad4e;
+  /* good, formerly #FFC824 */
+  width: 50%; }
+
+.strength3 {
+  background: none repeat scroll 0 0 #3c763d;
+  /* strong, formerly #6699CC */
+  width: 75%; }
+
+.strength4 {
+  background: none repeat scroll 0 0 #56a965;
+  /* best, formerly #008000 */
+  width: 100%; }
+
+/* DEB My Account pay now styles */
+/* Pay Now styles for the My Account product. These are the wizard like styles for the pay now and edit automatic payments screens */
+/*********************************************/
+/** DE PayNow - Automatic Payments Styles **/
+/*********************************************/
+/* positioning of the automatic payments links */
+.de-paynow-auto-links .btn-group-vertical .btn {
+  text-align: left; }
+
+/* DEB My Account preferences */
+/* Preferences page styles for the My Account product. */
+.preferences {
+  /* Customer dropdown select above tables in preferences. Remove padding to left align with tables.*/
+  /* customer lists used in editing profiles. Update to clearly show selected item in list */ }
+  .preferences .de-form-customer-select {
+    padding-left: 0px; }
+  .preferences .de-form-customer-select-list .selectedListItem {
+    background-color: #f5f5f5; }
+
+/* DEB My Account tables */
+/* Table styles for the My Account product. */
+/*********************************************/
+/** Table Styles **/
+/*********************************************/
+/* table cells which display font awesome commodity icons.*/
+table .de-tablecell-commodity {
+  color: #f05d21;
+  font-size: 1.5em;
+  text-align: center;
+  margin-left: 0.1em;
+  margin-right: 0.1em; }
+
+/* table cells which display font awesome action icons (edit, delete) */
+table .de-tablecell-action {
+  color: #005776;
+  /*	font-size: 1.25em;
+  */
+  text-align: center;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+  padding-top: 0.1em;
+  white-space: nowrap; }
+
+/* colors for font awesome links within tables */
+/* pdf document links within tables should be red */
+table td a i.fa-file-pdf-o {
+  color: #d9534f;
+  margin-left: 0.1em;
+  margin-right: 0.1em; }
+
+/* question icons in table headers should be orange */
+table th .popover {
+  font-weight: normal; }
+table th a {
+  font-weight: normal; }
+  table th a i.fa-question-circle {
+    /*    color: $de-orange-primary;*/ }
+
+/* Selected row or highlighted row appearance for tables */
+.table-striped > tbody > tr.selected, table > tbody > tr.selected {
+  background-color: #F05D21;
+  color: white; }
+  .table-striped > tbody > tr.selected > td, table > tbody > tr.selected > td {
+    background-color: #F05D21;
+    color: white; }
+    .table-striped > tbody > tr.selected > td a, table > tbody > tr.selected > td a {
+      color: white; }
+
+/* Filter controls toolbar above tables */
+/* update view button within dialogs needs top margin to align with date controls */
+.modal-body .de-btn-table-filter-view {
+  margin-top: 28px; }
+
+/* ng-table style updates */
+.ng-table-pager .pagination {
+  /* paging controls for tables */
+  margin-top: 0px; }
+
+@media (max-width: 768px) {
+  /* When tablesaw (responsive tables) styling in effect, remove row borders */
+  /* only applies to tablesaw tables and only at smal screen sizes */
+  .tablesaw-stack.table-bordered > tbody > tr > td {
+    border: 0px none transparent;
+    padding: 0px 2px 0px 4px; }
+  .tablesaw-stack.table tbody > tr > td {
+    border-top: 0px none transparent; } }
+/* STANDARDS AND FIXES */
+.sweet-field {
+  display: none; }
+
+/*End Standard And Fixes*/
+/*Header and Anchor Stylings*/
+/*End Font and Anchor Stylings*/
+/*Buttons */
+/*End Button*/
+/* Vertical Spacing Start*/
+.spacer, .spacer5, .spacer10, .spacer15, .spacer20, .spacer25, .spacer30, .spacer35, .spacer40, .spacer45, .spacer50, .spacer100, .spacer200 {
+  width: 100%;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block; }
+
+.spacer5 {
+  height: 5px; }
+
+.spacer10 {
+  height: 10px; }
+
+.spacer15 {
+  height: 15px; }
+
+.spacer20 {
+  height: 20px; }
+
+.spacer25 {
+  height: 25px; }
+
+.spacer30 {
+  height: 30px; }
+
+.spacer35 {
+  height: 35px; }
+
+.spacer40 {
+  height: 40px; }
+
+.spacer45 {
+  height: 45px; }
+
+.spacer50 {
+  height: 50px; }
+
+.spacer100 {
+  height: 100px; }
+
+.spacer200 {
+  height: 200px; }
+
+/* Vertical Spacing End*/
+/* Margin Top Start*/
+.top5 {
+  margin-top: 5px; }
+
+.top10 {
+  margin-top: 10px; }
+
+.top15 {
+  margin-top: 15px; }
+
+.top20 {
+  margin-top: 20px; }
+
+.top25 {
+  margin-top: 25px; }
+
+.top30 {
+  margin-top: 30px; }
+
+.top35 {
+  margin-top: 35px; }
+
+.top40 {
+  margin-top: 40px; }
+
+.top45 {
+  margin-top: 45px; }
+
+.top50 {
+  margin-top: 50px; }
+
+.top100 {
+  margin-top: 100px; }
+
+.top200 {
+  margin-top: 200px; }
+
+/* Margin Top End*/
+.blacktext {
+  color: #333333; }
+
+.wordBreak {
+  word-break: break-word; }
+
+.ng-table tr.subtotal td {
+  font-weight: bold;
+  background-color: #eeeeee; }
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Header Customer Account Selection</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/sass/main.css" rel="stylesheet">
+    
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- ** My Account prototype styles ** -->
+<!--    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">-->
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+	<!--ng-grid references-->
+    <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+    
+
+	<style type="text/css">
+
+		/* Table grid styles */
+		.gridStyle {
+			border: 1px solid #ddd;
+			width: 100%; 
+			height: 400px
+		}
+		.gridStyle .ngTopPanel {
+			background-color: transparent;
+		}
+		.gridStyle .ngRow {
+			border: 1px solid #ddd;
+		}
+		.gridStyle .ngRow.even {
+			background-color: #f9f9f9;
+		}
+		.gridStyle .ngAggregate,.gridStyle .ngRow.selected {
+			background-color: #f5f5f5;
+		}
+
+	</style>
+    
+</head>
+
+  <body ng-controller="MyCtrl">
+
+    <div class="container-fluid"><!-- body content -->
+         <div class="page-header">
+          <h2>Details pane with grid</h2>
+         </div>
+        <h4>ng-grid with jquery ui theme</h4>
+        <div class="container">
+            <div class="row">
+                <div class="gridStyle" ng-grid="gridOptions"></div>
+            </div>
+            <div class="row">
+                <h4>Service Location details</h4>
+                <div class="col-sm-12">
+					<div class="well well-sm">
+                      <table class="table table-bordered table-condensed">
+                        <tr>
+                          <td>BillingAccount</td>
+                          <td>ServiceLocation</td>
+                        </tr>
+                        <tr ng-repeat='sample in selectedSamples'>
+                          <td>{{sample.BillingAccount}}</td>
+                          <td>{{sample.ServiceLocation}}</td>
+                        </tr>
+                      </table>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            </div>
+        </div><!-- End Container-->
+
+
+
+	</div><!-- End Container fluid-->
+
+<!--<button type="button" ng-click="toggleCol(0)" >Toggle ungrouped customer</button>
+<button type="button" ng-click="toggleCol(1)" >Toggle grouped customer</button>
+<button type="button" ng-click="toggleGroup()" >Toggle group 2</button>
+-->
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+    <script type="text/javascript" src="http://angular-ui.github.com/ng-grid/lib/ng-grid.debug.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('myApp', ['ngGrid']);
+		app.controller('MyCtrl', function($scope) {
+			$scope.selectedSamples = [];
+			$scope.myData = [{Customer: "Big Easy Carwash", BillingAccount: "1145085", UtilityAccount: "11401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1245086", UtilityAccount: "12401014029121",ServiceLocation: "5 locations"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1345087", UtilityAccount: "13401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1445088", UtilityAccount: "14401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7123110", UtilityAccount: "15401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7223111", UtilityAccount: "16401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7323112", UtilityAccount: "17401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7423113", UtilityAccount: "18401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2145089", UtilityAccount: "21401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2245090", UtilityAccount: "22401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2345091", UtilityAccount: "23401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8123121", UtilityAccount: "24401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8223122", UtilityAccount: "25401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8323123", UtilityAccount: "26401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3145093", UtilityAccount: "31401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3245094", UtilityAccount: "32401014029123",ServiceLocation: "2034 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9123131", UtilityAccount: "33401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9223132", UtilityAccount: "34401014029123",ServiceLocation: "2034 First Ave Town TX 73325"}];
+			$scope.gridOptions = { 
+			  data: 'myData',
+			  selectedItems: $scope.selectedSamples,
+			  multiSelect: true,
+				columnDefs: [
+					{field:'Customer', displayName:'Customer Name'},
+					{field: 'BillingAccount', displayName: 'Billing Account'},
+					{field:'UtilityAccount', displayName:'Utility Account', cellClass:'ngCellText text-center', cellTemplate: '<div><a href="#"><i class="fa fa-angle-double-down"></i>&nbsp;{{row.entity[col.field]}}</a></div>', width: "20%" },
+					{field:'ServiceLocation', displayName:'Service Location', cellClass:'ngCellText', cellTemplate: '<div><a href="#"><i class="fa fa-angle-double-down"></i>&nbsp;{{row.entity[col.field]}}</a></div>', width: "20%" }
+					]
+			};
+		});
+
+	</script>  
+
+  </body>
+</html>

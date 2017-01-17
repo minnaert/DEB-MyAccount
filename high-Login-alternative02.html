@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width">
+    <title>My Account Log In - Direct Energy Business</title>
+    <link rel="SHORTCUT ICON" href="/Content/favicon.ico" type="image/x-icon" />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+</head>
+<body class="body-unauth">
+
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.business.directenergy.com/" title="Direct Energy Business website" target="_self"><img src="img/deb-logo-white.png" alt="logo" class="img-responsive"></a>
+            </div>
+        </div>
+    </nav>
+    <div id="main-view" class="container">
+        
+
+
+<div id="logOnContainer" ng-cloak>
+    <div class="row top10">
+        <div class="col-sm-12">
+            <ul class="breadcrumb">
+                <li><a href="/">My Account</a></li>
+                <li class="active">Log in</li>
+            </ul>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-xs-12"><h1>My Account Log In</h1></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="border: 1px solid red;">
+                    <h4>Put your Marketo RTP here</h4>
+                    The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-5 col-md-offset-1" ng-controller="LogOnController" ng-init="init('')">
+<!--                <div class="alert alert-danger" ng-show="logOnFailed"><i class="fa fa-exclamation-circle"></i>&nbsp;{{errormsg}}</div>-->
+                <form role="form" name="logonForm" ng-model="user" ng-honey-pot autocomplete="off" >
+                    <div class="form-group" ng-class="{'has-error':logonForm.EmailAddress.$invalid&&logonForm.submitted}">
+                        <label for="EmailAddress" class="control-label">Email/User name</label>
+                        <input type="email" id="EmailAddress" name="EmailAddress" class="form-control" ng-model="user.EmailAddress" ng-pattern="/^[a-zA-Z0-9.!#$%&amp;&#39;*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" required />
+<!--
+                        <div ng-show="logonForm.EmailAddress.$invalid&&logonForm.submitted">
+                            <p ng-show="logonForm.EmailAddress.$error.required" class="help-block">Email address is required</p>
+                            <p ng-show="logonForm.EmailAddress.$error.pattern" class="help-block">Enter a valid email address</p>
+                        </div>
+-->
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error':logonForm.Password.$invalid&&logonForm.submitted}">
+                        <label for="Password" class="control-label">Password</label>
+                        <input type="password" id="Password" name="Password" class="form-control" ng-model="user.Password" required />
+<!--
+                        <div ng-show="logonForm.Password.$invalid&&logonForm.submitted">
+                            <p ng-show="logonForm.Password.$error.required" class="help-block">Password is required</p>
+                        </div>
+-->
+                    </div>
+
+
+                    <div class="btn-toolbar">
+                        <div class="col-sm-8">
+                            <div class="checkbox">
+                                <label><input type="checkbox" id="rememberMe" name="rememberMe" ng-model="user.rememberMe" />Remember my user name</label>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary btn-lg pull-right" value="Log In" ng-click="sendForm()">
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <button id="btnForgotPassword" type="button" class="btn btn-link" href="/Account/ForgotPassword" ng-analytics-event="Forgot Password" event="eventOptions.EventCategory.Navigation" action="eventOptions.EventAction.Navigation.LinkClicked">Forgot Password?</button>                    
+<!--                            <span class="form-control-static pull-right">Not Registered?</span>-->
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <div class="help-text">Not Registered?</div>
+                            <button href="/Account/Register" class="btn btn-default" id="registerNow" ng-analytics-event="Register Now" event="eventOptions.EventCategory.Navigation" action="eventOptions.EventAction.Navigation.LinkClicked">Register Now</button>                            
+                        </div>
+                    </div>
+                    <hr>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 well">
+                <h4>Manage your account online</h4>
+                <ul>    <li>Check your account balances</li>    
+                    <li>View and print invoices</li>    
+                    <li>View your detailed usage</li>    
+                    <li>Learn about our <a target="_blank" href="https://www.business.directenergy.com/new-my-account">New Features</a></li>
+                </ul>
+            </div>
+<!--
+            <div class="col-md-4 visible-md-block visible-lg-block">
+                <img src="img/GeneralDEBCluster.jpg" class="img-responsive de-unauth-img-lg">
+            </div>
+-->
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div style="border: 1px solid red;">
+                    <h4>Put your Marketo RTP here</h4>
+                    The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog.
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+    </div>
+    <footer class="de-myact-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="de-copyright col-xs-12">
+                    <p>&copy; 2015 Direct Energy (DC PSC License No. EA-04-4-4; EA-13-12; GA-13-03-1; MD PSC License Nos. IR-719; IR-791; IR-3123; IR-3108; PUCT Cert. No. 10011; CT PURA License Nos. 00-05-14; 00-05-14RE01; MA DPU License Nos. CS-021; GS-052; CS-108; GS-051). Products and services vary depending on region or market.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+  </body>
+</html>

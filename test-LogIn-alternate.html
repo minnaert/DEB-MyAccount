@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DEB - My Account - Log in alternative</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ** My Account prototype styles ** -->
+    <!--    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">-->
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+
+    <style type="text/css">
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <div id="logOnContainer">
+<br><br><br><br><br><br>
+
+<!-- start log in changes vwo -->
+            
+            <div class="row" style="background-color: #dbdbdb; padding-top: 20px; padding-bottom: 20px;">
+                <div class="col-xs-12 col-sm-6 col-md-4 ng-scope" ng-controller="LogOnController" ng-init="init('')" style="background-color: #e45206; color: #fff; padding-top: 10px; padding-bottom: 10px;">
+                    <div class="alert alert-danger ng-binding ng-hide" ng-show="logOnFailed"><i class="fa fa-exclamation-circle"></i>&nbsp;</div>
+                    <form class="ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern" role="form" name="logonForm" ng-model="user" ng-honey-pot="" autocomplete="off">
+                        <div class="form-group" ng-class="{'has-error':logonForm.EmailAddress.$invalid&amp;&amp;logonForm.submitted}">
+                            <label for="EmailAddress" class="control-label">Email/User name</label>
+                            <input id="EmailAddress" name="EmailAddress" class="form-control ng-pristine ng-valid-email ng-invalid ng-invalid-required ng-valid-pattern ng-touched" ng-model="user.EmailAddress" ng-pattern="/^[a-zA-Z0-9.!#$%&amp;'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/" required="" type="email">
+                            <div class="ng-hide" ng-show="logonForm.EmailAddress.$invalid&amp;&amp;logonForm.submitted">
+                                <p ng-show="logonForm.EmailAddress.$error.required" class="help-block">Email address is required</p>
+                                <p ng-show="logonForm.EmailAddress.$error.pattern" class="help-block ng-hide">Enter a valid email address</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error':logonForm.Password.$invalid&amp;&amp;logonForm.submitted}">
+                            <label for="Password" class="control-label">Password</label>
+                            <input id="Password" name="Password" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" ng-model="user.Password" required="" type="password">
+                            <div class="ng-hide" ng-show="logonForm.Password.$invalid&amp;&amp;logonForm.submitted">
+                                <p ng-show="logonForm.Password.$error.required" class="help-block">Password is required</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="checkbox">
+                                <label for="rememberMe" class="control-label">
+                                    <input class="ng-pristine ng-untouched ng-valid" id="rememberMe" name="rememberMe" ng-model="user.rememberMe" type="checkbox"> Remember my user name
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="btn-toolbar text-right">
+                            <input class="btn btn-primary btn-lg btn-block" value="Log In" ng-click="sendForm()" type="submit">
+                        </div>
+                        <div class="btn-toolbar text-center"><br>
+                            <a data-di-id="#btnForgotPassword" class="btn btn-link ng-isolate-scope" id="btnForgotPassword" href="/Account/ForgotPassword" ng-analytics-event="Forgot Password" event="eventOptions.EventCategory.Navigation" action="eventOptions.EventAction.Navigation.LinkClicked" style="color: #fff;">Forgot Password?</a>
+                            <br><br>
+                            
+                            <a data-di-id="#registerNow" href="/Account/Register" id="registerNow" class="btn btn-default  ng-isolate-scope" ng-analytics-event="Register Now" event="eventOptions.EventCategory.Navigation" action="eventOptions.EventAction.Navigation.LinkClicked">Register Now</a><br><br>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-6 col-md-8" id="deb-myaccount-login-rtp"> put some rtp here <img src="img/de-lrg-business-bg1-med-bw.jpg" class="img-responsive de-unauth-img-lg"></div>
+            </div>
+                
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Manage your account online</h2>
+                    <div class="row">
+                        <div class="col-sm-3 col-xs-6">
+                            <a href="#"><img src="http://placehold.it/90x90"></a>
+                            <div><a href="#">Learn about our New Features</a></div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href="#"><img src="http://placehold.it/90x90"></a>
+                            <div><a href="#">View and print invoices</a></div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href="#"><img src="http://placehold.it/90x90"></a>
+                            <div><a href="#">View your detailed usage</a></div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">
+                            <a href="#"><img src="http://placehold.it/90x90"></a>
+                            <div><a href="#">Check your account balance</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+        
+<!-- start log in changes vwo -->
+        </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery CDN -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

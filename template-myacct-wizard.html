@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - wizard template</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<!-- ** My Account prototype styles ** -->
+    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+    body {
+        padding-top: 100px;
+    }
+    .navbar {
+        min-height: 100px;
+        border-bottom: 1px solid #000;
+    }
+    .de-myact-footer {
+        background-color: #fff;
+        border-top: 1px solid #000;
+        padding-top: 1.0em;
+        margin-top: 1.5em;
+    }
+    
+    /* Ordered number list Start*/
+    .orderedList .breadcrumb {
+        background-color: transparent;
+    }
+    .orderedList ol{
+        counter-increment: li;
+        list-style: none;
+        *list-style: decimal;
+    }
+    .orderedList ol li{
+        /* breadcrumb steps in wizard screens */
+        counter-increment: customlistcounter;
+        margin: 15px;
+        font-weight: bold;
+    }
+    .orderedList ol li.active{
+        /* selected breadcrumb steps in wizard screens */
+        color: #F05D21;
+    }
+    .orderedList ol li i{
+        /* divider icons in breadcrumb steps in wizard screens */
+        margin-left: 1.5em;
+    }
+
+    .orderedList ol li:before{
+        /* breadcrumb steps in wizard screens */
+        background-color: transparent;
+        border-radius: 50%;
+        border: 1px solid #000000;
+        content: counter(customlistcounter);
+        color: #000000;
+        padding: 5px 11px;
+        margin-right: 1.5em;
+    }
+    .orderedList ol li.active:before{
+        /* selected breadcrumb steps in wizard screens */
+        background-color: #F05D21;
+        border-color: #F05D21;
+        color: #ffffff;
+    }
+
+    .orderedList ul li{
+            background: url(../images/Orange_Lightning_Bolt.png) no-repeat left top;
+            list-style: none;
+            background-position: left;
+            padding-left: 25px;
+        }
+
+    /*    .breadcrumbActive{
+        color: #e45205;
+    }
+    .breadcrumbChevronSpacing{
+        margin-left:20px;
+    }
+    .breadcrumbInactive{
+        color: #000;
+    }
+*/
+    
+</style>
+</head>
+
+    <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#" title="Direct Energy Business website" target="_self"><img src="img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+            </div>
+          </div>
+      </nav>
+      <div class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12"><h1>Wizard</h1></div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-9">
+                <div class="row">
+                    <div class="col-sm-12 orderedList">
+                        <ol class="breadcrumb" ng-nav-bar>
+                            <li data-match-route="/PayNow" class="breadcrumbActive">Select Accounts<i class="fa fa-chevron-right"></i></li>
+                            <li data-match-route="/ReviewPayNow">Review<i class="fa fa-chevron-right"></i></li>
+                            <li data-match-route="/DetailsPayNow" class="active">Details<i class="fa fa-chevron-right"></i></li>
+                            <li data-match-route="/ConfirmPayNow">Confirm Payment</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="btn-toolbar text-right">
+                    <a class="btn btn-primary pull-right" href="high-Nav-MyAcct-Tabs-Home.html">Next</a>
+                  </div>
+            </div>
+            <div class="col-md-3 text-right visible-md-block visible-lg-block">
+                <img src="img/Cluster_General.jpg" class="img-responsive">
+            </div>
+      </div>
+
+    </div> <!-- /container -->
+      <footer class="de-myact-footer">
+        <div class="container-fluid">
+        <!-- footer container -->
+            <div class="row">
+                <div class="de-copyright col-xs-12">&copy;2014 Direct Energy Marketing Limited, a subsidiary of <a href="#">Centrica</a> plc. Direct Energy and the Lightning Bolt design are either registered trademarks or trademarks of Direct Energy Marketing Limited in the United States and/or Canada. Use of such trademarks has been licensed by Direct Energy Marketing Limited to its various subsidiaries and affiliates. Direct Energy Business, LLC (DC PSC License No. EA-04-4-4; MD PSC License Nos. IR-437; IR-719; IR-791; PUCT Cert. No. 10011). Products and services vary depending on region or market.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+  </body>
+</html>

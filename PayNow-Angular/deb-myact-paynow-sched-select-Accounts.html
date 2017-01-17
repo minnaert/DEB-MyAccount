@@ -1,0 +1,187 @@
+    <!doctype html>
+    <html>
+      <head>
+		<meta charset="utf-8">
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Reference to DEB Styleguide PATTERNS CSS -->
+<!--        <link href="http://torwed50:92/StyleGuide-Boilerplate/content/sass/main.css" rel="stylesheet">-->
+          <link rel="stylesheet" href="app/debMyactPaynow.css">
+          
+		<title>My Account - Pay - Power &amp; Gas</title>
+      </head>
+      <body ng-app="mainApp">
+          
+        <nav class="navbar navbar-default de-nav-header-main" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#de-nav-header-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" title="Direct Energy Business website" target="_self"><img src="../img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+              <a class="navbar-brand" href="#">My Account</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="de-nav-header-main-collapse">
+              <ul class="nav navbar-nav de-nav-contact">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Need Help? <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" title="Send Message"><i class="fa fa-envelope fa-lg"></i> Send Message</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" title="Power Phone"><i class="fa fa-lightbulb-o fa-lg"></i> 1-888-925-9115</a></li>
+                    <li><a href="#" title="Gas Phone"><i class="fa fa-fire fa-lg"></i> 1-888-437-7265</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="nav navbar-nav navbar-right de-nav-user">
+                  <p class="navbar-text">John Doe <a href="#" class="navbar-link">Log out</a></p>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>          
+
+
+          <div class="container">
+          <h1>Schedule Payment  <small>Select Accounts</small></h1>
+              <div class="row">
+                <div class="col-sm-12">
+                    <strong>Payment Name</strong>
+                    <input id="txtPaymentName" type="text" required class="form-control">
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                    <strong>Customer</strong>
+                    <select class="form-control">
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                    </select>
+                  </div>
+              </div>
+            <div class="row">
+              <div class="col-sm-12">
+                  <!-- Account List -->
+                  <h3>Power Accounts</h3>
+                  <div class="help-block">Select up to 10 accounts to be included in this scheduled payment.</div>
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Account #</th>
+                                <th>Service Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center"><input type="checkbox"></td>
+                                <td>11223344</td>
+                                <td>123 Sesame St., New York, NY 10001</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"><input type="checkbox"></td>
+                                <td>33445566</td>
+                                <td>1600 Pennsylvania St., Newark, NJ 11022</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"><input type="checkbox"></td>
+                                <td>66778899</td>
+                                <td>123 Sesame St., New York, NY 10001</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center"><input type="checkbox"></td>
+                                <td>77880099</td>
+                                <td>1600 Pennsylvania St., Newark, NJ 11022</td>
+                            </tr>
+                        </tbody>
+                  </table>
+                </div>
+              </div>
+          </div> <!-- / container -->
+
+          
+          <div class="container"><!-- Button navigation -->
+            <div class="row">
+              <div class="col-sm-12">
+                <a href="deb-myact-paynow.html" class="btn btn-link">Cancel</a>
+<!--                <a href="deb-myact-paynow.html" class="btn btn-default"><i class="fa fa-chevron-left"></i>&nbsp;Back</a>-->
+                <a href="deb-myact-paynow-review-payment.html" class="btn btn-primary btn-lg">Next&nbsp;<i class="fa fa-chevron-right"></i></a>
+                </div>
+              </div>
+          </div><!-- End Button navigation -->
+
+    <footer>
+        <div id="footerSection" class="container-fluid de-myact-footer">
+            <div class="row">
+                <div class="col-md-10 col-sm-9">
+                    <div class="row" id="footerLinkSection" style="">
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="btn-group-justified btn-group-sm">
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support/product-and-invoice-sheets">About Your Product &amp; Invoice</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support/forms">Need a form?</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/preferences">Go Paperless</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="btn-group-justified btn-group-sm">
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/preferences">Preferences</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support">FAQs</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support">Outages &amp; Emergencies</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 de-copyright">
+                        <p>© 2015 Direct Energy. All Rights Reserved. Direct Energy and the Lightning Bolt design are registered trademarks of Direct Energy. (DC PSC License No. EA-04-4-4; EA-13-12; GA-13-03-1; NJ BUP License Nos. ESL-0165, GSL-0145; MD PSC License Nos. IR-719; IR-791; IR-3123; IR-3108; PUCT Cert. No. 10011; Direct Energy Business, LLC (formerly known as Strategic Energy) CT PURA License Nos. 00-05-14; 00-05-14RE01; MA DPU License Nos. CS-021; GS-052; CS-108; GS-051). Direct Energy and the Lightning Bolt design are registered trademarks of Direct Energy. Products and services vary depending on region or market.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-3" id="footerSocialLinkSection" style="">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-12 col-lg-6">
+                            <a href="http://www.business.directenergy.com/" title="Direct Energy Business website" target="_blank"><img src="../img/deb-logo-black.png" class="img-responsive" alt=""></a>
+                            <a id="footerContactUs" title="" target="_blank" style=""></a>
+                            <a id="footerSMBContactUs" href="https://www.business.directenergy.com/contact-us" title="Contact Us" target="_blank" style="display: none">Contact Us</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-12 col-lg-6 de-social-links">
+                            <a href="http://www.business.directenergy.com/Blog.aspx" title="Direct Energy Business blog" target="_blank" class="de-social-rss"><i class="fa fa-rss-square"></i></a>
+                            <a href="https://www.youtube.com/playlist?list=PLtSfADpSQMvJzG80cMFMy6iRQWvYmxT3w" title="" target="_blank" class="de-social-youtube"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/direct-energy-business" title="Direct Energy Business LinkedIn page" target="_blank" class="de-social-linkedin"><i class="fa fa-linkedin-square"></i></a>
+                            <p>Follow us</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+          
+          
+          
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>      
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <!-- ngTable references -->
+    <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
+    <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
+          
+    <!-- primary pay now module -->
+<!--    <script src="app/mainApp.js"></script>-->
+
+    <script src="app/debMyactPaynowModule.js"></script>
+    <script type="text/javascript">
+        console.log("angular object",angular);
+    </script>
+        
+    </body>
+</html>

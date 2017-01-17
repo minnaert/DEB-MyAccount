@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="description" content="Default Meta Description" />
+    <meta name="keywords" content="Default Keywords" />
+    <meta name="viewport" content="width=device-width">
+    <title>MyAccount Mobile menu prototype</title>
+    <link rel="SHORTCUT ICON" href="/Content/favicon.ico" type="image/x-icon" />
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+    </style>
+
+<!-- END of Google Analytics code -->
+    <!-- HTML5 shim and Respond.js for IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// (file:///) -->
+    <!--[if IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse de-nav-header-main" role="navigation" ng-controller="HeaderController">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#de-nav-header-main-collapse">
+                Menu
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a class="navbar-brand" path-href="/" title="Direct Energy Business MyAccount Home" target="_self"><img src="img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+        </div>
+        <!-- Need help, user information and secondary navigation get collapsed for toggling -->
+        <div class="collapse navbar-collapse" id="de-nav-header-main-collapse">
+            <ul class="nav navbar-nav de-nav-contact" ng-if="!hideHeaderHelpSection">
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Contact Us <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <!-- C&I contact information -->
+                        <li class="dropdown-menu-heading">Customer Service</li>
+                        <li ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.NonSMBUser" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.NoSMB"><a path-href="/send-a-message/0" title="Send Message" id="headerPowerCNIContactName"><i class="fa fa-envelope-o fa-lg"></i> {{contacts[0].Name}}</a></li>
+                        <li ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.NonSMBUser" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.NoSMB"><a href="tel:{{contacts[0].DisplayPhoneNumber}}" title="Customer Service Phone" id="headerPowerCNIPhoneNumber"><i class="fa fa-phone fa-lg"></i> {{contacts[0].DisplayPhoneNumber}}</a></li>
+                        <!-- SMB contact information -->
+                        <li ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.SMBOnly" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.SMB"><a href="tel:{{contacts[1].DisplayPhoneNumber}}" title="Customer Service Phone"><i class="fa fa-phone fa-lg"></i> {{contacts[1].DisplayPhoneNumber}}</a></li><!-- replace with SMBcontact from sitecore 1-866-348-4193 -->
+                        <!-- Contact information links below phone numbers and emails -->
+                        <li ng-show="DisplayClientServicesInformation" ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.NonSMBUser" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.NoSMB" class="divider"></li>
+                        <li ng-show="DisplayClientServicesInformation" ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.NonSMBUser" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.NoSMB"><a href="@ApplicationParameter.ClientServicesInformationUrl" target="_blank"><i class="fa fa-info-circle"></i> Client Services Information</a></li>
+                        <!-- SMB Contact Us link -->
+                        <li ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.SMBOnly" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.SMB" class="divider"></li>
+                        <li ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.SMBOnly" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.SMB"><a href="{{contacts[1].EmailAddress}}" title="Contact Us" target="_blank"> Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="@Url.Action("LogOff", "Portal")">Log Out</a></li>
+            </ul>
+            <div class="nav navbar-nav navbar-right" id="de-nav-secondary" ng-hide="hideNavigationSection">
+                <ul class="nav nav-pills" role="tablist">
+                    <li id="de-nav-home" ng-hide="hideHomeButton"><a path-href="/" title="Home"><i class="fa fa-home fa-lg"></i>&nbsp;Home</a></li>
+                    <li id="de-nav-message-center" ng-class="{'active':currentPath.indexOf('message-center')!=-1}" ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.NonSMBUser" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.NoSMB"><a path-href="/message-center" title="Message Center" role="tab"><i class="fa fa-envelope fa-lg"></i> <span ng-if="unreadMessagesCount>0" class="badge">2</span></a></li>
+                    <li id="de-nav-preferences" ng-class="{'active':currentPath.indexOf('preferences')!=-1}" ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.User" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.All"><a path-href="/preferences" title="Preferences" role="tab">Preferences</a></li>
+                    <li id="de-nav-support" ng-class="{'active':currentPath.indexOf('support')!=-1}" ng-access-level level="@DEB.MyAccount.UI.Common.AuthorizationLevels.Level.NonSMBUser" profile="@DEB.MyAccount.UI.Common.AuthorizationLevels.ProfileConfigurations.NoSMB"><a path-href="/support" title="Support" role="tab">Support</a></li>
+                </ul>
+            </div>
+            <div class="nav navbar-nav navbar-right">
+                <p class="navbar-text" id="de-nav-user">FirstName LastName</p>
+            </div>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<style type="text/css">
+    .de-mobile-menu a.list-group-item i {
+        float: right;
+        color: #f05d21;
+    }
+    .de-mobile-menu > a.list-group-item:first-child {
+        background-color: #f05d21;
+        color: #ffffff;
+        text-align: center;
+        border: 0 solid transparent;
+    }
+    .de-mobile-menu a.list-group-item .list-group-item-heading {
+        background-color: #f05d21;
+        color: #ffffff;
+    }
+/*
+    .de-mobile-menu a.list-group-item {
+        color: #000000;
+        background-color: #eee;
+    }
+*/
+    .de-mobile-menu > .list-group-item  {
+        background-color: #eee;
+        border-color: #f05d21;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+    .de-mobile-menu > a.list-group-item-secondary {
+        background-color: #777;
+        color: #ffffff;
+        border: 0 solid transparent;
+    }
+    .de-mobile-menu a.list-group-item-secondary i{
+        color: #ffffff;
+    }
+    .de-mobile-menu a.list-group-item-child {
+        background-color: #ffffff;
+        color: #777;
+        padding-left: 30px;;
+        border-color: #777;
+        border-left-color: transparent;
+        border-right-color: transparent;
+    }
+    .de-mobile-menu a.list-group-item-child i{
+        color: #777;
+    }
+
+    .de-mobile-menu a.list-group-item-parent i:before {
+        /* symbol for "open" panels. font awesome minus circle fa-minus-circle */
+        content: "\f056";   
+    }
+    .de-mobile-menu a.list-group-item-parent.collapsed i:before {
+        /* symbol for "collapsed" panels. font awesome plus circle fa-plus-circle  */
+        content: "\f055";   
+    }
+
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="list-group de-mobile-menu">
+                <a href="#" class="list-group-item">
+                    <h4 class="list-group-item-heading">MyAccount</h4>
+                </a>
+                <a href="#" role="button" data-target="#de-mobilenav-help-children" data-toggle="collapse" class="list-group-item list-group-item-secondary list-group-item-parent collapsed">Need Help? <i class="fa fa-plus-circle"></i></a>
+                <div class="collapse" id="de-mobilenav-help-children">
+                    <a href="#" class="list-group-item list-group-item-child">Send a Message <i class="fa fa-chevron-right"></i></a>
+                    <a href="#" class="list-group-item list-group-item-child">1-888-925-9115 <i class="fa fa-chevron-right"></i></a>
+                </div>
+                <a href="#" class="list-group-item">Home <i class="fa fa-chevron-right"></i></a>
+                <a href="#" role="button" data-target="#de-mobilenav-invoice-children" data-toggle="collapse" class="list-group-item list-group-item-parent collapsed">Invoices &amp; Payments <i class="fa fa-plus-circle"></i></a>
+                <div class="collapse" id="de-mobilenav-invoice-children">
+                    <a href="#" class="list-group-item list-group-item-child">Pay My Bills <i class="fa fa-chevron-right"></i></a>
+                    <a href="#" class="list-group-item list-group-item-child">Automatic Payments <i class="fa fa-chevron-right"></i></a>
+                    <a href="#" class="list-group-item list-group-item-child">Invoice History <i class="fa fa-chevron-right"></i></a>
+                    <a href="#" class="list-group-item list-group-item-child">Payment History <i class="fa fa-chevron-right"></i></a>
+                </div>
+                <a href="#" class="list-group-item">Usage <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item">Locations <i class="fa fa-chevron-right"></i></a>
+                <a href="#" role="button" data-target="#de-mobilenav-reports-children" data-toggle="collapse" class="list-group-item list-group-item-parent collapsed">Reports &amp; Alerts <i class="fa fa-plus-circle"></i></a>
+                <div class="collapse" id="de-mobilenav-reports-children">
+                    <a href="#" class="list-group-item list-group-item-child">General Reports <i class="fa fa-chevron-right"></i></a>
+                    <a href="#" class="list-group-item list-group-item-child">Usage &amp; Spend Alerts <i class="fa fa-chevron-right"></i></a>
+                    <a href="#" class="list-group-item list-group-item-child">Market Alerts <i class="fa fa-chevron-right"></i></a>
+                </div>
+                <a href="#" class="list-group-item">Contracts <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item">Education Resources <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item">Benefits &amp; Programs <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item">Admin <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item">Messages <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item">Preferences <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item">Support <i class="fa fa-chevron-right"></i></a>
+                <a href="#" class="list-group-item list-group-item-secondary text-center">Log Out</a>
+            </div>
+
+        </div>
+    </div>
+</div>    
+    
+<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery CDN -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

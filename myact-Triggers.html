@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Redesign</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap.css" rel="stylesheet">
+
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        
+/* button style classes to customer selection dropdown. Based on Bootstrap button styling, uses button mixin */
+        
+        
+/* Tab control on main page */
+#de-main-nav-tabs .nav-tabs, #de-billing-nav-tabs .nav-tabs, #de-report-nav-tabs .nav-tabs {
+  border: 0;
+  border-top: 1px solid #F05D21;
+  background-color: #eeeeee;
+  /* white for unequal sized tabs #ffffff*/ }
+  #de-main-nav-tabs .nav-tabs > li > a, #de-billing-nav-tabs .nav-tabs > li > a, #de-report-nav-tabs .nav-tabs > li > a {
+    border: 0;
+    border-radius: 0;
+    background-color: #ffffff;
+    color: #F05D21; }
+    #de-main-nav-tabs .nav-tabs > li > a:hover, #de-billing-nav-tabs .nav-tabs > li > a:hover, #de-report-nav-tabs .nav-tabs > li > a:hover {
+      color: #555555;
+      background-color: #eeeeee; }
+  #de-main-nav-tabs .nav-tabs > li.active > a, #de-billing-nav-tabs .nav-tabs > li.active > a, #de-report-nav-tabs .nav-tabs > li.active > a {
+    background-color: #F05D21;
+    color: #ffffff; }
+    #de-main-nav-tabs .nav-tabs > li.active > a:hover, #de-billing-nav-tabs .nav-tabs > li.active > a:hover, #de-report-nav-tabs .nav-tabs > li.active > a:hover {
+      background-color: #a0360b; }
+  @media all and (min-width: 768px) {
+    #de-main-nav-tabs .nav-tabs, #de-billing-nav-tabs .nav-tabs, #de-report-nav-tabs .nav-tabs {
+      /* tab styles for larger than tablets */ }
+      #de-main-nav-tabs .nav-tabs > li > a, #de-billing-nav-tabs .nav-tabs > li > a, #de-report-nav-tabs .nav-tabs > li > a {
+        border-top: 1px solid #F05D21;
+        border-right: 2px solid #F05D21;
+        height: 82px; }
+        #de-main-nav-tabs .nav-tabs > li > a i, #de-billing-nav-tabs .nav-tabs > li > a i, #de-report-nav-tabs .nav-tabs > li > a i {
+          display: block;
+          text-align: center;
+          margin-top: 0.5em;
+          margin-bottom: 0.5em; }
+      #de-main-nav-tabs .nav-tabs > li:first-child > a, #de-billing-nav-tabs .nav-tabs > li:first-child > a, #de-report-nav-tabs .nav-tabs > li:first-child > a {
+        border-left: 2px solid #F05D21; }
+      #de-main-nav-tabs .nav-tabs > li.active:after, #de-billing-nav-tabs .nav-tabs > li.active:after, #de-report-nav-tabs .nav-tabs > li.active:after {
+        /* adding triangle icons for active tab. Only for table & larger */
+        content: "";
+        display: block;
+        width: 12px;
+        height: 6px;
+        background-image: url(img/icon-orange-arrow-down.png);
+        background-repeat: no-repeat;
+        background-position: center top;
+        position: relative;
+        left: 48%; } }
+
+#de-billing-nav-tabs, #de-report-nav-tabs {
+  margin-bottom: 10px;
+  margin-left: -30px;
+  margin-right: -30px;
+  /* specific sub tabs formatting */ }
+  #de-billing-nav-tabs .nav-tabs, #de-report-nav-tabs .nav-tabs {
+    border-top: 0;
+    background-color: #eeeeee; }
+    @media all and (min-width: 768px) {
+      #de-billing-nav-tabs .nav-tabs, #de-report-nav-tabs .nav-tabs {
+        /* tab styles for larger than tablets */ }
+        #de-billing-nav-tabs .nav-tabs > li > a, #de-report-nav-tabs .nav-tabs > li > a {
+          border-top: 0;
+          border-left: 0;
+          height: auto; }
+        #de-billing-nav-tabs .nav-tabs > li:first-child > a, #de-report-nav-tabs .nav-tabs > li:first-child > a {
+          border-left: 0; }
+        #de-billing-nav-tabs .nav-tabs > li:last-child > a, #de-report-nav-tabs .nav-tabs > li:last-child > a {
+          border-right: 0; } }
+
+#de-main-nav-tabs-content {
+  /* Background container for main content tabs */
+  background-color: #eeeeee; }
+  @media all and (min-width: 768px) {
+    #de-main-nav-tabs-content.tab-content {
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 10px;
+      min-height: 64vh; } }        
+
+        
+/* over-riding old style */        
+        .panel-de-myacct-primary, .panel-de-myacct-default {
+            border-color: #ffffff;
+        }                                
+        
+    </style>
+
+</head>
+
+<body>
+
+    <!-- End Container-->
+    <br/>
+    <div class="container-fluid" id="summary">
+        <!-- body content -->
+        <div class="container de-nav-customer-container">
+            <div class="spacer20"></div>        
+            <div id="de-main-nav-tabs" class="row">
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs nav-justified">
+                        <li><a href="/" data-toggle="tab"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="/billing" data-toggle="tab"><i class="fa fa-usd"></i> Invoices &amp; Payments</a></li>
+                        <li><a href="/usage" data-toggle="tab"><i class="fa fa-bar-chart"></i> Usage</a></li>
+                        <li><a href="/service-location" data-toggle="tab"><i class="fa fa-map-marker"></i> Locations</a></li>
+                        <li><a href="/report" data-toggle="tab"><i class="fa fa-bullhorn"></i> Reports &amp; Alerts</a></li>
+                        <li><a href="/contract" data-toggle="tab"><i class="fa fa-file-text"></i> Contracts</a></li>
+                        <li class="active"><a href="/triggers" data-toggle="tab"><i class="fa fa-bullseye"></i> Triggers</a></li>
+                        <li><a href="/demand" data-toggle="tab"><i class="fa fa-bolt"></i> Demand Response</a></li>
+                        <li><a href="/learnmore" data-toggle="tab"><i class="fa fa-university"></i> Energy Library</a></li>
+                    </ul>
+                </div>
+            </div><!-- end tabs -->
+            
+            <div id="de-main-nav-tabs-content" class="tab-content">
+                
+                <div id="de-triggers" class="de-maintab-container">
+                <!-- start main tab container -->
+                    <div class="tab-pane" id="triggers">
+                        <div class="spacer10"></div>
+                        <div id="de-report-nav-tabs" class="row hidden-xs">
+                            <div class="col-sm-12">
+                                <ul class="nav nav-tabs nav-justified">
+                                    <li><a href="#" data-toggle="tab">Dashboard</a></li>
+                                    <li class="active"><a href="#" data-toggle="tab">Create an Order</a></li>
+                                    <li><a href="#" data-toggle="tab">Market Intelligence</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="panel panel-de-myacct-default">
+                                <div class="panel-heading">Create an Order</div>
+                                <div class="panel-body">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- end main tab container -->
+                </div>
+            
+            </div>            
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+
+<!-- footer -->
+<footer class="de-myact-footer">
+    <div id="footerSection" class="container-fluid de-myact-footer-links" >
+        <div class="container">
+        <div class="row" id="footerLinkSection">
+            <div class="col-md-6">
+                <div class="btn-group-justified btn-group-sm">
+                    <a class="btn btn-link" href="@ViewBag.ProductAndInvoice.Url">About Your Product and Invoice</a>
+                    <a class="btn btn-link" href="@ViewBag.Forms.Url">Need a Form?</a>
+                    <a class="btn btn-link" href="@ViewBag.Paperless.Url">Go Paperless</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group-justified btn-group-sm">
+                    <a class="btn btn-link" href="@ViewBag.Preference.Url">Preferences</a>
+                    <a class="btn btn-link" href="@ViewBag.Faqs.Url">FAQs</a>
+                    <a class="btn btn-link" href="@ViewBag.Outages.Url">Outages &amp; Emergencies</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div id="footerSocialLinkSection" class="container">
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div class="col-sm-6 col-md-8 de-copyright">
+                    &copy; 2016 Direct Energy. All Rights Reserved. Direct Energy and the Lightning Bolt design are registered trademarks of Direct Energy. (DC PSC License No. EA-04-4-4; EA-13-12; GA-13-03-1; NJ BUP License Nos. ESL-0165, ESL-142, GSL-0145, GSL-0128; MD PSC License Nos. IR-437; IR-2697; IR-3123; IR-3108; PUCT Cert. No. 10011; Direct Energy Business, LLC CT PURA License Nos. 12-03; 00-05-14RE01; MA DPU License Nos. CS-021; GS-052; CS-108; GS-051). Products and services vary depending on region or market.
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <a href="@ViewBag.BusinessWebsite.Url" title="@ViewBag.BusinessWebsite.Title" target="_blank"><img src="img/deb-logo-black.png" class="img-responsive" alt="Direct Energy Business website" /></a>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 de-social-links">
+                    <a href="@ViewBag.Blog.Url" title="@ViewBag.Blog.Title" target="_blank" class="de-social-rss"><i class="fa fa-rss-square"></i></a>
+                    <a href="@ViewBag.YouTube.Url" title="@ViewBag.YouTube.Title" target="_blank" class="de-social-youtube"><i class="fa fa-youtube"></i></a>
+                    <a href="@ViewBag.LinkedIn.Url" title="@ViewBag.LinkedIn.Title" target="_blank" class="de-social-linkedin"><i class="fa fa-linkedin-square"></i></a>
+                    <p id="footerContactUs"><a href="@ViewBag.ContactUs.Url" title="@ViewBag.ContactUs.Title" target="_blank">Contact Us</a></p>
+                    <p id="footerSMBContactUs"><a href="@ViewBag.SMBContactUs.Url" title="@ViewBag.SMBContactUs.Title" target="_blank" style="display: none">Contact Us</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>        
+        
+<!-- end footer -->
+
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <!-- jQuery CDN -->
+            <script src="http://code.jquery.com/jquery.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+            <!-- Bootstrap-select JS files. Custom select functions -->
+            <script type="text/javascript" src="js/libs/bootstrap-select/bootstrap-select.js"></script>
+            <script>
+                
+
+            </script>
+</body>
+
+</html>

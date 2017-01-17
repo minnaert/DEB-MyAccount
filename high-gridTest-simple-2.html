@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>My Account table grid test: uiGrid</title>
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!--ui-grid references-->
+    <link rel="styleSheet" href="http://ui-grid.info/release/ui-grid-unstable.min.css"/>
+
+	<style type="text/css">
+.ui-grid-pager-panel {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.ui-grid-pager-container {
+  float: left;
+}
+.gridStyle .ui-grid-pager-control {
+  margin-right: 10px;
+  margin-left: 10px;
+  min-width: 135px;
+  float: left;
+}
+.gridStyle .ui-grid-pager-control button {
+  height: 25px;
+  min-width: 26px;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  white-space: nowrap;
+  color: #333;
+  background-color: #fff;
+}
+.gridStyle .ui-grid-pager-control input {
+  height: 26px;
+  width: 50px;
+  vertical-align: top;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.gridStyle .ui-grid-pager-control .first-bar {
+  width: 10px;
+  border-left: 2px solid #333333;
+  margin-top: -6px;
+  height: 12px;
+  margin-left: -3px;
+}
+.gridStyle .ui-grid-pager-control .first-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 8.7px 5px 0;
+  border-color: transparent #333333 transparent transparent;
+  margin-left: 2px;
+}
+.gridStyle .ui-grid-pager-control .next-triangle {
+  margin-left: 1px;
+}
+.gridStyle .ui-grid-pager-control .prev-triangle {
+  margin-left: 0;
+}
+.gridStyle .ui-grid-pager-control .last-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5px 0 5px 8.7px;
+  border-color: transparent transparent transparent #333333;
+  margin-left: -1px;
+}
+.gridStyle .ui-grid-pager-control .last-bar {
+  width: 10px;
+  border-left: 2px solid #333333;
+  margin-top: -6px;
+  height: 12px;
+  margin-left: 1px;
+}
+.gridStyle .ui-grid-pager-row-count-picker {
+  float: left;
+}
+.gridStyle .ui-grid-pager-row-count-picker select {
+  height: 26px;
+  width: 60px;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.gridStyle .ui-grid-pager-row-count-picker .ui-grid-pager-row-count-label, .gridStyle .ui-grid-pager-max-pages-number  {
+  margin-top: 3px;
+}
+.gridStyle .ui-grid-pager-count-container {
+  float: right;
+  margin-top: 4px;
+  min-width: 50px;
+}
+.gridStyle .ui-grid-pager-count-container .ui-grid-pager-count {
+  margin-right: 10px;
+  margin-left: 10px;
+  float: right;
+}
+    
+
+	</style>
+    
+</head>
+
+  <body ng-controller="MyCtrl">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Table Using UI.Grid</h2>
+                </div>
+        </div>
+        <div class="row">
+            <div id="grid1" ui-grid="gridOptions" ui-grid-pagination class="grid gridStyle"></div>
+        </div>
+    </div><!-- End Container-->
+
+<!--<button type="button" ng-click="toggleCol(0)" >Toggle ungrouped customer</button>
+<button type="button" ng-click="toggleCol(1)" >Toggle grouped customer</button>
+<button type="button" ng-click="toggleGroup()" >Toggle group 2</button>
+-->
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.min.js"></script>
+    
+	<script type="text/javascript">
+        
+        var app = angular.module('myApp', ['ui.grid', 'ui.grid.pagination']);        
+
+        app.controller('MyCtrl', function($scope) {
+			$scope.myData = [{Customer: "Big Easy Carwash", BillingAccount: "1145085", UtilityAccount: "11401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1245086", UtilityAccount: "12401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1345087", UtilityAccount: "13401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1445088", UtilityAccount: "14401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7123110", UtilityAccount: "15401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7223111", UtilityAccount: "16401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7323112", UtilityAccount: "17401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7423113", UtilityAccount: "18401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2145089", UtilityAccount: "21401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2245090", UtilityAccount: "22401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2345091", UtilityAccount: "23401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8123121", UtilityAccount: "24401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8223122", UtilityAccount: "25401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8323123", UtilityAccount: "26401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3145093", UtilityAccount: "31401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3245094", UtilityAccount: "32401014029123",ServiceLocation: "2034 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9123131", UtilityAccount: "33401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9223132", UtilityAccount: "34401014029123",ServiceLocation: "2034 First Ave Town TX 73325"}];
+            $scope.gridOptions = {
+                data: 'myData',
+                paginationPageSizes: [10, 25, 50, 75],
+                paginationPageSize: 10,
+				groups: ['Customer'],
+				columnDefs: [
+					{field:'Customer', displayName:'Customer Name'},
+					{field: 'BillingAccount', displayName: 'Billing Account'},
+					{field:'UtilityAccount', displayName:'Utility Account', cellClass:'ngCellText text-center', cellTemplate: '<div><a href="#"><i class="fa fa-angle-double-down"></i>&nbsp;{{row.entity[col.field]}}</a></div>', width: "20%" },
+					{field:'ServiceLocation', displayName:'Service Location'}
+				]
+            };
+//			$scope.gridOptions = { 
+//				data: 'myData',
+//				groups: ['Customer'],
+//                enablePaginationControls: true,
+//                paginationPageSizes: [25, 50, 75],
+//                paginationPageSize: 25,
+//				selectedItems: $scope.mySelections,
+//				multiSelect: false,
+//				showGroupPanel: false,
+//				columnDefs: [
+//					{field:'Customer', displayName:'Customer Name'},
+//					{field: 'BillingAccount', displayName: 'Billing Account'},
+//					{field:'UtilityAccount', displayName:'Utility Account', cellClass:'ngCellText text-center', cellTemplate: '<div><a href="#"><i class="fa fa-angle-double-down"></i>&nbsp;{{row.entity[col.field]}}</a></div>', width: "20%" },
+//					{field:'ServiceLocation', displayName:'Service Location'}
+//				]
+//			};
+
+		});
+
+	</script>  
+
+  </body>
+</html>

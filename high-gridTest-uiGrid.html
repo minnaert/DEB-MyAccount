@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>My Account table grid test: uiGrid</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+    <!--ui-grid references-->
+    <link rel="styleSheet" href="http://ui-grid.info/release/ui-grid-unstable.min.css"/>
+
+    <!--ng-grid references-->
+<!--    <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />-->
+    
+
+	<style type="text/css">
+		.de-navbar-customer-container h4 {
+			color: #ffffff;
+			margin-left: 1.0em;
+		}
+		.btn-navbar-customer {
+/*			white-space:normal !important;
+			text-wrap: normal;
+*/		}		
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu dt{
+			color: #000000;
+		}
+
+		/* updating hover text for subtext information in dropdowns */
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small, 
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:focus small, 
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu li.active:not(.disabled) > a small {
+			color: black;
+		}
+
+		/* Table grid styles */
+		.gridStyle {
+			border: 1px solid #ddd;
+			width: 100%; 
+			height: 400px
+		}
+		.gridStyle .ngTopPanel {
+			background-color: transparent;
+		}
+		.gridStyle .ngRow {
+			border: 1px solid #ddd;
+		}
+		.gridStyle .ngRow.even {
+			background-color: #f9f9f9;
+		}
+		.gridStyle .ngAggregate,.gridStyle .ngRow.selected {
+			background-color: #f5f5f5;
+		}
+
+	</style>
+    
+</head>
+
+  <body ng-controller="MyCtrl">
+
+    <div class="container-fluid"><!-- body content -->
+     <div class="page-header">
+      <h2>My Account table grid test: uiGrid</h2>
+     </div>
+	</div><!-- End Container-->
+<br/>
+    <div class="container-fluid"><!-- body content -->
+    <div class="container de-navbar-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selCustomer">Customers</label>
+                <select id="selCustomer" class="selectpicker" data-live-search="false" data-width="100%" data-style="btn-navbar-customer btn-lg" ng-model="gridSelectedId" ng-change="display()">
+                    <option selected>All Customers</option>
+                    <optgroup label="Profiles">
+                        <option>First Profile</option>
+                        <option>Second Profile</option>
+                    </optgroup>
+                    <optgroup label="Customers">
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container-->
+
+	<br />
+    <div class="container">
+        <div class="row">
+            <div id="grid1" ui-grid="{ data: myData }" ui-grid-pagination class="grid gridStyle"></div>
+<!--            <div class="gridStyle" ng-grid="gridOptions"></div>-->
+        </div>
+        <div class="row">
+            <h4>Message details</h4>
+        	<div class="col-sm-12 well well-lg">
+            	<p>Here is a message</p>
+                <div class="selectedItems">{{mySelections}} here</div>
+            </div>
+            
+        </div>
+    </div><!-- End Container-->
+
+	</div><!-- End Container fluid-->
+
+<!--<button type="button" ng-click="toggleCol(0)" >Toggle ungrouped customer</button>
+<button type="button" ng-click="toggleCol(1)" >Toggle grouped customer</button>
+<button type="button" ng-click="toggleGroup()" >Toggle group 2</button>
+-->
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+
+    <!-- Bootstrap-select JS files. Custom select functions -->
+    <script type="text/javascript" src="js/libs/bootstrap-select/bootstrap-select.js"></script> 
+	<script>
+	    // Enabling all select pickers /
+		$(document).ready(function() 
+		{ 
+			$('.selectpicker').selectpicker(); 
+
+		});
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="http://ui-grid.info/release/ui-grid-unstable.min.js"></script>
+    
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+    <script type="text/javascript" src="http://angular-ui.github.com/ng-grid/lib/ng-grid.debug.js"></script>
+-->
+	<script type="text/javascript">
+        var app = angular.module('myApp', ['ui.grid']);        
+//		var app = angular.module('myApp', ['ngGrid']);
+		app.controller('MyCtrl', function($scope) {
+			$scope.myData = [{Customer: "Big Easy Carwash", BillingAccount: "1145085", UtilityAccount: "11401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1245086", UtilityAccount: "12401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1345087", UtilityAccount: "13401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1445088", UtilityAccount: "14401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7123110", UtilityAccount: "15401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7223111", UtilityAccount: "16401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7323112", UtilityAccount: "17401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7423113", UtilityAccount: "18401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2145089", UtilityAccount: "21401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2245090", UtilityAccount: "22401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2345091", UtilityAccount: "23401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8123121", UtilityAccount: "24401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8223122", UtilityAccount: "25401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8323123", UtilityAccount: "26401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3145093", UtilityAccount: "31401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3245094", UtilityAccount: "32401014029123",ServiceLocation: "2034 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9123131", UtilityAccount: "33401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9223132", UtilityAccount: "34401014029123",ServiceLocation: "2034 First Ave Town TX 73325"}];
+			$scope.gridOptions = { 
+				data: 'myData',
+				groups: ['Customer'],
+                enablePaginationControls: true,
+                paginationPageSizes: [25, 50, 75],
+                paginationPageSize: 25,
+				selectedItems: $scope.mySelections,
+				multiSelect: false,
+				showGroupPanel: false,
+				columnDefs: [
+					{field:'Customer', displayName:'Customer Name'},
+					{field: 'BillingAccount', displayName: 'Billing Account'},
+					{field:'UtilityAccount', displayName:'Utility Account', cellClass:'ngCellText text-center', cellTemplate: '<div><a href="#"><i class="fa fa-angle-double-down"></i>&nbsp;{{row.entity[col.field]}}</a></div>', width: "20%" },
+					{field:'ServiceLocation', displayName:'Service Location'}
+				]
+			};
+
+			$scope.toggleCol= function(i) {
+			   $scope.gridOptions.$gridScope.columns[i].toggleVisible()
+			};
+			$scope.toggleGroup= function() {
+			   $scope.gridOptions.groupBy('Customer');
+//			   $scope.gridOptions.$gridScope.columns[1].toggleVisible()
+//			   $scope.gridOptions.showGroupPanel = false;
+			};
+			$scope.changeCustomer = function() {
+				// $scope.gridOptions.groups = [];
+				// $scope.gridOptions.groups = [''];
+				// ???
+			};			
+			$scope.display = function () {
+//				console.log("User selected grid : " + $scope.gridSelectedId);
+
+				if ($scope.gridSelectedId == 'First Profile') {
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.groupBy('Customer');
+				   $scope.gridOptions.$gridScope.columns[0].visible = true;
+				   $scope.gridOptions.$gridScope.columns[1].visible = true;
+				} else if ($scope.gridSelectedId == 'All Customers') {
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.groupBy('Customer');
+				   $scope.gridOptions.$gridScope.columns[0].visible = true;
+				   $scope.gridOptions.$gridScope.columns[1].visible = true;
+				} else if ($scope.gridSelectedId == 'Second Profile'){
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.groupBy('Customer');
+				   $scope.gridOptions.$gridScope.columns[0].visible = true;
+				   $scope.gridOptions.$gridScope.columns[1].visible = true;
+				}
+				else {
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.$gridScope.columns[0].visible = false;
+				}
+
+			};
+		});
+
+	</script>  
+
+  </body>
+</html>

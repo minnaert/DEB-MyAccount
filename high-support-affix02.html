@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Support - Affix</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- ** My Account prototype styles ** -->
+    <link rel="stylesheet" type="text/css" href="http://torwed50:92/StyleGuide-Boilerplate/css/de-patterns.css">
+
+
+	<style type="text/css">
+	  #de-support-nav-contents.affix {
+		  position: fixed !important;
+		  top: 20px;
+	  }	
+        .de-document-list .fa-file-pdf-o{
+            color: #d9534f;
+            font-size: x-large;
+            margin-left: 0;
+            margin-right: 0.2em;
+        }
+        .de-event-date {
+            background-color: #ccc;
+            text-align: center;
+            padding-top: 0.4em;
+            padding-bottom: 0.4em;
+            padding-left: 2.0em;
+            
+        }
+	</style>
+    
+</head>
+
+  <body data-spy="scroll" data-target="#de-support-nav-contents">
+	<div id="top" class="page-header"><h2>Support</h2></div>
+
+	<div class="container">
+    	<div class="row"><!-- Main content section for Support information. Collapsable sections -->
+			<div class="col-md-9">
+
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#outages" href="#outages">Outages &amp; Emergencies</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#outages" href="#outages"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+
+                    <div id="outages">
+                      <div class="panel-body">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Utility Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Commodity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>Commonwealth Electric</td>
+                                  <td>1-800-592-2000</td>
+                                  <td class="de-tablecell-commodity"><i class="fa fa-lightbulb-o"></i></td>
+                                </tr>
+                                <tr>
+                                  <td>Massachusetts Electric</td>
+                                  <td>1-800-322-3223</td>
+                                  <td class="de-tablecell-commodity"><i class="fa fa-lightbulb-o"></i></td>
+                                </tr>
+                                <tr>
+                                  <td>Boston Edison</td>
+                                  <td>1-800-592-2000</td>
+                                  <td class="de-tablecell-commodity"><i class="fa fa-fire"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                  
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-target="#forms" href="#forms">Forms</a>
+                            <a class="pull-right" data-toggle="collapse" data-target="#forms" href="#forms"><i class="fa fa-minus-circle"></i></a>
+                        </h4>
+                    </div>
+                    <div id="forms" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                           <h4>Most Popular Forms</h4>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <ul class="list-unstyled de-document-list">
+                                        <li><a href="#" class="btn btn-link"><i class="fa fa-file-pdf-o"></i>California Invoices</a></li>
+                                        <li><a href="#" class="btn btn-link"><i class="fa fa-file-pdf-o"></i>Texas Invoices</a></li>
+                                        <li><a href="#" class="btn btn-link"><i class="fa fa-file-pdf-o"></i>Other Invoices</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="btn-toolbar">
+                                <a href="#" class="btn btn-link"><i class="fa fa-chevron-right"></i> All Forms</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#power-faqs" data-toggle="false" href="#power-faqs">Power FAQs</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#power-faqs" href="#power-faqs"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+                    <div id="power-faqs">                      
+                      <div class="panel-body">
+                        Get answers to common questions about supply service with Direct Energy Business by browsing our FAQs.
+                        <div class="row">
+                        	<div class="col-md-6 col-sm-12">
+                                <ul class="list-unstyled">
+                                  <li><a href="#" class="btn btn-link"><i class="fa fa-chevron-right"></i> Top power questions</a></li>
+                                  <li><a href="#" class="btn btn-link"><i class="fa fa-chevron-right"></i> General account &amp; billing information</a></li>
+                                  <li><a href="#" class="btn btn-link"><i class="fa fa-chevron-right"></i> Bill payment options</a></li>
+                                </ul>
+                            </div>
+                        	<div class="col-md-6 col-sm-12">
+                                <ul class="list-unstyled">
+                                  <li><a href="#" class="btn btn-link"><i class="fa fa-chevron-right"></i> Product information &amp; contract terms</a></li>
+								  <li><a href="#" class="btn btn-link"><i class="fa fa-chevron-right"></i> Renewals</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                      </div>
+                      </div>
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#gas-faqs" href="#gas-faqs">Natural Gas FAQs</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#gas-faqs" href="#gas-faqs"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+                    <div id="gas-faqs">
+                      <div class="panel-body">
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+                    </div>
+                  </div>
+                  
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#power-invoice-sheets" href="#power-invoice-sheets">Power Product &amp; Invoice Sheets</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#power-invoice-sheets" href="#power-invoice-sheets"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+
+                    <div id="power-invoice-sheets">
+                      <div class="panel-body">
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+
+                      </div>
+                     </div>
+
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#power-invoice-sheets" href="#gas-invoice-sheets">Natural Gas Product &amp; Invoice Sheets</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#power-invoice-sheets" href="#gas-invoice-sheets"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+
+                    <div id="gas-invoice-sheets">
+                      <div class="panel-body">
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+
+                      </div>
+                    </div>
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#helpfulinfo" href="#helpfulinfo">Helpful Information</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#helpfulinfo" href="#helpfulinfo"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+
+                    <div id="helpfulinfo">
+                      <div class="panel-body">
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+
+                      </div>
+                    </div>
+
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#hedginginfo" href="#hedginginfo">Hedging Information</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#hedginginfo" href="#hedginginfo"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+
+                    <div id="hedginginfo">
+                      <div class="panel-body">
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+                      </div>
+                     </div>
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-target="#eforecaster" href="#eforecaster">eforecaster Newsletter</a>
+                        <a class="pull-right" data-toggle="collapse" data-target="#eforecaster" href="#eforecaster"><i class="fa fa-minus-circle"></i></a>
+                      </h4>
+                    <div id="eforecaster">
+                      <div class="panel-body">
+Bacon ipsum dolor sit amet corned beef landjaeger sausage ground round, meatloaf spare ribs pork chop venison. Tail pork chop hamburger pork belly pork loin bacon salami leberkas. Turkey frankfurter spare ribs sausage ball tip brisket tenderloin jerky drumstick. Short loin andouille prosciutto biltong, shank leberkas pancetta chuck capicola tenderloin filet mignon bresaola strip steak rump venison. Tongue venison capicola meatball.
+
+T-bone salami corned beef sirloin andouille jerky frankfurter chuck tongue strip steak. Shank meatball ball tip cow beef ribs. Leberkas strip steak pork loin fatback drumstick, pancetta turkey frankfurter pork belly chuck. Leberkas shank chicken spare ribs turducken, andouille meatloaf salami fatback flank filet mignon ball tip kielbasa. Corned beef pig shankle short loin biltong pork chop. Spare ribs short ribs swine meatball ground round pork belly pastrami turkey kevin filet mignon brisket frankfurter turducken.
+                      </div>
+                    </div>
+                    <div id="upcomingevents">
+                        <div class="panel panel-default" id="upcoming-events">
+                            <div class="panel-heading" data-toggle="collapse" data-target="#target9">
+                                <h4 class="panel-title">
+                                    <a id="upcomingeventsId"></a>
+                                    <a data-toggle="collapse" data-target="#target9">Upcoming Events</a>
+                                    <a class="pull-right" data-toggle="collapse" data-target="#target9"><i class="fa fa-minus-circle"></i></a>
+                                </h4>
+                            </div>
+                            <div id="target9" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    Below are some of the exciting upcoming events from Direct Energy Business and the power industry.
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="list-unstyled">
+                                                <li ng-repeat="event in events.Data">
+                                                    <div class="alert alert-warning">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <strong>{{event.Name}}</strong>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <p>{{event.Date | date:'MM/dd/yyyy'}}</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                                <p ng-bind-html="event.Description | trustedHtml">{{event.Description}}</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div> <!-- end row -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="media">
+                                                <div class="media-body">
+                                                   <div class="row">
+                                                       <div class="col-xs-2 de-event-date">
+                                                           <div>Fri</div>
+                                                           <div><strong>Oct 31</strong></div>
+                                                           <div>2014</div>
+                                                       </div>
+                                                       <div class="col-xs-10">
+                                                           <h4 class="media-heading">This is an event name</h4>
+                                                           the quick brown fox jumped over the lazy dog
+                                                           ...
+                                                       </div>
+                                                   </div>
+                                                </div>
+                                            </div>                                            
+
+                                            <div class="media">
+                                                <div class="media-body">
+                                                    <div class="row">
+                                                        <div class="col-xs-2 de-event-date">
+                                                            <div>Fri</div>
+                                                            <div><strong>Oct 31</strong></div>
+                                                            <div>2014</div>
+                                                        </div>
+                                                        <div class="col-xs-10">
+                                                            <h4 class="media-heading">This is an event name</h4>
+                                                            the quick brown fox jumped over the lazy dog
+                                                            ...
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                        
+                        
+                    </div>
+
+            </div>
+            <!-- End main content section for support information -->
+            
+            <!-- Start table of contents section. Affix behavior included -->
+            <div class="col-md-3">
+                <div id="de-support-nav-contents" class="hidden-print hidden-xs hidden-sm" role="complementary" data-spy="affix" data-offset-top="60" >
+                <h4>Contents</h4>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="#outages">Outages &amp; Emergencies</a></li>
+                        <li><a href="#forms">Forms</a></li>
+                        <li><a href="#power-faqs">Power FAQs</a></li>
+                        <li><a href="#gas-faqs">Natural Gas FAQs</a></li>
+                        <li><a href="#power-invoice-sheets">Power Product &amp; Invoice Sheets</a></li>
+                        <li><a href="#gas-invoice-sheets">Natural Gas Product &amp; Invoice Sheets</a></li>
+                        <li><a href="#helpfulinfo">Helpful Information</a></li>
+                        <li><a href="#hedginginfo">Hedging Information</a></li>
+                        <li><a href="#eforecaster">eforecaster Newsletter</a></li>
+                        <li><a href="#upcomingevents">Upcoming Events</a></li>
+                    </ul>
+                    <h4><a class="back-to-top" href="#top"><i class="fa fa-arrow-circle-up"></i> Back to top</a></h4>
+                </div>
+            </div>
+            <!-- End table of contents section -->
+        </div>
+    </div>
+
+    <div class="container-fluid de-myact-footer"><!-- footer container -->
+		<div class="row">
+			<div class="col-sm-4"><!-- first footer column-->
+            	<h4>Quick Links</h4>
+                <ul>
+                	<li>First link</li>
+                </ul>
+            </div>
+			<div class="col-sm-4"><!-- second footer column-->
+            	<h4>Help</h4>
+                <ul>
+                	<li>First link</li>
+                </ul>
+            </div>
+			<div class="col-sm-4"><!-- third footer column-->
+            	<div class="de-social-links">
+                    <a href="#" class="de-social-rss"><i class="fa fa-rss-square"></i></a>
+                	<a href="#" class="de-social-youtube"><i class="fa fa-youtube"></i></a>
+                    <a href="#" class="de-social-linkedin"><i class="fa fa-linkedin-square"></i></a>
+                    <a href="#" class="de-social-twitter"><i class="fa fa-twitter-square"></i></a>
+                    <a href="#" class="de-social-facebook"><i class="fa fa-facebook-square"></i></a>
+                </div>
+                <h4>Can we help you?</h4>
+                <a href="#"><i class="fa fa-envelope-o"></i> Send us a message</a>
+            </div>
+        </div>
+    </div> <!-- /footer container -->
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+<script type="text/javascript">
+	$('#de-support-nav-contents .panel-title a').click(function () {
+		$(this).parent().find('i').toggleClass('fa-plus-circle');
+		$(this).parent().find('i').toggleClass('fa-minus-circle');
+	});
+	
+
+/*$('#de-support-nav-contents').affix({
+    offset: {
+      top: 20
+    , bottom: function () {
+        return (this.bottom = $('.de-myact-footer').outerHeight(true))
+      }
+    }
+  })  
+*/
+</script>
+
+  </body>
+</html>

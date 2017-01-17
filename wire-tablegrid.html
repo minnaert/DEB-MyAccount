@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html><!-- InstanceBegin template="/Templates/myact-template-base.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>My Account Table Grid</title>
+<!-- InstanceEndEditable -->
+
+<!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+<link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<!--<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+<!-- InstanceBeginEditable name="base-head" -->
+<style type="text/css">
+	body {
+		margin-bottom: 60px;
+	}
+	.footer {
+		position: absolute;
+		bottom: 0px;
+		width: 100%;
+		height: 60px;
+		background-color: #CCCCCC;
+	}	
+	
+</style>
+<!-- InstanceEndEditable -->
+</head>
+<body>
+<!-- InstanceBeginEditable name="base-body" -->
+	<div class="container-fluid">
+		<div class="row">
+        	<div class="col-sm-12 col-md-10 col-md-offset-1"><!-- Start Tab container -->
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs responsive">
+                  <li class="active"><a href="#summary" data-toggle="tab">Summary</a></li>
+                  <li><a href="#billing" data-toggle="tab">Billing</a></li>
+                  <li><a href="#payments" data-toggle="tab">Payments</a></li>
+                  <li><a href="#usage" data-toggle="tab">Usage</a></li>
+                  <li><a href="#locations" data-toggle="tab">Service Locations</a></li>
+                  <li><a href="#contracts" data-toggle="tab">Contracts</a></li>
+                  <li><a href="#admin" data-toggle="tab">Admin</a></li>
+                </ul>
+                
+                <!-- Tab panes -->
+                <div class="tab-content">
+					<!-- Summary Tab pane -->
+                    <div class="tab-pane active" id="summary">
+                          <p>Summary</p>
+                    </div>
+					<!-- Billing Tab pane -->
+                    <div class="tab-pane" id="billing">
+                          <p>Billing</p>
+                    </div>
+					<!-- Payments Tab pane -->
+                    <div class="tab-pane" id="payments">
+                          <p>Payments</p>
+                    </div>
+					<!-- Usage Tab pane -->
+                    <div class="tab-pane" id="usage">
+                        <h2>Usage for All Accounts</h2>
+                        <div class="table-responsive">
+                        <table class="table table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Billing Account #</th>
+                                    <th>Utility Account #</th>
+                                    <th>Service Location</th>
+                                    <th>Invoice #</th>
+                                    <th>Date From</th>
+                                    <th>Date To</th>
+                                    <th>Usage (kWh)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1145085</td>
+                                <td>14401014029124</td>
+                                <td>123 N Street</td>
+                                <td><a href="#"><i class="fa fa-file-pdf-o"></i>1228026</a></td>
+                                <td>11/30/2011</td>
+                                <td>11/30/2011</td>
+                                <td>12345</td>
+                            </tr>
+                            <tr>
+                                <td>1145085</td>
+                                <td>14401014029124</td>
+                                <td>123 N Street</td>
+                                <td><a href="#"><i class="fa fa-file-pdf-o"></i>1228026</a></td>
+                                <td>11/30/2011</td>
+                                <td>11/30/2011</td>
+                                <td>12345</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </div>
+                    </div>
+                </div><!-- End Tab panes -->
+            </div><!-- End Tab container -->
+        </div>
+
+	</div>
+
+	<footer class="footer">
+    	<div class="container-fluid">
+        	<div class="row">
+            	<div class="col-sm-4">
+                	<p class="text-muted text-center">The quick brown fox jumped over the lazy dog.</p>
+                </div>
+            	<div class="col-sm-4 col-xs-6">
+                	<p class="text-muted text-center">The quick brown fox jumped over the lazy dog.</p>
+                </div>
+            	<div class="col-sm-4 col-xs-6">
+                	<p class="text-muted text-center">The quick brown fox jumped over the lazy dog.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="base-page-bottom" -->
+<!-- InstanceEndEditable -->
+<!-- Bootstrap core JavaScript
+        ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<!-- jQuery CDN --> 
+<script src="http://code.jquery.com/jquery.js"></script> 
+<!-- Latest compiled and minified JavaScript --> 
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+<!-- InstanceBeginEditable name="script" -->
+	<!-- Using responsive tabs library to make tab navigation responsive -->
+	<script src="js/libs/bootstrap-responsive-tabs/js/responsive-tabs.js" type="text/javascript"></script>
+	<script type="text/javascript">
+      (function($) {
+          fakewaffle.responsiveTabs(['xs']);
+      })(jQuery);
+    </script>
+
+<!-- InstanceEndEditable -->
+
+</body>
+<!-- InstanceEnd --></html>

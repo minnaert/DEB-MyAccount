@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Header Customer Account Selection</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- ** My Account prototype styles ** -->
+<!--    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">-->
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+
+	<style type="text/css">
+	</style>
+    
+</head>
+
+  <body>
+
+    <div class="container-fluid"><!-- body content -->
+     <div class="page-header">
+      <h2>Customer Selection and Account Selection</h2>
+     </div>
+	</div><!-- End Container-->
+<br/>
+    <div class="container-fluid"><!-- body content -->
+    <h4>More than 50 Customers &amp; Profiles, large list (1500), both commodities</h4>
+	<div class="container de-nav-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selCustomer">Customers</label>
+                <select id="selCustomer" class="selectpicker" data-live-search="true" data-width="100%" data-style="btn-nav-customer">
+<!--                    <option selected>All Customers</option>-->
+                    <optgroup label="Profiles">
+                        <option>First Profile</option>
+                        <option>Second Profile</option>
+                    </optgroup>
+                    <optgroup label="Customers">
+                        <option>Search to display customers...</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selAccounts">Accounts</label>
+                <select id="selAccountsPerf" class="selectpicker" data-live-search="true" data-width="100%" data-show-subtext="true" data-style="btn-nav-customer">
+                    <option>Select an account</option>
+                    <optgroup id="optgrpLoad" label="Account limit exceeded">    
+                        <option id="btnLoadAll" data-content="<span  class='btn btn-default'>Load All Accounts (1500)</span>">Load All Accounts (1500)</option>
+                        <option data-content="<span id='btnLoadPower' class='btn btn-default'>Load All Power Accounts (750)</span>">Load All Power Accounts (750)</option>
+                        <option data-content="<span id='btnLoadGas' class='btn btn-default'>Load All Natural Gas Accounts (750)</span>">Load All Natural Gas Accounts (750)</option>
+                    </optgroup>
+                    <option>...account search results...</option>
+                    <optgroup id="optgrpPower" label="Power Accounts"></optgroup>
+                    <optgroup id="optgrpGas" label="Natural Gas Accounts"></optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4">
+<!--            	<button type="button" class="btn btn-primary pull-right"><i class="fa fa-money"></i> Pay Now</button>
+-->            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container-->
+<br/>
+    <h4>Multiple Customers &amp; Profiles, large list (250), both commodities</h4>
+    <div class="container de-nav-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selCustomer">Customers</label>
+                <select id="selCustomer" class="selectpicker" data-live-search="false" data-width="100%" data-style="btn-nav-customer">
+                    <option selected>All Customers</option>
+                    <optgroup label="Profiles">
+                        <option>First Profile</option>
+                        <option>Second Profile</option>
+                    </optgroup>
+                    <optgroup label="Customers">
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                        <option>This is a really big customer name which may or may not wrap</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selAccounts">Accounts</label>
+                <select id="selAccounts" class="selectpicker" data-live-search="true" data-width="100%" data-show-subtext="true" data-style="btn-nav-customer">
+                        <option>All Accounts</option>
+                        <option>All Power Accounts</option>
+                        <option>All Natural Gas Accounts</option>
+                        <option>Select an account</option>
+                        <optgroup label="Power">
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143085</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143086</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143087</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143088</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143089</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143090</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143091</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143092</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143093</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143094</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143095</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143096</option>
+                        </optgroup>
+                        <optgroup label="Natural Gas">
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143085</option>
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143086</option>
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143087</option>
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143088</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143089</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143090</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143091</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143092</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143093</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143094</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143095</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143096</option>
+                        </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4">
+<!--            	<button type="button" class="btn btn-primary pull-right"><i class="fa fa-money"></i> Pay Now</button>
+-->            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container-->
+<br/>
+    <h4>Multiple Customers, No Profiles, large list (250), both commodities</h4>
+    <div class="container de-nav-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selCustomer">Customers</label>
+                <select id="selCustomer" class="selectpicker" data-live-search="true" data-width="100%" data-style="btn-nav-customer">
+                    <option selected>All Customers</option>
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                        <option>This is a really big customer name which may or may not wrap</option>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selAccounts">Accounts</label>
+                <select id="selAccounts" class="selectpicker" data-live-search="true" data-width="100%" data-show-subtext="true" data-style="btn-nav-customer">
+<!--                        <option>All Accounts</option>
+                        <option>All Power Accounts</option>
+                        <option>All Natural Gas Accounts</option>-->
+                        <option>Select an account</option>
+                        <optgroup label="Power">
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143085</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143086</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143087</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Big Easy Carwash">1143088</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143089</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143090</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143091</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Medium Easy Carwash">1143092</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143093</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143094</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143095</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Small Easy Carwash">1143096</option>
+                        </optgroup>
+                        <optgroup label="Natural Gas">
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143085</option>
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143086</option>
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143087</option>
+                            <option data-icon="fa fa-fire" data-subtext="Big Easy Carwash">2143088</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143089</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143090</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143091</option>
+                            <option data-icon="fa fa-fire" data-subtext="Medium Easy Carwash">2143092</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143093</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143094</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143095</option>
+                            <option data-icon="fa fa-fire" data-subtext="Small Easy Carwash">2143096</option>
+                        </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4">
+<!--            	<button type="button" class="btn btn-primary pull-right"><i class="fa fa-money"></i> Pay Now</button>
+-->            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container-->
+<br/>
+    <h4>Multiple Customers, Profiles, Demand Response Customers, both commodities + DR accounts</h4>
+    <div class="container de-nav-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selCustomer">Customers</label>
+                <select id="selCustomer" class="selectpicker" data-live-search="true" data-width="100%" data-style="btn-nav-customer">
+                    <option selected>All Customers</option>
+                    <optgroup label="Profiles">
+                        <option>First Profile</option>
+                        <option>Second Profile</option>
+                    </optgroup>
+                    <optgroup label="Customers">
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                        <option>This is a really big customer name which may or may not wrap</option>
+                    </optgroup>
+                    <optgroup label="Demand Response">
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selAccounts">Accounts</label>
+                <select id="selAccounts" class="selectpicker" data-live-search="true" data-width="100%" data-show-subtext="true" data-style="btn-nav-customer">
+                        <option>All Accounts (6)</option>
+                        <option>All power accounts (3)</option>
+                        <option>All natural gas accounts (3)</option>
+                        <optgroup label="Natural Gas (3)">
+                            <option data-icon="fa fa-fire" data-subtext="A Customer Name">2143085</option>
+                            <option data-icon="fa fa-fire" data-subtext="A Customer Name">2143089</option>
+                            <option data-icon="fa fa-fire" data-subtext="My Customer Name">2143093</option>
+                        </optgroup>
+                        <optgroup label="Power (3)">
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="My Customer Name">1143085</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="My Customer Name">1143089</option>
+                            <option data-icon="fa fa-lightbulb-o" data-subtext="Your Customer Name">1143093</option>
+                        </optgroup>
+<!--
+                        <optgroup label="Demand Response">
+                            <option data-subtext="Big Easy Carwash">538876</option>
+                            <option data-subtext="Medium Easy Carwash">546621</option>
+                            <option data-subtext="Small Easy Carwash">557490</option>
+                        </optgroup>
+-->
+                </select>
+            </div>
+            <div class="col-sm-4">
+<!--            	<button type="button" class="btn btn-primary pull-right"><i class="fa fa-money"></i> Pay Now</button>
+-->            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container-->
+
+
+	</div><!-- End Container fluid-->
+
+
+<div class="spacer20">
+	<br/>
+	<br/>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+    <!-- Bootstrap-select JS files. Custom select functions -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script> 
+	<script>
+	    <!-- Enabling all select pickers -->
+		$(document).ready(function() 
+		{ 
+			$('.selectpicker').selectpicker(); 
+
+		});
+
+        $("#selAccountsPerf").change(function(){
+            var selected = $("option:selected", this);
+//            if(selected.parent()[0].id == "optgrpLoad"){
+//                alert("hello");
+//            } 
+            if(this.id == "btnLoadAll"){
+                alert("This is the first item");
+            }
+
+        
+        });        
+       
+        
+       
+	    <!-- Set Options for account selector -->
+		$( "#selCustomer" ).change(function() {
+			var optAcctsAllSubtext = "<option>All Accounts</option><option>All Power Accounts</option><option>All Natural Gas Accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1245086</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9123131</option><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9223132</option></optgroup>";
+			var optAcctsAll = "<option>Select an account</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>1145085</option><option data-icon='fa fa-lightbulb-o'>1245086</option><option data-icon='fa fa-lightbulb-o'>1345087</option><option data-icon='fa fa-lightbulb-o'>1445088</option><option data-icon='fa fa-lightbulb-o'>2145089</option><option data-icon='fa fa-lightbulb-o'>2245090</option><option data-icon='fa fa-lightbulb-o'>2345091</option><option data-icon='fa fa-lightbulb-o'>3145093</option><option data-icon='fa fa-lightbulb-o'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>7123110</option><option data-icon='fa fa-fire'>7223111</option><option data-icon='fa fa-fire'>7323112</option><option data-icon='fa fa-fire'>7423113</option><option data-icon='fa fa-fire'>8123121</option><option data-icon='fa fa-fire'>8223122</option><option data-icon='fa fa-fire'>8323123</option><option data-icon='fa fa-fire'>9123131</option><option data-icon='fa fa-fire'>9223132</option></optgroup>"; 
+
+			var optAcctsBigEasySubtext = "<option>All Accounts</option><option>All Power Accounts</option><option>All Natural Gas Accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1245086</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option></optgroup>";
+			var optAcctsBigEasy = "<option>All Accounts</option><option>All Power Accounts</option><option>All Natural Gas Accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>1145085</option><option data-icon='fa fa-lightbulb-o'>1245086</option><option data-icon='fa fa-lightbulb-o'>1345087</option><option data-icon='fa fa-lightbulb-o'>1445088</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>7123110</option><option data-icon='fa fa-fire'>7223111</option><option data-icon='fa fa-fire'>7323112</option><option data-icon='fa fa-fire'>7423113</option></optgroup>";
+			var optAcctsMedEasySubtext = "<option>All Accounts</option><option>All Power Accounts</option><option>All Natural Gas Accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option></optgroup>";
+			var optAcctsMedEasy = "<option>All Accounts</option><option>All Power Accounts</option><option>All Natural Gas Accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>2145089</option><option data-icon='fa fa-lightbulb-o'>2245090</option><option data-icon='fa fa-lightbulb-o'>2345091</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>8123121</option><option data-icon='fa fa-fire'>8223122</option><option data-icon='fa fa-fire'>8323123</option></optgroup>";
+			var optAcctsSmlEasySubtext = "<option>All Accounts</option><option>All Power Accounts</option><option>All Natural Gas Accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9123131</option><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9223132</option></optgroup>";
+			var optAcctsSmlEasy = "<option>All Accounts</option><option>All Power Accounts</option><option>All Natural Gas Accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>3145093</option><option data-icon='fa fa-lightbulb-o'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>9123131</option><option data-icon='fa fa-fire'>9223132</option></optgroup>";
+
+			// Clearing all the options in the account list
+			$( "#selAccounts option" ).remove();
+			// Ensure Accounts select is enabled
+			$('#selAccounts').prop('disabled',false);
+//			$('#selAccounts').selectpicker('refresh');
+
+			// Showing Pay Now button
+			$('#btnPayNow').hide();
+
+
+			if($( "#selCustomer option:selected" ).text()=="All Customers" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsAll);
+				// All Customers, disable accounts selector
+				//$('#selAccounts').prop('disabled',true);
+				$('#btnPayNow').hide();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="First Profile" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsAllSubtext);
+				$('#btnPayNow').hide();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Second Profile" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsAllSubtext);
+				$('#btnPayNow').hide();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Big Easy Carwash" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsBigEasy);
+				$('#btnPayNow').show();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Medium Easy Carwash" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsMedEasy);
+				$('#btnPayNow').show();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Small Easy Carwash" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsSmlEasy);
+				$('#btnPayNow').show();
+			}
+			else {
+//				alert('goodbye');
+				// Add some options
+				$('#selAccounts').append(optAcctsAllSubtext);
+			};
+			
+			// Refresh Accounts select list to display newly added options
+			$('#selAccounts').selectpicker('refresh');				
+
+		});
+		 
+    </script>
+
+  </body>
+</html>

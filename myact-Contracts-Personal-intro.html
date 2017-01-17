@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Redesign</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap.css" rel="stylesheet">
+
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Introd.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/intro.js/2.2.0/introjs.min.css">
+
+    
+    
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+        
+/* button style classes to customer selection dropdown. Based on Bootstrap button styling, uses button mixin */
+/*
+.btn-nav-customer {
+    @include button-variant($btn-primary-color, $de-blue-tertiary, $de-blue-tertiary);
+} 
+*/
+        
+        .list-group-item .lead {
+            margin-bottom: 5px;
+        }
+        
+        a i.fa-file-pdf-o {
+            /* pdf links within the summary. make pdf icon red & link normal color  */
+            color: #a94442;
+        }
+        
+        .de-maintab-container {
+            background-color: #dbdbdb;
+        }
+       
+        #de-main-nav-tabs .nav.nav-tabs, #de-main-nav-tabs .nav.nav-pills {
+            border: 0;
+            border-top: 1px solid #f05d21;
+        }
+        #de-main-nav-tabs .nav.nav-tabs li a, #de-main-nav-tabs .nav.nav-pills li a {
+            border: 0;
+            border-right: 1px solid #f05d21;
+            border-radius: 0;
+            background-color: #ffffff;
+            color: #f05d21;
+        }
+        #de-main-nav-tabs .nav.nav-tabs li:last-child a, #de-main-nav-tabs .nav.nav-pills li:last-child a {
+            border-right: 0;
+        }
+        #de-main-nav-tabs .nav.nav-tabs li.active a, #de-main-nav-tabs .nav.nav-pills li.active a {
+            background-color: #f05d21;
+            color: #ffffff;
+        }
+        @media all and (min-width: 800px) {
+            #de-main-nav-tabs .nav.nav-tabs li a i,  #de-main-nav-tabs .nav.nav-pills li a i{
+                display: block;
+                text-align: center;
+            }
+            /* tab styles for larger than tablets */
+            #de-main-nav-tabs .nav.nav-tabs > li.active:after {
+                    content: "";
+                    display: block;
+                    width: 12px;
+                    height: 6px;
+                    background-image:url(img/icon-orange-arrow-down.png);
+                    background-repeat: no-repeat;
+                    background-position: center top;
+                    position: relative;
+                    left: 45%;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- End Container-->
+    <br/>
+    <div class="container-fluid" id="summary">
+        <!-- body content -->
+        <div class="container de-nav-customer-container">
+            <div class="spacer20"></div>        
+            <div id="de-main-nav-tabs" class="row">
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs nav-justified">
+                        <li><a href="/" data-toggle="tab"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="/billing" data-toggle="tab"><i class="fa fa-usd"></i> Invoices &amp; Payments</a></li>
+                        <li><a href="/usage" data-toggle="tab"><i class="fa fa-bar-chart"></i> Usage</a></li>
+                        <li><a href="/service-location" data-toggle="tab"><i class="fa fa-map-marker"></i> Locations</a></li>
+                        <li><a href="/report" data-toggle="tab"><i class="fa fa-bullhorn"></i> Reports &amp; Alerts</a></li>
+                        <li class="active"><a href="/contract" data-toggle="tab"><i class="fa fa-file-text"></i> Contracts</a></li>
+                        <li><a href="/demand" data-toggle="tab"><i class="fa fa-bolt"></i> Demand Response</a></li>
+                        <li><a href="/learnmore" data-toggle="tab"><i class="fa fa-university"></i> Learn More</a></li>
+                    </ul>
+                </div>
+            </div><!-- end tabs -->
+            
+            <div class="row" id="de-contracts">
+                <div class="container de-maintab-container">
+                <!-- start main tab container -->
+                    <!-- Power Contracts -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 data-step="1" data-intro="All of your current contracts are listed here. Older contracts you may have are in the Historical section.">Active Power Contracts</h2>
+                            <p class="lead">Below are all of your products and contract information. You can view your contracts or change the energy product you use from Direct Energy.
+                                You can analyze your usage in Excel, 
+                            <a class="btn btn-large btn-info" href="javascript:void(0);" onclick="javascript:introJs().start();"><i class="fa fa-question-circle"></i> Show me</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-8 col-md-9">
+
+                            <p class="lead"><a href="#"><i class="fa fa-chevron-down"></i>&nbsp;ABC Plumbing</a></p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-5" data-step="4" data-intro="The details of your contract such as price, term length and product name are included here.">
+                                            <strong>Fixed 24 month</strong>&nbsp;&nbsp;&nbsp;
+                                            <p class="lead">$0.072 / kWh</p>
+                                            <div>10/01/2014 - 10/01/2016</div>
+                                            <div><small>PJM_FP_XCAP_RMR_NY</small></div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <a href="#">4 Locations</a>
+                                            <div>123 Sesame street, New York, NY 10001</div>
+                                            <div>456 Sesame street, New York, NY 10001</div>
+                                            <div>789 Sesame street, New York, NY 10001</div>
+                                            <div>987 Sesame street, New York, NY 10001</div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="btn-toolbar">
+                                                <a class="btn btn-success" href="#" role="button" data-step="2" data-intro="If your contract is up for renewal, you will be able to do that here." data-position='right'>Renew</a>  
+                                                <a class="btn btn-sm btn-default top10" href="#"><i class="fa fa-file-pdf-o"></i>&nbsp;Download</a>
+                                            </div>                
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <strong>Variable 12 month</strong>&nbsp;&nbsp;&nbsp;
+                                            <p class="lead">$0.083 / kWh</p>
+                                            <div>10/01/2015 - 10/01/2016</div>
+                                            <div><small>PJM_FP_XCAP_RMR_NY</small></div>
+                                        </div>
+                                        <div class="col-sm-5">
+<!--                                            <a href="#">1 Location</a>-->
+                                            <div>123 Sesame street, New York, NY 10001</div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="btn-toolbar">
+                                                <a class="btn btn-default disabled" href="#" role="button">Renew 10/2017</a>  
+                                                <a class="btn btn-sm btn-default top10" href="#"><i class="fa fa-file-pdf-o"></i>&nbsp;Download</a>
+                                            </div>                
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-4">
+                                            <strong>Variable 12 month</strong>&nbsp;&nbsp;&nbsp;
+                                            <p class="lead"><a data-toggle="collapse" href="#collapseContractChart" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-bar-chart"></i> $0.083 to $0.091 / kWh</a></p>
+                                            <div class="collapse" id="collapseContractChart">Rate changes over 12 month contract
+                                            <img src="http://placehold.it/350x150?text=Bar+Chart">
+                                            </div>
+                                            <div class="col-sm-6 col-md-12">10/01/2015 - 10/01/2016</div>
+                                            <div class="col-sm-6 col-md-12"><small>PJM_FP_XCAP_RMR_NY</small></div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-5">
+<!--                                            <a href="#">1 Location</a>-->
+                                            <div>123 Sesame street, New York, NY 10001</div>
+                                        </div>
+                                        <div class="col-sm-6 col-md-3">
+                                            <div class="btn-toolbar">
+                                                <a class="btn btn-default disabled" href="#" role="button">Renew 10/2017</a>  
+                                                <a class="btn btn-sm btn-default top10" href="#"><i class="fa fa-file-pdf-o"></i>&nbsp;Download</a>
+                                            </div>                
+                                        </div>
+                                    </div>
+                                </li>                                
+                            </ul>                            
+                            <p class="lead"><a href="#"><i class="fa fa-chevron-down"></i>&nbsp;Big Easy Carwash</a></p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <strong>Variable 24 month</strong>&nbsp;&nbsp;&nbsp;
+                                            <p class="lead">current $0.072 / kWh</p>
+                                            <div>09/01/2014 - 09/01/2016</div>
+                                            <div><small>PJM_FP_XCAP_RMR_NY</small></div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <a href="#">2 Locations</a>
+                                            <div>1200 First Ave, Columbus, OH 16001</div>
+                                            <div>1201 First Ave, Columbus, OH 16001</div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="btn-toolbar">
+                                                <a class="btn btn-warning" href="#" role="button">Choose Again</a>  
+                                                <a class="btn btn-sm btn-default top10" href="#"><i class="fa fa-envelope-o"></i>&nbsp;Request Copy</a>
+                                            </div>                
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-3">
+                            <div class="well" data-step="3" data-intro="If there are current promotions, links to them would be here." data-position='left'>
+                                <div class="text-danger bg-danger text-center"><small>Sitecore or rtp</small></div>
+                                <h4>Big RTP stuff</h4>
+                                <div class="embed-responsive embed-responsive-16by9"><iframe src="//fast.wistia.net/embed/iframe/0y8s3en45r" width="560" height="315" frameborder="0"></iframe></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="panel panel-default">
+                              <div class="panel-heading"><i class="fa fa-chevron-right"></i>&nbsp;Historical Power Contracts</div>
+                              <div class="panel-body collapse">
+                                Old contract....<br>
+                                Old contract....<br>
+                                Old contract....<br>
+                                Old contract....<br>
+                              </div>
+                            </div>                            
+                            <h2></h2>
+                        </div>
+                    </div>
+
+
+                    <!-- Natural Gas Contracts -->
+                     <div class="row">
+                        <div class="col-sm-12">
+                            <h2>Active Natural Gas Contracts</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-8 col-md-9">
+                            <p class="lead"><a href="#"><i class="fa fa-chevron-down"></i>&nbsp;Big Easy Carwash</a></p>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-sm-5">
+                                            <strong>Fixed 24 month</strong>&nbsp;&nbsp;&nbsp;
+                                            <p class="lead">$0.6609 / Therm</p>
+                                            <div>09/01/2014 - 09/01/2016</div>
+                                            <div><small>CONED DQC POOL</small></div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <a href="#">2 Locations</a>
+                                            <div>1200 First Ave, Columbus, OH 16001</div>
+                                            <div>1201 First Ave, Columbus, OH 16001</div>
+                                        </div>
+                                        <div class="col-sm-2">
+                                            <div class="btn-toolbar">
+                                                <a class="btn btn-warning" href="#" role="button">Choose Again</a>  
+                                                <a class="btn btn-sm btn-default top10" href="#"><i class="fa fa-envelope-o"></i>&nbsp;Request Copy</a>
+                                            </div>                
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>                            
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-3">
+                            <div class="well">
+                                <div class="text-danger bg-danger text-center"><small>Sitecore or rtp</small></div>
+                                <img src="http://placehold.it/350x250?text=Gas products here" class="img-responsive"/>
+                                <h4>DEB Products</h4>
+                                <p>Details about natural gas products would go here.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="panel panel-default">
+                              <div class="panel-heading"><i class="fa fa-chevron-right"></i>&nbsp;Historical Natural Gas Contracts</div>
+                              <div class="panel-body collapse">
+                                Old contract....<br>
+                                Old contract....<br>
+                                Old contract....<br>
+                                Old contract....<br>
+                              </div>
+                            </div>                            
+                            <h2></h2>
+                        </div>
+                    </div>
+                    
+                <!-- end main tab container -->
+                </div>
+                
+            </div>
+            
+            
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+
+
+<!-- footer -->
+<footer class="de-myact-footer">
+    <div id="footerSection" class="container-fluid de-myact-footer-links" >
+        <div class="container">
+        <div class="row" id="footerLinkSection">
+            <div class="col-md-6">
+                <div class="btn-group-justified btn-group-sm">
+                    <a class="btn btn-link" href="@ViewBag.ProductAndInvoice.Url">About Your Product and Invoice</a>
+                    <a class="btn btn-link" href="@ViewBag.Forms.Url">Need a Form?</a>
+                    <a class="btn btn-link" href="@ViewBag.Paperless.Url">Go Paperless</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="btn-group-justified btn-group-sm">
+                    <a class="btn btn-link" href="@ViewBag.Preference.Url">Preferences</a>
+                    <a class="btn btn-link" href="@ViewBag.Faqs.Url">FAQs</a>
+                    <a class="btn btn-link" href="@ViewBag.Outages.Url">Outages &amp; Emergencies</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div id="footerSocialLinkSection" class="container">
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <div class="col-sm-6 col-md-8 de-copyright">
+                    &copy; 2016 Direct Energy. All Rights Reserved. Direct Energy and the Lightning Bolt design are registered trademarks of Direct Energy. (DC PSC License No. EA-04-4-4; EA-13-12; GA-13-03-1; NJ BUP License Nos. ESL-0165, ESL-142, GSL-0145, GSL-0128; MD PSC License Nos. IR-437; IR-2697; IR-3123; IR-3108; PUCT Cert. No. 10011; Direct Energy Business, LLC CT PURA License Nos. 12-03; 00-05-14RE01; MA DPU License Nos. CS-021; GS-052; CS-108; GS-051). Products and services vary depending on region or market.
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2">
+                    <a href="@ViewBag.BusinessWebsite.Url" title="@ViewBag.BusinessWebsite.Title" target="_blank"><img src="img/deb-logo-black.png" class="img-responsive" alt="Direct Energy Business website" /></a>
+                </div>
+                <div class="col-xs-6 col-sm-3 col-md-2 de-social-links">
+                    <a href="@ViewBag.Blog.Url" title="@ViewBag.Blog.Title" target="_blank" class="de-social-rss"><i class="fa fa-rss-square"></i></a>
+                    <a href="@ViewBag.YouTube.Url" title="@ViewBag.YouTube.Title" target="_blank" class="de-social-youtube"><i class="fa fa-youtube"></i></a>
+                    <a href="@ViewBag.LinkedIn.Url" title="@ViewBag.LinkedIn.Title" target="_blank" class="de-social-linkedin"><i class="fa fa-linkedin-square"></i></a>
+                    <p id="footerContactUs"><a href="@ViewBag.ContactUs.Url" title="@ViewBag.ContactUs.Title" target="_blank">Contact Us</a></p>
+                    <p id="footerSMBContactUs"><a href="@ViewBag.SMBContactUs.Url" title="@ViewBag.SMBContactUs.Title" target="_blank" style="display: none">Contact Us</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>        
+        
+<!-- end footer -->
+
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <!-- jQuery CDN -->
+            <script src="http://code.jquery.com/jquery.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+            <!-- Bootstrap-select JS files. Custom select functions -->
+            <script type="text/javascript" src="js/libs/bootstrap-select/bootstrap-select.js"></script>
+
+            <!-- Intro.js JS files. -->
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/intro.js/2.2.0/intro.min.js"></script>
+        
+        <script>
+                
+
+            </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+/* extra css classes for deb pay now prototype */
+
+.de-terms-conditions p {
+    font-size: 10px;
+    color: #999999;
+    line-height: 10px
+}
+
+/* pdf document links within tables should be red */
+table td a i.fa-file-pdf-o {
+  color: #d9534f;
+  margin-left: 0.1em;
+  margin-right: 0.1em; 
+}
+
+table tr.selected td, table tr.selected td a, table tr.selected td a i.fa-file-pdf-o {
+  background-color: #F05D21;
+    color: #fff;
+}
+
+table.ng-table.tablePowerAccounts tfoot>tr>th, table.ng-table tfoot>tr>th { 
+  text-align: right;
+}
+
+.top10 {
+    margin-top: 10px;
+}

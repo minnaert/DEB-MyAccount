@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>DEB Hero REponsive tests</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      
+      <style type="text/css">
+          h1, h2, h3 {
+            color: yellow;
+          }
+          
+/* Landing page background images */
+#hero01 {
+	background: url('img/de-sml-business-bg1-sml.jpg') no-repeat center center;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	background-size: auto;
+	min-height: 300px;
+    margin-bottom: 5px;
+}
+#hero02 {
+	background: url('img/de-lrg-business-bg1-sml.jpg') no-repeat center center fixed;
+	-webkit-background-size: auto;
+	-moz-background-size: auto;
+	-o-background-size: auto;
+	background-size: auto;
+	min-height: 300px;
+    margin-bottom: 5px;
+}
+  #hero03 {
+	  height: 300px;
+	  overflow: hidden;
+  }
+#hero03 h3{
+    color: #000;
+}
+          
+#hero03 img {
+    src: url('img/de-sml-business-bg1.jpg');
+    opacity: 0.2;
+    z-index: 1;
+    position: absolute;
+    max-width: 98%;
+    margin-left: -15px;
+}
+
+.hero-body {
+    position: relative;;
+    z-index: 10;
+    width: 100%;
+    top: 5;
+}
+
+          /* Responsive background images for landing page */
+            /* Default = small images for mobile */
+@media (min-width: 640px) {
+/* Medium tablet device size */
+    #hero01 {
+        background: url('img/de-sml-business-bg1-med.jpg') no-repeat center center;
+    }
+    #hero02 {
+        background: url('img/Powerlines_shutterstock_125279276_sml.jpg') no-repeat center center fixed;
+    }
+    #hero03 img {
+        src: url('img/de-sml-business-bg1-med.jpg');
+        opacity: 0.7;
+    }
+}
+
+@media (min-width: 1024px) {
+/* Large Desktop device size */
+    #hero01 {
+        background: url('img/de-sml-business-bg1.jpg') no-repeat center center;
+    }
+    #hero02 {
+        background: url('img/de-lrg-business-bg1.jpg') no-repeat center center fixed;
+    }
+    #hero03 img {
+        src: url('img/de-sml-business-bg1.jpg');
+        opacity: 1;
+    }
+}
+          
+      </style>
+  </head>
+  <body>
+    <h1>Hero pages</h1>
+      
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-12" id="hero01">
+              <div class="col-md-6 col-md-offset-6 col-sm-12">
+                  <h3>Hero 01 Title</h3>
+                  <p>This is some body content</p>
+                  <a href="#" class="btn btn-primary">Call to action</a>
+              </div>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-sm-12" id="hero02">
+                <h3 class="hide-sml">Hero 02 Title</h3>
+              <p>This is some body content</p>
+              <a href="#" class="btn btn-primary">Call to action</a>
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-sm-12" id="hero03">
+                <img src="img/de-sml-business-bg1.jpg" class="img-responsive"/>
+              <div class="hero-body">
+                <h3>Hero 03 Title</h3>
+                <p>This is some body content. hide the button for phone</p>
+                <a href="#" class="btn btn-primary hidden-xs">Call to action</a>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>      
+  </body>
+</html>

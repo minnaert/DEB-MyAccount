@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script data-require="angular.js@*" data-semver="1.2.0-rc3-nonmin" src="http://code.angularjs.org/1.2.0-rc.3/angular.js"></script>
+    <script data-require="ng-table@*" data-semver="0.3.0" src="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.js"></script>
+
+    <link data-require="ng-table@*" data-semver="0.3.0" rel="stylesheet" href="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.css" />
+    <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+ 
+      
+<!--
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+-->
+      <style type="text/css">
+        .ng-table-pager .pagination {
+            margin-top: 0px;
+            
+        }
+      </style>
+  </head>
+
+
+<body ng-app="main" ng-controller="DemoCtrl">
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Table Using UI.Grid</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <table ng-table="tableParams" template-pagination="custom/pager" class="table table-bordered">
+                    <tbody ng-repeat="group in $groups">
+                        <tr class="ng-table-group">
+                            <td colspan="{{$columns.length}}">
+                                <a href="" ng-click="group.$hideRows = !group.$hideRows">
+                                    <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+                                    <strong>{{ group.value }}</strong>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr ng-hide="group.$hideRows" ng-repeat="user in group.data">
+                            <td sortable="Customer" data-title="'Customer'">
+                                {{user.Customer}}
+                            </td>
+                            <td sortable="BillingAccount" data-title="'Billing Account'">
+                                {{user.BillingAccount}}
+                            </td>
+                            <td sortable="UtilityAccount" data-title="'Utility Account'">
+                                {{user.UtilityAccount}}
+                            </td>
+                            <td sortable="ServiceLocation" data-title="'Service Location'">
+                                {{user.ServiceLocation}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <script type="text/ng-template" id="custom/pager">
+                    <div class="row ng-cloak ng-table-pager">
+                        <div class="col-xs-8 col-sm-4">
+                            <ul class="pagination">
+                                <li ng-class="{'disabled': !page.active && !page.current, 'active': page.current}" ng-repeat="page in pages" ng-switch="page.type">
+                                <a ng-switch-when="prev" ng-click="tableParams.page(page.number)" href="">&laquo;</a>
+                                <a ng-switch-when="first" ng-click="params.page(page.number)" href=""><span ng-bind="page.number"></span></a>
+                                <a ng-switch-when="page" ng-click="params.page(page.number)" href=""><span ng-bind="page.number"></span></a>
+                                <a ng-switch-when="more" ng-click="params.page(page.number)" href="">&#8230;</a>
+                                <a ng-switch-when="last" ng-click="params.page(page.number)" href=""><span ng-bind="page.number"></span></a>
+                                <a ng-switch-when="next" ng-click="params.page(page.number)" href="">&raquo;</a>
+                                </li>
+                            </ul>                            
+                        </div>
+                        <div class="col-xs-4 col-sm-4 text-center"><strong>Total items: {{tableParams.total()}}</strong>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 text-right">
+                            <div ng-if="params.settings().counts.length" class="ng-table-counts btn-group">
+                                <button ng-repeat="count in params.settings().counts" type="button"
+                                ng-class="{'active':params.count() == count}"
+                                ng-click="params.count(count)" class="btn btn-default">
+                                <span ng-bind="count"></span>
+                                </button>
+                            </div>                           
+                        </div>
+                    </div>
+                </script>                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Billing Account</th>
+                            <th>Utility Account</th>
+                            <th>Service Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ABC Plumbing</td>
+                            <td>845320</td>
+                            <td><a href="#"><i class="fa fa-list"></i> 1 Account</a></td>
+                            <td><a href="#"><i class="fa fa-list"></i> 1 Location</a></td>
+                        <tr>
+                            <td>Boston Auto Body</td>
+                            <td>845318</td>
+                            <td><a href="#"><i class="fa fa-list"></i> 2 Accounts</a></td>
+                            <td><a href="#"><i class="fa fa-list"></i> 2 Locations</a></td>
+                        </tr>
+                        <tr>
+                            <td>Carnegie Science Center</td>
+                            <td>845306</td>
+                            <td><a href="#"><i class="fa fa-list"></i> 3 Accounts</a></td>
+                            <td><a href="#"><i class="fa fa-list"></i> 3 Locations</a></td>
+                        </tr>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>Service Location Details</h4>
+                <div class="servicelocation-subtable">
+                    <table class="table table-bordered table-striped" data-tablesaw-mode="stack"><thead class="ng-scope">
+                            <tr>
+                                <th>Utility Account #</th>
+                                <th>Address</th>
+                                <th>City</th>
+                                <th>State</th>
+                                <th>Zip</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <!-- ngRepeat: account in $data --><tr class="ng-scope" ng-repeat="account in $data">
+                                <td sortable="'DisplayId'" data-title="'Utility Account #'"><span class="tablesaw-cell-content ng-binding">
+                                    10204049749457433
+                                </span></td>
+                                <td data-title="'Address'"><span class="tablesaw-cell-content ng-binding">
+                                    850 PAINT ROCK RD ODLT 150HPSB BLDG 8
+                                </span></td>
+                                <td data-title="'City'"><span class="tablesaw-cell-content ng-binding">
+                                    SAN ANGELO
+                                </span></td>
+                                <td data-title="'State'"><span class="tablesaw-cell-content ng-binding">
+                                    TX
+                                </span></td>
+                                <td data-title="'Zip'"><span class="tablesaw-cell-content ng-binding">
+                                    769058064
+                                </span></td>
+                            </tr><!-- end ngRepeat: account in $data -->
+                        </tbody>
+                    </table><div class="ng-scope ng-isolate-scope" template-url="templates.pagination" ng-table-pagination="params"><!-- ngInclude: templateUrl --><div class="ng-scope" ng-include="templateUrl"><div class="ng-table-pager ng-scope"> <!-- ngIf: params.settings().counts.length --> <ul class="pagination ng-table-pagination"> <!-- ngRepeat: page in pages --> </ul> </div> </div></div>
+                </div>
+            </div>
+        </div>
+    </div><!-- End Container-->
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+
+    <script type="text/javascript">
+var app = angular.module('main', ['ngTable']).
+controller('DemoCtrl', function($scope, ngTableParams) {
+        var data = [{Customer: "Big Easy Carwash", BillingAccount: "1145085", UtilityAccount: "11401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+                            {Customer: "Big Easy Carwash", BillingAccount: "1245086", UtilityAccount: "12401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+                            {Customer: "Big Easy Carwash", BillingAccount: "1345087", UtilityAccount: "13401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+                            {Customer: "Big Easy Carwash", BillingAccount: "1445088", UtilityAccount: "14401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+                            {Customer: "Big Easy Carwash", BillingAccount: "7123110", UtilityAccount: "15401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+                            {Customer: "Big Easy Carwash", BillingAccount: "7223111", UtilityAccount: "16401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+                            {Customer: "Big Easy Carwash", BillingAccount: "7323112", UtilityAccount: "17401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+                            {Customer: "Big Easy Carwash", BillingAccount: "7423113", UtilityAccount: "18401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+                            {Customer: "Medium Easy Carwash", BillingAccount: "2145089", UtilityAccount: "21401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+                            {Customer: "Medium Easy Carwash", BillingAccount: "2245090", UtilityAccount: "22401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+                            {Customer: "Medium Easy Carwash", BillingAccount: "2345091", UtilityAccount: "23401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+                            {Customer: "Medium Easy Carwash", BillingAccount: "8123121", UtilityAccount: "24401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+                            {Customer: "Medium Easy Carwash", BillingAccount: "8223122", UtilityAccount: "25401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+                            {Customer: "Medium Easy Carwash", BillingAccount: "8323123", UtilityAccount: "26401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+                            {Customer: "Small Easy Carwash", BillingAccount: "3145093", UtilityAccount: "31401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+                            {Customer: "Small Easy Carwash", BillingAccount: "3245094", UtilityAccount: "32401014029123",ServiceLocation: "2034 First Ave Town TX 73325"},
+                            {Customer: "Small Easy Carwash", BillingAccount: "9123131", UtilityAccount: "33401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+                            {Customer: "Small Easy Carwash", BillingAccount: "9223132", UtilityAccount: "34401014029123",ServiceLocation: "2034 First Ave Town TX 73325"}];
+
+    $scope.tableParams = new ngTableParams({
+        page: 1,            // show first page
+        count: 10          // count per page
+    }, {
+        groupBy: 'Customer',
+        total: data.length,
+        getData: function($defer, params) {
+            var orderedData = params.sorting() ?
+                    $filter('orderBy')(data, $scope.tableParams.orderBy()) :
+                    data;
+
+            $defer.resolve(orderedData.slice((params.page() - 1) * params.count(), params.page() * params.count()));
+        }
+    });
+})        	
+	</script>  
+
+</body>
+</html>
+

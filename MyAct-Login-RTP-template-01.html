@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="description" content="Default Meta Description" />
+    <meta name="keywords" content="Default Keywords" />
+    <meta name="viewport" content="width=device-width">
+    <title>My Account Log In - Direct Energy Business</title>
+    <link rel="SHORTCUT ICON" href="/Content/favicon.ico" type="image/x-icon" />
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    
+
+<!-- END of Google Analytics code -->
+    <!-- HTML5 shim and Respond.js for IE9 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// (file:///) -->
+    <!--[if IE 9]>
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body class="body-unauth">
+
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://www.business.directenergy.com/" title="Direct Energy Business website" target="_self"><img src="http://torwed50:92/StyleGuide-Boilerplate/Content/img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+            </div>
+        </div>
+    </nav>
+    <div id="main-view" class="container-fluid">
+        <div id="logOnContainer">
+            <div class="row top10">
+                <div class="col-xs-12 deb-myaccount-login-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-4 deb-myaccount-login-input" ng-controller="LogOnController">
+                            <form role="form" name="logonForm"  class="col-xs-12 col-sm-10 col-sm-offset-1">
+                                <div class="form-group">
+                                    <label for="EmailAddress" class="control-label">Email/User name</label>
+                                    <input type="email" id="EmailAddress" name="EmailAddress" class="form-control" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Password" class="control-label">Password</label>
+                                    <input type="password" id="Password" name="Password" class="form-control" ng-model="user.Password" required />
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label for="rememberMe" class="control-label">
+                                            <input type="checkbox" id="rememberMe" name="rememberMe" ng-model="user.rememberMe" />
+                                            Remember my user name
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="btn-toolbar">
+                                    <input type="submit" class="btn btn-primary btn-block" value="Log In" ng-click="sendForm()">
+                                </div>
+                                <div class="btn-toolbar text-center">
+                                    <a class="btn btn-link" id="btnForgotPassword" href="/Account/ForgotPassword" ng-analytics-event="Forgot Password" event="eventOptions.EventCategory.Navigation" action="eventOptions.EventAction.Navigation.LinkClicked">Forgot Password?</a>
+                                    <a href="/Account/Register" id="registerNow" class="btn btn-default" ng-analytics-event="Register Now"
+                                       event="eventOptions.EventCategory.Navigation" action="eventOptions.EventAction.Navigation.LinkClicked">Register Now</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-sm-6 col-md-8" id="deb-myaccount-login-rtp">
+                            
+                                <!-- Put your rtp test content here -->
+
+                                <style type="text/css">
+                                    .myact-img-background {
+                                    }
+                                    @media (max-width: 767px){
+/*
+                                        .myact-login-btm-content {
+                                            width: auto;
+                                            margin-left: 1.0em;
+                                            padding: 0.5em 1.0em 0.5em 1.0em;
+                                            position: absolute;
+                                            display: inline;
+                                            top: 0;
+                                        }
+
+                                        .myact-login-btm-content div{
+                                            padding-top: 10px;
+                                            text-align: center;
+                                        }
+                                        .myact-login-btm-content div img{
+                                            display: block;
+                                            margin-left: auto;
+                                            margin-right: auto;
+                                            margin-top: 10px;
+                                        }
+*/                                    }
+                                    @media (max-width: 991px){
+                                        #deb-myaccount-login-rtp {
+                                            position: static;
+                                        }
+                                        .myact-login-btm-content div h2{
+                                            margin-top: 0;
+                                            text-align: center;
+                                        }
+                                        .myact-login-btm-content div{
+                                            text-align: center;
+                                        }
+                                        .myact-login-btm-content div img{
+                                            display: block;
+                                            margin-left: auto;
+                                            margin-right: auto;
+                                            margin-top: 10px;
+                                            max-height: 200px;
+                                        }
+                                    }
+                                    .myact-login-btm-content div{
+                                        padding-left: 30px;
+                                    }
+                                    
+                                </style>
+                             <div class="row myact-login-btm-content">
+                                    <!-- START your RTP content here -->
+                                    <div class="col-md-6 col-sm-12">
+                                        <h2>The Top Energy Trends for 2016</h2>
+                                        <h4>From John Schultz, Direct Energy Business President</h4>
+                                        <a href="https://business.directenergy.com/2016-energy-trends?iesrc=ctr" target="_blank" class="btn btn-primary">WATCH THE VIDEO</a>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12">
+                                        <a href="https://business.directenergy.com/2016-energy-trends?iesrc=ctr" target="_blank"><img class="img-responsive" src="img/img-rtp-myacct-fauxvideo-schultz.png"></a>
+                                    </div>
+                                </div>
+                                    <!-- END your RTP content here -->
+                        </div>
+                    </div>
+                    
+                </div><!-- end first columns -->
+            </div>
+            <div class="row">
+                <div class="col-sm-12" id="deb-myaccount-login-content-area">
+                    <h2>Manage your account online</h2><div class="row"><div class="col-sm-3 col-xs-6 text-center"><a href="#"><img width="50" height="50" src="http://placehold.it/50x50" alt="my account - icon checkmark" /></a><div><a style="color: #f05d21;" href="http://www.business.directenergy.com/new-my-account">Learn About My Account</a></div></div><div class="col-sm-3 col-xs-6 text-center"><a href="#"><img alt="" src="http://placehold.it/50x50" /></a><div><a style="color: #f05d21;" href="http://www.business.directenergy.com/new-my-account">View and print invoices</a></div></div><div class="col-sm-3 col-xs-6 text-center"><a href="#"><img alt="" src="http://placehold.it/50x50" /></a><div><a style="color: #f05d21;" href="http://www.business.directenergy.com/new-my-account">View your detailed usage</a></div></div><div class="col-sm-3 col-xs-6 text-center"><a href="#"><img alt="" src="http://placehold.it/50x50" /></a><div><a style="color: #f05d21;" href="http://www.business.directenergy.com/new-my-account">Check your account balance</a></div></div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer class="de-myact-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="de-copyright col-xs-12">
+                    <p>© 2016 Direct Energy. All Rights Reserved. Direct Energy and the Lightning Bolt design are registered trademarks of Direct Energy. (DC PSC License No. EA-04-4-4; EA-13-12; GA-13-03-1; NJ BUP License Nos. ESL-0165, ESL-142, GSL-0145, GSL-0128; MD PSC License Nos. IR-437; IR-2697; IR-3123; IR-3108; PUCT Cert. No. 10011; Direct Energy Business, LLC CT PURA License Nos. 12-03; 00-05-14RE01; MA DPU License Nos. CS-021; GS-052; CS-108; GS-051). Products and services vary depending on region or market.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+            <!-- Bootstrap core JavaScript
+            ================================================== -->
+            <!-- Placed at the end of the document so the pages load faster -->
+            <!-- jQuery CDN -->
+            <script src="http://code.jquery.com/jquery.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+@charset "utf-8";
+/* DE My Account Sass document */
+/* CSS Document */
+/* body classes for templates */
+/* line 10, ../sass/de-myaccount.scss */
+.body-de-myacct-unauth {
+  background: url("../img/de-lrg-business-bg1-med-bw.jpg") center no-repeat;
+  background-color: #ccc;
+}
+
+/* line 14, ../sass/de-myaccount.scss */
+.body-de-myacct-wizard {
+  background: url("../img/de-lrg-business-bg1-med-bw.jpg") center no-repeat;
+  background-color: #ccc;
+}
+
+/*********************************************/
+/** Navigation Header Styles **/
+/*********************************************/
+/* line 23, ../sass/de-myaccount.scss */
+.de-navbar-customer-container {
+  padding: 1em 0.5em 1em 0.5em;
+  background-color: #005776;
+  color: #ffffff;
+}
+
+/* line 29, ../sass/de-myaccount.scss */
+.btn-navbar-customer {
+  background-color: #005776;
+  border-color: #005776;
+}
+
+/* line 36, ../sass/de-myaccount.scss */
+.btn-navbar-customer:hover,
+.btn-navbar-customer:focus,
+.btn-navbar-customer:active,
+.btn-navbar-customer.active {
+  background-color: #183680;
+  border-color: #142d6a;
+  color: #ffffff;
+}
+
+/* line 52, ../sass/de-myaccount.scss */
+.btn-navbar-customer.disabled:hover,
+.btn-navbar-customer.disabled:focus,
+.btn-navbar-customer.disabled:active,
+.btn-navbar-customer.disabled.active,
+.btn-navbar-customer[disabled]:hover,
+.btn-navbar-customer[disabled]:focus,
+.btn-navbar-customer[disabled]:active,
+.btn-navbar-customer[disabled].active,
+fieldset[disabled] .btn-navbar-customer:hover,
+fieldset[disabled] .btn-navbar-customer:focus,
+fieldset[disabled] .btn-navbar-customer:active,
+fieldset[disabled] .btn-navbar-customer.active {
+  background-color: #005776;
+  border-color: #005776;
+  color: #ffffff;
+}
+
+/* line 61, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper, .de-myacct-menu-wrapper-alt {
+  /*	height: 62px; 
+  */
+}
+
+/* line 65, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper {
+  background-color: #F05D21;
+}
+
+/* line 68, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper-alt {
+  background-color: #ffffff;
+  height: 70px;
+  border-bottom: 2px solid #F05D21;
+}
+
+/* line 73, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+/* line 76, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper .navbar-nav > li > a:hover {
+  color: #ffffff;
+}
+
+/* line 79, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper h2, .de-myacct-menu-wrapper-alt h2, .de-myacct-menu-wrapper .de-navbar-title, .de-myacct-menu-wrapper-alt .de-navbar-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* line 83, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper h2 {
+  color: #ffffff;
+}
+
+/* line 86, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper-alt h2 {
+  color: #F05D21;
+}
+
+/* line 89, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper .de-navbar-title {
+  color: #ffffff;
+}
+
+/* line 92, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper-alt .de-navbar-title {
+  color: #e54206;
+}
+
+/* line 95, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper .brand {
+  padding: 15px 0 10px 10px;
+}
+
+/* line 98, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper-alt .brand {
+  padding: 5px 0 5px 10px;
+}
+
+/* line 101, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper .brand a, .de-myacct-menu-wrapper-alt .brand a {
+  margin: 0 0 10px 15px;
+}
+
+/* line 104, ../sass/de-myaccount.scss */
+.de-myacct-menu-header-logout {
+  padding: 20px 10px 15px 0;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 110, ../sass/de-myaccount.scss */
+.de-myacct-menu-header-logout a {
+  color: #ffffff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* line 116, ../sass/de-myaccount.scss */
+.de-myacct-menu-wrapper-alt .de-myacct-menu-header-logout a {
+  color: #000000;
+}
+
+/*********************************************/
+/** Task page type Styles **/
+/*********************************************/
+/* line 124, ../sass/de-myaccount.scss */
+.de-task-buttons {
+  border-top: 2px solid #F05D21;
+  padding-top: 5px;
+  width: 100%;
+  text-align: right;
+}
+
+/* line 131, ../sass/de-myaccount.scss */
+.de-customer-title {
+  background-color: #0000A0;
+}
+
+/*********************************************/
+/** Footer Styles **/
+/*********************************************/
+/* line 140, ../sass/de-myaccount.scss */
+.de-myact-footer {
+  background-color: #CCC;
+}
+
+/* line 143, ../sass/de-myaccount.scss */
+.de-myact-footer h4 {
+  color: #000000;
+}
+
+/* line 146, ../sass/de-myaccount.scss */
+.de-social-links {
+  text-align: center;
+}
+
+/* line 149, ../sass/de-myaccount.scss */
+.de-social-links a {
+  font-size: 30px;
+  color: #000;
+  text-align: center;
+}
+
+/* line 154, ../sass/de-myaccount.scss */
+.de-social-youtube:hover {
+  color: #FF3333;
+}
+
+/* line 157, ../sass/de-myaccount.scss */
+.de-social-twitter:hover {
+  color: #33CCFF;
+}
+
+/* line 160, ../sass/de-myaccount.scss */
+.de-social-linkedin:hover {
+  color: #4875B4;
+}
+
+/* line 163, ../sass/de-myaccount.scss */
+.de-social-rss:hover {
+  color: #FF8000;
+}
+
+/* line 166, ../sass/de-myaccount.scss */
+.de-social-facebook:hover {
+  color: #3B5998;
+}
+
+/** unauthenticated styles **/
+/* line 172, ../sass/de-myaccount.scss */
+.de-wrapper-unauth {
+  background-color: #fff;
+  margin-top: auto;
+  padding-bottom: 10px;
+}
+
+/* line 177, ../sass/de-myaccount.scss */
+.de-wrapper-unauth .page-header {
+  background-color: #F05D21;
+  color: #fff;
+}
+
+/* line 181, ../sass/de-myaccount.scss */
+.de-wrapper-unauth .page-header img {
+  max-height: 100px;
+}
+
+/* line 184, ../sass/de-myaccount.scss */
+.de-wrapper-unauth form {
+  padding: 5px 10px 10px 5px;
+}
+
+/* Responsive positioning for landing page */
+@media (min-width: 640px) {
+  /* Medium tablet device size */
+  /* line 190, ../sass/de-myaccount.scss */
+  .de-wrapper-unauth {
+    background-color: #fff;
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-bottom: 20px;
+  }
+
+  /* line 197, ../sass/de-myaccount.scss */
+  .de-wrapper-unauth .page-header img {
+    max-height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  /* Large Desktop device size */
+  /* line 203, ../sass/de-myaccount.scss */
+  .de-wrapper-unauth {
+    background-color: #fff;
+    margin-top: 150px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-bottom: 50px;
+  }
+
+  /* line 210, ../sass/de-myaccount.scss */
+  .de-wrapper-unauth .page-header img {
+    max-height: 100%;
+  }
+}

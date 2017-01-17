@@ -1,0 +1,296 @@
+    <!doctype html>
+    <html>
+      <head>
+		<meta charset="utf-8">
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Reference to DEB Styleguide PATTERNS CSS -->
+<!--        <link href="http://torwed50:92/StyleGuide-Boilerplate/content/sass/main.css" rel="stylesheet">-->
+          <link rel="stylesheet" href="app/debMyactPaynow.css">
+
+          <title>My Account - Pay - Review</title>
+      </head>
+      <body ng-app="mainApp" ng-controller="custAcctCtrl">
+          
+        <nav class="navbar navbar-default de-nav-header-main" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#de-nav-header-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" title="Direct Energy Business website" target="_self"><img src="../img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+              <a class="navbar-brand" href="#">My Account</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="de-nav-header-main-collapse">
+              <ul class="nav navbar-nav de-nav-contact">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Need Help? <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" title="Send Message"><i class="fa fa-envelope fa-lg"></i> Send Message</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" title="Power Phone"><i class="fa fa-lightbulb-o fa-lg"></i> 1-888-925-9115</a></li>
+                    <li><a href="#" title="Gas Phone"><i class="fa fa-fire fa-lg"></i> 1-888-437-7265</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="nav navbar-nav navbar-right de-nav-user">
+                  <p class="navbar-text">John Doe <a href="#" class="navbar-link">Log out</a></p>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>          
+
+          <div class="container">
+          <h1>Pay Bills  <small>Review Payment</small></h1>
+              <div class="row">
+                <div class="col-sm-12">
+                    <div class="form-group">
+                        <label for="selCustomerList">Customer</label>
+                        <p class="form-control-static">Big Easy Carwash</p>
+                    </div>
+                  </div>
+              </div>
+              
+              <div class="row">
+              <div class="col-sm-12" ng-controller="introController as demo">
+                  <!-- Account List -->
+                  <h2 ng-show="{{hasPower}}">Power Accounts</h2><h2 ng-show="{{hasGas}}">Gas Accounts</h2>
+                  <div class="row" ng-show="{{hasPower}}">
+                    <div class="col-sm-12">
+                        <table ng-table="demo.tableParamsPower" id="tablePowerAccounts" class="table table-condensed table-bordered table-striped" ng-init="total = 0">
+                            <tbody>
+                            <tr ng-repeat="account in $data" ng-class="editPaymentAmounts ? '' : 'warning'; {selected: account.isChecked}">
+                                <td data-title="'Account #'" sortable="'name'">{{account.accountNumber}}</td>
+                                <td data-title="'Service Location'" sortable="'serviceLocation'">{{account.serviceLocation}}</td>
+                                <td data-title="'Total Due'" sortable="'totalDue'" class="text-right" ng-init="$parent.total = $parent.total + account.totalDue">{{account.totalDue | currency}}</td>
+                                <td data-title="'Payment Amount'" sortable="'totalDue'" class="text-right" ng-if="!amountToPay"><input type="number" class="form-control text-right" ng-init="$parent.total = $parent.total + account.totalDue" ng-model="account.totalDue"></td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="{{$columns.length -2}}">Total Amount Due</th>
+                                    <th class="text-right"> {{ total | currency}}</th>
+                                    <th ng-if="!amountToPay" ng-class="text-right">{{ total | currency}}</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                  </div> 
+                  <div class="row" ng-show="{{hasGas}}">
+                      <table ng-table="demo.tableParamsGas" id="tableNaturalGasAccounts" class="table table-condensed table-bordered table-striped" ng-init="total = 0">
+                        <tbody ng-repeat="group in $groups">
+                            <tr class="ng-table-group">
+                                <td colspan="{{$columns.length -1}}">
+<!--                                    <a href="#">{{ group.value }}</a>-->
+                                    <a href="" ng-click="group.$hideRows = !group.$hideRows">
+                                    <span class="glyphicon" ng-class="{ 'glyphicon-chevron-right': group.$hideRows, 'glyphicon-chevron-down': !group.$hideRows }"></span>
+                                    <strong>{{ group.value }}</strong>
+                                    </a>
+                                </td>
+                                <td class="text-right"><strong>Account Total</strong></td>
+                            </tr>
+                            <tr ng-repeat="account in $data" ng-class="editPaymentAmounts ? '' : 'warning'; {selected: account.isChecked}">
+                                <td><input type="checkbox" ng-model="account.isChecked" ng-change="selectEntity()"></td>
+                                <td data-title="'Account #'" sortable="'accountNumber'">{{account.accountNumber}}</td>
+                                <td data-title="'Service Location'" sortable="'serviceLocation'">{{account.serviceLocation}}</td>
+                                <td data-title="'Invoice #'" sortable="'invoiceNumber'"><a href="#" target="_blank"><i class="fa fa-file-pdf-o"></i> {{account.invoiceNumber}}                                   <td data-title="'Due Date'" sortable="'dueDate'">{{account.dueDate}}</td>
+                                <td data-title="'Amount Due'" sortable="'totalDue'" class="text-right" ng-init="$parent.total = $parent.total + account.totalDue">{{account.totalDue | currency}}</td>
+                                <td data-title="'Payment Amount'" sortable="'totalDue'" class="text-right" ng-if="!amountToPay"><input type="number" class="form-control text-right" ng-init="$parent.total = $parent.total + account.totalDue" ng-model="account.totalDue"></td>
+
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="{{$columns.length -2}}">Total Amount Due</th>
+                                    <th class="text-right"> {{ total | currency}}</th>
+                                    <th ng-if="!amountToPay" ng-class="text-right">{{ total | currency}}</th>
+                                </tr>
+                            </tfoot>
+                      </table> 
+                  </div>
+
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 text-right top10">
+                    <a href="#" class="btn btn-default pull-right" ng-click="toggleAmountToPay()" ng-class="editPaymentAmounts ? 'btn-default' : 'btn-warning'">Edit Payment Amount</a>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                    <h3>Total to be paid: $125.00</h3>
+                  </div>
+              </div>
+              
+              <div class="row">
+                <div class="col-sm-3">
+                    <label>Due Date</label>
+                </div>
+                <div class="col-sm-9">
+                    <p class="form-control-static">12-31-2015</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                    <label>Payment Date</label>
+                        </div>
+                </div>
+                <div class="col-sm-9">
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="input-group date datepicker" id="datePickerId">
+                                    <input type="text" id="paymentDateId" name="paymentDateId" class="form-control" value="12/31/2015">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-calendar"></i></button>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="text-danger">Payment Date is required</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+                  <div class="form-group">
+                      <div class="col-sm-8">
+                        <label for="selBankAccountList">Pay from</label>
+                        <select class="form-control" id="selBankAccountList">
+                            <option>Bank of America&nbsp;&nbsp;Account number: #########5432</option>
+                            <option>Bank of America&nbsp;&nbsp;Account number: #########5581</option>
+                            <option>Bank of America&nbsp;&nbsp;Account number: #########7891</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-4">
+                          <label>&nbsp;</label><br>
+                          <a class="btn btn-default" ng-click="isAddBank = !isAddBank">New Account</a>
+                      </div>
+                  </div>
+                  <div class="row">
+                    
+                  </div>
+                </div>
+              </div>
+
+                <form role="form" name="paymentDetailsForm" ng-show="isAddBank">
+                    <div class="row">
+                        <br>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="bankRouting">Bank Routing #</label>
+                                <input type="text" class="form-control" name="bankRouting" id="bankRouting" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="bankAccount">Bank Account #</label>
+                                <input type="text" class="form-control" name="bankAccount" id="bankAccount" required />
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="../img/deb-img-myact-check.jpg" class="top10 img-responsive de-unauth-img-lg center-block" />
+                        </div>
+                    </div>
+                </form>                  
+              
+            <div class="row">
+              <div class="col-sm-12 de-terms-conditions">
+                  <h4>Terms and conditions</h4>
+                  <p> By clicking "Authorize", I authorize Direct Energy Business to initiate an Automated Clearing House (ACH) debit transaction from the checking or savings account that I specify. The amount of the payment will be the total account balances due as of the due date.<br>
+I agree to be bound by any rules that my financial institution requires for ACH debit transactions, and to pay any fees charged by my financial institution in connection therewith. <br>
+I understand and agree that Direct Energy Business shall bear no liability or responsibility for any losses of any kind that I may incur as a result of an erroneous statement, any delay in the actual date on which my account is debited, or my failure to provide accurate and/or valid payment information. <br>
+I understand and agree that Direct Energy Business reserves the right to change these terms and conditions at any time. Notice of any such change may be given on or with my bill or by other methods. For more information call 1-888-925-9115.</p>
+                </div>
+            </div>
+          </div> <!-- / container -->
+          
+          <div class="container"><!-- Button navigation -->
+            <div class="row top10">
+              <div class="col-sm-12">
+                <a href="deb-myact-paynow.html" class="btn btn-link">Cancel</a>
+                <a href="deb-myact-paynow-select-Accounts.html" class="btn btn-default"><i class="fa fa-chevron-left"></i>&nbsp;Back</a>
+                <a href="deb-myact-paynow-confirmation-payment.html" class="btn btn-success btn-lg">I Authorize Payment of $125.00</a>
+                </div>
+              </div>
+          </div><!-- End Button navigation -->
+
+    <footer>
+        <div id="footerSection" class="container-fluid de-myact-footer top10">
+            <div class="row">
+                <div class="col-md-10 col-sm-9">
+                    <div class="row" id="footerLinkSection" style="">
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="btn-group-justified btn-group-sm">
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support/product-and-invoice-sheets">About Your Product &amp; Invoice</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support/forms">Need a form?</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/preferences">Go Paperless</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <div class="btn-group-justified btn-group-sm">
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/preferences">Preferences</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support">FAQs</a>
+                                <a class="btn btn-link" href="https://myaccount.directenergy.com/portal#!/support">Outages &amp; Emergencies</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 de-copyright">
+                        <p>© 2015 Direct Energy. All Rights Reserved. Direct Energy and the Lightning Bolt design are registered trademarks of Direct Energy. (DC PSC License No. EA-04-4-4; EA-13-12; GA-13-03-1; NJ BUP License Nos. ESL-0165, GSL-0145; MD PSC License Nos. IR-719; IR-791; IR-3123; IR-3108; PUCT Cert. No. 10011; Direct Energy Business, LLC (formerly known as Strategic Energy) CT PURA License Nos. 00-05-14; 00-05-14RE01; MA DPU License Nos. CS-021; GS-052; CS-108; GS-051). Direct Energy and the Lightning Bolt design are registered trademarks of Direct Energy. Products and services vary depending on region or market.</p>
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-3" id="footerSocialLinkSection" style="">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-12 col-lg-6">
+                            <a href="http://www.business.directenergy.com/" title="Direct Energy Business website" target="_blank"><img src="../img/deb-logo-black.png" class="img-responsive" alt=""></a>
+                            <a id="footerContactUs" title="" target="_blank" style=""></a>
+                            <a id="footerSMBContactUs" href="https://www.business.directenergy.com/contact-us" title="Contact Us" target="_blank" style="display: none">Contact Us</a>
+                        </div>
+                        <div class="col-xs-6 col-sm-12 col-lg-6 de-social-links">
+                            <a href="http://www.business.directenergy.com/Blog.aspx" title="Direct Energy Business blog" target="_blank" class="de-social-rss"><i class="fa fa-rss-square"></i></a>
+                            <a href="https://www.youtube.com/playlist?list=PLtSfADpSQMvJzG80cMFMy6iRQWvYmxT3w" title="" target="_blank" class="de-social-youtube"><i class="fa fa-youtube"></i></a>
+                            <a href="https://www.linkedin.com/company/direct-energy-business" title="Direct Energy Business LinkedIn page" target="_blank" class="de-social-linkedin"><i class="fa fa-linkedin-square"></i></a>
+                            <p>Follow us</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+          
+          
+          
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>      
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    <!-- ngTable references -->
+    <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
+    <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
+          
+    <!-- primary pay now module -->
+<!--    <script src="app/mainApp.js"></script>-->
+
+    <script src="app/debMyactPaynowModule.js"></script>
+    <script type="text/javascript">
+        console.log("angular object",angular);
+    </script>
+        
+    </body>
+</html>

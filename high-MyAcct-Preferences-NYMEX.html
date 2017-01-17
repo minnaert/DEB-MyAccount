@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Preferences</title>
+
+    <!-- Table saw references -->
+    <link rel="stylesheet" href="js/libs/tablesaw/stackonly/tablesaw.stackonly.css">
+
+    <link data-require="ng-table@*" data-semver="0.3.0" rel="stylesheet" href="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.css" />
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+ 
+<style type="text/css">
+</style>
+</head>
+
+  <body class="body-de-myacct-main">
+
+	<nav class="navbar navbar-default de-myacct-menu-wrapper">
+        <div class="container-fluid">
+            <div class="col-md-2">
+	          <a class="navbar-brand" href="high-Nav-DEB-External-Simple.html" title="Direct Energy Business website" target="_self"><img src="img/deb-logo-white.png" alt="logo" class="img-responsive"></a>
+            </div>
+            <div class="col-md-10">
+              <ul class="nav navbar-nav">
+                <p class="navbar-text de-navbar-title">My Account</p>
+              </ul>
+            </div>
+        </div>
+    </nav>    
+	<div class="container"><!-- body content -->
+		<div class="row">
+			<div class="col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">My Account</a></li>
+                    <li class="active">Preferences</li>
+                </ul>
+            </div>
+        </div>
+
+<div class="row">
+<div class="col-sm-3 col-lg-2">
+    <ul class="nav nav-pills nav-stacked">
+        <li title="Invoice Preferences" role="presentation"><a href="#">Invoice Preferences</a></li >
+        <li title="Change Password" role="presentation"><a href="#">Change Password</a></li >
+        <li title="Market Updates" role="presentation"><a href="#">Market Updates</a></li >
+        <li title="NYMEX Alerts" role="presentation" class="active"><a href="#">NYMEX Alerts</a></li >
+        <li title="Billing Addresses" role="presentation"><a href="#">Billing Address</a></li >
+        <li title="Billing Addresses" role="presentation"><a href="#">Customers</a></li >
+        <li title="Historical Accounts" role="presentation"><a href="#">Historical Accounts</a></li >
+    </ul>
+    <a class="btn btn-default top20" path-href="/"><i class="fa fa-home"></i>&nbsp;&nbsp;Return to My Account</a>
+</div>    
+    <div class="col-sm-9 col-lg-10">
+        <div class="tab-pane" id="nymexAlerts">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h4>Active NYMEX Alerts</h4></div>
+                <div class="panel-body">
+                    <div class="btn-toolbar text-right">
+                        <a class="btn btn-link" path-href="/preferences/nymex-alerts/new-nymex-alert"><i class="fa fa-plus-circle fa-lg"></i> New Alert</a>
+                    </div>
+                    <div class="nymex-table">
+                        <table id="nymex-table" class="table table-bordered table-striped tablesaw tablesaw-stack" data-tablesaw-mode="stack">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Name</th>
+                                    <th>Commodity</th>
+                                    <th>Type</th>
+                                    <th>Delivery Month</th>
+                                    <th>Most Recent NYMEX Price <a href="#"><i class="fa fa-question-circle"></i></a></th>
+                                    <th>Price Alert Created <a href="#"><i class="fa fa-question-circle"></i></a></th>
+                                    <th>Total Volume</th>
+                                    <th>High</th>
+                                    <th>Low</th>
+                                    <th>Last Modified</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+<!--,
+,
+-->                                <tr>
+                                    <td>
+                                        <a title="Edit Alert" href="#"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a  href="#" title="Delete Alert"><i class="fa fa-trash-o fa-lg"></i></a>
+                                    </td>
+                                    <td>Gas Winter Average</td>
+                                    <td>Natural Gas</td>
+                                    <td>Weighted Average</td>
+                                    <td>09/2015 - 12/2015</td>
+                                    <td>$4.44 MMBtu</td>
+                                    <td>$4.95 MMBtu</td>
+                                    <td>12,000</td>
+                                    <td>5.00</td>
+                                    <td>4.50</td>
+                                    <td>12-13-2014</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a title="Edit Alert" href="#"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a  href="#" title="Delete Alert"><i class="fa fa-trash-o fa-lg"></i></a>
+                                    </td>
+                                    <td>Gas Summer Average</td>
+                                    <td>Natural Gas</td>
+                                    <td>Weighted Average</td>
+                                    <td>06/2015 - 09/2015</td>
+                                    <td>$4.44 MMBtu</td>
+                                    <td>$4.95 MMBtu</td>
+                                    <td>13,000</td>
+                                    <td>5.25</td>
+                                    <td>4.75</td>
+                                    <td>12-13-2014</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a title="Edit Alert" href="#"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a  href="#" title="Delete Alert"><i class="fa fa-trash-o fa-lg"></i></a>
+                                    </td>
+                                    <td>Zone A alert</td>
+                                    <td>NYISO Zone A - Off Peak</td>
+                                    <td>Monthly</td>
+                                    <td>2/2015</td>
+                                    <td>$34.02 / Mwh</td>
+                                    <td>$35.19 / Mwh</td>
+                                    <td>N/A</td>
+                                    <td>36.00</td>
+                                    <td>32.50</td>
+                                    <td>12-13-2014</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <a title="Edit Alert" href="#"><i class="fa fa-pencil fa-lg"></i></a>
+                                        <a  href="#" title="Delete Alert"><i class="fa fa-trash-o fa-lg"></i></a>
+                                    </td>
+                                    <td>Gas Strip winter alert</td>
+                                    <td>Natural Gas</td>
+                                    <td>Strip</td>
+                                    <td>09/2015 - 12/2015</td>
+                                    <td>$4.44 MMBtu</td>
+                                    <td>$4.95 MMBtu</td>
+                                    <td>N/A</td>
+                                    <td>5.00</td>
+                                    <td>4.50</td>
+                                    <td>12-13-2014</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="de-panel-notice">
+                        <i class="fa fa-info-circle"></i> When the NYMEX price goes above or below the limits you set, you will receive an email and a message in the Message Center.
+                    </div>
+
+                    <div class="panel panel-default" ng-if="(alerts|compareDate: '<':currentDate:'Delivery').length>0">
+                        <div class="panel-heading" ng-expand-collapse>
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-target="#de-expired-alerts" href="javascript:void(0)">Expired Alerts</a>
+                                <a class="pull-right" data-toggle="collapse" data-target="#de-expired-alerts"><i class="fa fa-plus-circle"></i></a>
+                            </h4>
+                        </div>
+                        <div id="de-expired-alerts" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <table class="table table-bordered table-condensed table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Name</th>
+                                            <th>Commodity</th>
+                                            <th>Delivery Month</th>
+                                            <th>Price Alert Created</th>
+                                            <th>High</th>
+                                            <th>Low</th>
+                                            <th>Last Modified</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="alert in alerts|compareDate: '<':currentDate:'Delivery'">
+                                            <td>
+                                                <a href="javascript:void(0)" title="Delete Alert" ng-click="deleteAlert(alert)"><i class="fa fa-trash-o fa-lg"></i></a>
+                                            </td>
+                                            <td>{{alert.Name}}</td>
+                                            <td>{{alert.IndexName}}</td>
+                                            <td>{{alert.DeliveryMonth}}/{{alert.DeliveryYear}}</td>
+                                            <td>${{alert.SubmittedValue}} / {{alert.Unit}}</td>
+                                            <td>{{alert.HighValue}}</td>
+                                            <td>{{alert.LowValue}}</td>
+                                            <td>{{alert.ModifiedDate | date:'MM-dd-yyyy'}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-warning">
+                <p>Setting an alert does not generate an order. Prices displayed are provided for informational purposes only and DO NOT represent your current price. NYMEX Natural Gas data is sourced directly from eSignal and is delayed up to 30 minutes. The Power pricing shown represents the prior trading day's closing price. For the most up-to-date pricing information on any Direct Energy Business provided commodity, please contact a Direct Energy Business sales representative.</p>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+	</div><!-- End Container fluid-->
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+
+  </body>
+</html>

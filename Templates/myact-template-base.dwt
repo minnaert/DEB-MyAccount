@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>My Account Template Base</title>
+<!-- TemplateEndEditable -->
+
+<!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+<link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+
+<!-- Bootstrap core CSS -->
+<!--<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">-->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+<!-- TemplateBeginEditable name="base-head" -->
+<!-- TemplateEndEditable -->
+</head>
+<body>
+<!-- TemplateBeginEditable name="base-body" -->
+ 	<div class="container-fluid">
+	</div><!-- /.container-fluid -->
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="base-page-bottom" -->
+<!-- TemplateEndEditable -->
+<!-- Bootstrap core JavaScript
+        ================================================== --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<!-- jQuery CDN --> 
+<script src="http://code.jquery.com/jquery.js"></script> 
+<!-- Latest compiled and minified JavaScript --> 
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+<!-- TemplateBeginEditable name="script" -->
+<!-- TemplateEndEditable -->
+
+</body>
+</html>

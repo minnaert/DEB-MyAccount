@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - main secondary template</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap validator -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+    </style>
+</head>
+    <body class="body-unauth">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="@Url.Action("Index")" title="Direct Energy Business website" target="_self"><img src="img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+                </div>
+            </div>
+        </nav>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <h1>Which Accounts Do You Want to See?</h1>
+            </div>
+        </div>
+
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Small Business Accounts <i class="fa fa-lg fa-arrow-circle-right"></i></button>
+                            <h4>Customers</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item"><strong>ABC Car Wash</strong>
+                                  <div class="row">
+                                    <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 1</div>
+                                    <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 1</div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item" ng-repeat="customer in $data "><strong>{{customer.name}}</strong>
+                                  <div class="row">
+                                    <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: {{customer.poweraccounts.data.length}}</div>
+                                    <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: {{customer.gasaccounts.data.length}}</div>
+                                  </div>
+                              </li>
+                            </ul>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item">
+                            <button type="button" class="btn btn-primary btn-lg btn-block">Commercial Accounts <i class="fa fa-lg fa-arrow-circle-right"></i></button>
+                            <h4>Customers</h4>
+                            <ul class="list-group">
+                              <li class="list-group-item"><strong>Big Easy Car Wash</strong>
+                                  <div class="row">
+                                    <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 10</div>
+                                    <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 0</div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item"><strong>Medium Easy Car Wash</strong>
+                                  <div class="row">
+                                    <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 6</div>
+                                    <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 12</div>
+                                  </div>
+                              </li>
+                              <li class="list-group-item"><strong>Small Easy Car Wash</strong>
+                                  <div class="row">
+                                    <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 14</div>
+                                    <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 14</div>
+                                  </div>
+                              </li>
+                            </ul>
+                        </a>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- End Container fluid-->
+    <footer class="de-myact-footer">
+        <div class="container-fluid">
+            <!-- footer container -->
+            <div class="row">
+                <div class="de-copyright col-xs-12">&copy;2014 Direct Energy Marketing Limited, a subsidiary of <a href="#">Centrica</a> plc. Direct Energy and the Lightning Bolt design are either registered trademarks or trademarks of Direct Energy Marketing Limited in the United States and/or Canada. Use of such trademarks has been licensed by Direct Energy Marketing Limited to its various subsidiaries and affiliates. Direct Energy Business, LLC (DC PSC License No. EA-04-4-4; MD PSC License Nos. IR-437; IR-719; IR-791; PUCT Cert. No. 10011). Products and services vary depending on region or market.
+                </div>
+            </div>
+        </div>
+    </footer> 
+
+
+        
+<!--    *********************** test    -->
+
+    <div class="row top20">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+            <div class="alert alert-danger">
+                <strong><i class="fa fa-exclamation-triangle fa-2x"></i>&nbsp;&nbsp;This user name only has access to inactive accounts</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row top20">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 text-center well">
+            <p><strong>It appears as if your accounts have expired or are inactive.</strong></p>
+            <p><strong>You cannot access My Account at this time.</strong></p>
+        </div>
+    </div>
+    <div class="row top20">
+        <div class="col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-2">
+            <p>Need help? Give us a call</p>
+            <a class="btn btn-primary" path-href="/SendAMessage">Contact Us</a> or Call <strong>1-866-348-4193{{smb phone number}}</strong>
+        </div>
+        <div class="col-sm-4 col-md-2 text-right">
+            <a class="btn btn-lg btn-link" path-href="/">Back to Log In</a>
+        </div>
+    </div>        
+<!--    *********************** test    -->
+        
+        
+        
+        
+    <!-- Bootstrap core JavaScript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery CDN -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>

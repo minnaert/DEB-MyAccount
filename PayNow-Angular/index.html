@@ -1,0 +1,156 @@
+    <!doctype html>
+    <html>
+      <head>
+		<meta charset="utf-8">
+        <!-- Bootstrap -->
+        <!-- Latest compiled and minified CSS -->
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+        <!-- Reference to DEB Styleguide PATTERNS CSS -->
+        <link href="http://torwed50:92/StyleGuide-Boilerplate/content/sass/main.css" rel="stylesheet">
+          
+		<title>My Account - Pay - Power &amp; Gas</title>
+      </head>
+      <body ng-app="mainApp">
+          
+        <nav class="navbar navbar-default de-nav-header-main" role="navigation">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#de-nav-header-main-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#" title="Direct Energy Business website" target="_self"><img src="../img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+              <a class="navbar-brand" href="#">My Account</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="de-nav-header-main-collapse">
+              <ul class="nav navbar-nav de-nav-contact">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Need Help? <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" title="Send Message"><i class="fa fa-envelope fa-lg"></i> Send Message</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" title="Power Phone"><i class="fa fa-lightbulb-o fa-lg"></i> 1-888-925-9115</a></li>
+                    <li><a href="#" title="Gas Phone"><i class="fa fa-fire fa-lg"></i> 1-888-437-7265</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="nav navbar-nav navbar-right de-nav-user">
+                  <p class="navbar-text">John Doe <a href="#" class="navbar-link">Log out</a></p>
+              </div>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>          
+
+
+          <div class="container">
+              <div class="row" ng-controller="introController as demo">
+              <h2>table selection test</h2>
+                  <table class="table table-condensed table-bordered table-striped" ng-table="demo.tableParamsPower" id="tablePowerAccounts" >
+                    <tbody>
+                    <tr ng-repeat="account in $data" ng-init="selectedRow = null" ng-class="{'selected':$parent.selectedRow == $index}">                  
+                       <td data-title="'Account #'" sortable="'name'" >{{account.accountNumber}}</td>
+                       <td data-title="'Service Location'" sortable="'serviceLocation'">{{account.serviceLocation}}</td>
+                        <td><a ng-click="$parent.$parent.selectedRow=$index">foo foo</a></td>
+                        </tr>
+                      </tbody>
+              </table>
+                  <p>{{account}}</p>
+                  <p>{{selectedRow}}</p>
+              </div>
+              
+          <h1>Pay Bills Index</h1>
+              <div class="row" ng-controller="custAcctCtrl">
+                <div class="col-sm-12">
+                  <ul>
+                    <li><a href="">Single customer - single power</a></li>
+                    <li><a href="">Single customer - single natural gas</a></li>
+                    <li><a href="">Single customer - single both commodities</a></li>
+                    <li><a href="">Single customer - multiple power</a></li>
+                    <li><a href="">Single customer - multiple natural gas</a></li>
+                    <li><a href="">Single customer - multiple both commodities</a></li>
+                      <hr>
+                    <li><a href="">Multiple customers - power only</a></li>
+                    <li><a href="">Multiple customers - natural gas only</a></li>
+                    <li><a href="">Multiple customers - both commodities</a></li>
+                      <hr>
+                    <li><a href="">Edit Automatic / Scheduled payments</a></li>
+                    <li><a href="">New Automatic / Scheduled payments</a></li>
+                    </ul>
+                  <a href="#" ng-click="setmultipleCommodity(false)">Commodity = no</a><br>
+                  <a href="deb-myact-paynow.html" ng-click="setmultipleCustomers(false)">Customers = no</a><br>
+                  <a href="#" ng-click="setmultipleAccounts(false)">Accounts = no</a><br>
+                    <p>commodity = {{multipleCommodity}}</p>
+                    <p>power = {{hasPower}}</p>
+                    <p>gas = {{hasGas}}</p>
+                    <p>customers = {{multipleCustomers}}</p>
+                    <p>accounts = {{multipleAccounts}}</p>
+                  </div>
+
+                  
+                  
+                  
+<!--
+$scope.hasPower = false;
+$scope.hasGas = false;
+$scope.multipleCommodity = false;
+$scope.multipleCustomers = false;
+$scope.multipleAccounts = false                  
+-->
+                  
+                  <div class="col-sm-12">
+                    <div class="dropdown">
+                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Dropdown
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="" ng-click="setmultipleCustomers(false); setmultipleCommodity(false); sethasPower(true); sethasGas(false); setmultipleAccounts(false)">Single customer - single power</a></li>
+                            <li><a href="" ng-click="setmultipleCustomers(false); setmultipleCommodity(false); sethasPower(false); sethasGas(true); setmultipleAccounts(false)">Single customer - single natural gas</a></li>
+                            <li><a href="" ng-click="setmultipleCustomers(false); setmultipleCommodity(true); sethasPower(true); sethasGas(true); setmultipleAccounts(true)">Single customer - single both commodities</a></li>
+                            <li><a href="" ng-click="setmultipleCustomers(false); setmultipleCommodity(false); sethasPower(true); sethasGas(false); setmultipleAccounts(true)">Single customer - multiple power</a></li>
+                            <li><a href="" ng-click="setmultipleCustomers(false); setmultipleCommodity(false); sethasPower(false); sethasGas(true); setmultipleAccounts(true)">Single customer - multiple natural gas</a></li>
+                            <li><a href="" ng-click="setmultipleCustomers(false); setmultipleCommodity(true); sethasPower(true); sethasGas(true); setmultipleAccounts(true)">Single customer - multiple both commodities</a></li>
+                          <li role="separator" class="divider"></li>
+                            <li><a href="" ng-click="setmultipleCustomers(true); setmultipleCommodity(false); sethasPower(true); sethasGas(false); setmultipleAccounts(true)">Multiple customers - power only</a></li>
+                            <li><a href="" ng-click="setmultipleCustomers(true); setmultipleCommodity(false); sethasPower(false); sethasGas(true); setmultipleAccounts(true)">Multiple customers - natural gas only</a></li>
+                            <li><a href="" ng-click="setmultipleCustomers(true); setmultipleCommodity(true); sethasPower(true); sethasGas(true); setmultipleAccounts(true)">Multiple customers - both commodities</a></li>
+                          <li role="separator" class="divider"></li>
+                            <li><a href="">Edit Automatic / Scheduled payments</a></li>
+                            <li><a href="">New Automatic / Scheduled payments</a></li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              
+            
+          </div> <!-- / container -->
+
+
+    
+          
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>      
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- ngTable references -->
+    <link rel="stylesheet" href="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.css">
+    <script src="https://rawgit.com/esvit/ng-table/master/dist/ng-table.min.js"></script>
+    <!-- primary pay now module -->
+<!--    <script src="app/mainApp.js"></script>-->
+
+    <script src="app/debMyactPaynowModule.js"></script>
+    <script type="text/javascript">
+        console.log("angular object",angular);
+    </script>
+        
+        </body>
+</html>

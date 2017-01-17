@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - main secondary template</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap validator -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css" />
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <style type="text/css">
+    </style>
+</head>
+
+    <body class="body-unauth">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="@Url.Action("Index")" title="Direct Energy Business website" target="_self"><img src="img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+
+        <div id="registerContainer">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1>Register For My Account</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+
+                    <div ng-controller="RegisterController">
+                        <div class="alert alert-danger hidden" id="de-form-submission-message"><i class="fa fa-exclamation-circle"></i>&nbsp;{{errormsg}}</div>
+                        <form role="form" name="registerForm" id="registerForm">
+                            <p>View and manage your Direct Energy Business accounts any time of the day.</p>
+                            <p>To access My Account, complete the information below using your account number and zip code from your Direct Energy Business invoice</p>
+                            <h4 class="top20">Your Information</h4>
+
+                            <div class="form-group">
+                                <label class="control-label" for="inputFirstname">First name</label>
+                                <input type="text" class="form-control" name="inputFirstname" id="inputFirstname">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="inputLastname">Last name</label>
+                                <input type="text" class="form-control" name="inputLastname" id="inputLastname">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="inputUsername">Email address / User name</label>
+                                <input type="text" class="form-control" name="inputUsername" id="inputUsername">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="inputPassword">Password</label>
+                                <input type="password" class="form-control" name="inputPassword" id="inputPassword">
+                                <div id="pwd_strength_wrap_well" class="well">
+                                    <div id="passwordDescription"></div>
+                                    <div id="passwordStrength" class="strength{{strength}}"></div>
+                                    <div id="pswd_info">
+                                        <strong>Minimum Password Requirements:</strong>
+                                        <ul class="list-unstyled">
+                                            <li ng-class="length?'valid':'invalid'">At least 6 characters</li>
+                                            <li ng-class="capital?'valid':'invalid'">At least one uppercase letter</li>
+                                            <li ng-class="special?'valid':'invalid'">At least one special character or one number</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="inputConfirmPassword">Confirm Password</label>
+                                <input type="password" class="form-control" name="inputConfirmPassword" id="inputConfirmPassword">
+                            </div>
+
+                            <div class="row spacer10"></div>
+
+                            <h4>Account Information</h4>
+                            <p>If you have multiple accounts, you can register using any account number. You will have access to all accounts after you complete registration</p>
+                            <div class="alert alert-success" ng-show="customerExists==1"><i class="fa fa-check-circle" ng-show="customerExists==1"></i></div>
+                            <div class="alert alert-danger" ng-show="customerExists==-1"><i class="fa fa-exclamation-circle" ng-show="customerExists==-1"></i></div>
+                            <div class="form-group">
+                                <label class="control-label" for="inputAccountnumber">Account number</label>
+                                <input type="text" class="form-control" name="inputAccountnumber" id="inputAccountnumber">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label" for="inputZipcode">Zip code</label>
+                                <input type="text" class="form-control" name="inputZipcode" id="inputZipcode">
+                            </div>                            
+
+                            <h4 class="top20">Terms and Conditions</h4>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label for="chkReadtac" class="control-label">
+                                        <input type="checkbox" id="chkReadtac" name="chkReadtac" required />I have read and agree with the <a>terms and conditions</a>
+                                    </label>
+                                    <p class="help-block">You must agree to the terms</p>
+                                </div>
+                            </div>
+
+                            <div class="btn-toolbar text-right">
+                                <a href="#" class="btn btn-link">Cancel</a>
+                                <button type="submit" class="btn btn-primary btn-lg" id="RegisterButton" value="Register">Register Now</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <p><span class="lead">Already registered?&nbsp;&nbsp;<a href="#">Log In</a></span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="well de-well top20">
+                                <p>Once you receive an invoice, you can register</p>
+                                <ul>
+                                    <li>
+                                        Haven't received your first invoice?
+                                    </li>
+                                    <li>
+                                        Having trouble registering?
+                                    </li>
+                                </ul>
+                                <div class="row top10">
+                                    <div class="col-md-6 text-center">
+                                        <p><i class="fa fa-lightbulb-o fa-2x"></i>&nbsp;Power&nbsp;&nbsp;&nbsp;1-888-925-9115</p>
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                        <p><i class="fa fa-fire fa-2x"></i>&nbsp;Natural Gas&nbsp;&nbsp;&nbsp;1-800-437-7265</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hidden-xs center-block">
+                        <img src="img/Cluster_General.jpg" class="img-responsive de-unauth-img-lg center-block">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- End Container fluid-->
+    <footer class="de-myact-footer">
+        <div class="container-fluid">
+            <!-- footer container -->
+            <div class="row">
+                <div class="de-copyright col-xs-12">&copy;2014 Direct Energy Marketing Limited, a subsidiary of <a href="#">Centrica</a> plc. Direct Energy and the Lightning Bolt design are either registered trademarks or trademarks of Direct Energy Marketing Limited in the United States and/or Canada. Use of such trademarks has been licensed by Direct Energy Marketing Limited to its various subsidiaries and affiliates. Direct Energy Business, LLC (DC PSC License No. EA-04-4-4; MD PSC License Nos. IR-437; IR-719; IR-791; PUCT Cert. No. 10011). Products and services vary depending on region or market.
+                </div>
+            </div>
+        </div>
+    </footer> 
+
+    <!-- Bootstrap core JavaScript
+            ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- jQuery CDN -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- jquery password strength -->
+    <script src="js/libs/jquery.pwstrength.bootstrap/dist/pwstrength-bootstrap-1.2.0.js"></script>
+
+    <!-- Bootstrap validator -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
+
+    <script type="text/javascript">
+        // Form validation functions
+
+        $(document).ready(function () {
+
+            /* custom validator function. Used for acccount number validation */
+            $.fn.bootstrapValidator.validators.password = {
+                validate: function(validator, $field, options) {
+                    var value = $field.val();
+                    if (value === '') {
+                        return true;
+                    }
+
+                    if (value.length < 8) {
+                        return false;
+                    }
+                    if (value === value.toLowerCase()) {
+                        return false;
+                    }
+                    if (value === value.toUpperCase()) {
+                        return false;
+                    }
+                    if (value.search(/[0-9]/) < 0) {
+                        return false;
+                    }
+
+                    return true;
+                }
+            };            
+            
+            
+            
+            $('#registerForm').bootstrapValidator({
+                // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+				feedbackIcons: {
+                    valid: 'fa fa-check fa-lg',
+                    invalid: 'fa fa-times',
+                    validating: 'fa fa-refresh'                    
+/*		            required: 'glyphicon glyphicon-asterisk',
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'
+*/				},
+
+                
+                fields: {
+                    inputFirstname: {
+                        message: 'First name is not valid',
+                        validators: {
+                            notEmpty: {
+                                message: 'First name is required'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9]+$/,
+                                message: 'First name can only consist of alphabetical and number'
+                            }
+                        }
+                    },
+                    inputLastname: {
+                        message: 'Last name is not valid',
+                        validators: {
+                            notEmpty: {
+                                message: 'Last name is required'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9]+$/,
+                                message: 'Last name can only consist of alphabetical and number'
+                            }
+                        }
+                    },
+                    inputUsername: {
+                        message: 'User name is not valid',
+                        validators: {
+                            notEmpty: {
+                                message: 'User name is required'
+                            },
+                            emailAddress: {
+                                message: 'User name is not a valid email address'
+                            },
+                            different: {
+                                field: 'inputPassword',
+                                message: 'User name and Password cannot be the same'
+                            }
+                        }
+                    },
+                    inputPassword: {
+                        message: 'Password is not valid',
+                        validators: {
+                            notEmpty: {
+                                message: 'Password is required'
+                            },
+                            different: {
+                                field: 'inputUsername',
+                                message: 'Password cannot be the same as user name'
+                            },
+                            stringLength: {
+                                min: 8,
+                                message: 'Password must have at least 8 characters'
+                            },
+                            identical: {
+                                field: 'inputConfirmPassword',
+                                message: 'Password and confirm password are not the same'
+                            }
+                        }
+                    },
+                    inputConfirmPassword: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Confirm password is required'
+                            },
+                            different: {
+                                field: 'inputUsername',
+                                message: 'Password cannot be the same as user name'
+                            },
+                            stringLength: {
+                                min: 8,
+                                message: 'Password must have at least 8 characters'
+                            },
+                            identical: {
+                                field: 'inputPassword',
+                                message: 'Password and confirm password are not the same'
+                            }
+                        }
+                    },
+                    inputAccountnumber: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Account number is required'
+                            },
+                            stringLength: {
+                                min: 8,
+                                message: 'Account number must have at least 8 characters'
+                            }
+                        }
+                    },
+                    inputZipcode: {
+                        validators: {
+                            notEmpty: {
+                                message: 'Zip code is required'
+                            },
+                            zipCode: {
+                                country: 'US',
+                                message: 'The value is not valid US zip code'
+                            }
+                        }
+                    },
+                    chkReadtac: {
+                        validators: {
+                            notEmpty: {
+                                message: 'You must accept the Terms and conditions.'
+                            }
+                        }
+                    }
+
+                }
+            });
+        });
+
+
+
+
+         // displaying form submission error messages
+        $('#RegisterButton').click(function () {
+            if ($('#inputPassword').val() == 'error') {
+                $('#de-form-submission-message').removeClass('hidden')
+                return false;
+            };
+        });
+
+         // password strength meter
+        $(document).ready(function () {
+
+            $('#inputPassword').pwstrength({
+                bootstrap3: true,
+                ui: {
+                    showVerdictsInsideProgressBar: true,
+                    container: "#de-pwd-strength",
+                    viewports: {
+                        progress: ".pwstrength_viewport_progress"
+                    }
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>

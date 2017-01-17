@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>My Account Preferences: Subscriptions</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+<!--    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">-->
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+<!--    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">-->
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<style type="text/css">
+
+/* Add your custom CSS below */
+
+/*
+body div.mktoModal div.mktoModalContent {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);    
+}
+        
+body div.mktoModal div.mktoModalClose {
+    top: 2px;
+    right: 4px;
+    background: #fff;
+    border: none;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    color: #000;
+    height: 14px;
+    width: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-shadow: 0px 1px 0px #FFF;
+    opacity: 0.2;
+    text-align: center;
+}
+*/
+
+      </style>
+
+      <!-- Marketo Forms script -->
+      <script src="//app-sjg.marketo.com/js/forms2/js/forms2.min.js"></script>
+
+</head>
+
+  <body>
+
+      
+    <div class="container-fluid"><!-- body content -->
+     <div class="page-header">
+      <h2>My Account Preferences</h2>
+     </div>
+	</div><!-- End Container-->
+<br/>
+    <div class="container-fluid"><!-- body content -->
+    <div class="container de-navbar-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6">
+            </div>
+
+            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container-->
+
+	<br />
+    <div class="container">
+      
+        
+       <div class="row">
+            <h4>Message details</h4>
+        	<div class="col-md-4 col-sm-6">
+            	<a href="?lightboxForm=true" class="btn btn-danger">Request an Appointment</a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-3 col-lg-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li title="Invoice Preferences"><a href="#">Invoice Preferences</a><li>
+                    <li title="Change Password"><a href="#">Change Password</a><li>
+                    <li class="active" title="Subscriptions"><a href="#">Subscriptions</a><li>
+                    <li title="Energy Market Alerts"><a href="#">Energy Market Alerts</a><li>
+                    <li title="Billing Addresses"><a href="#">Billing Addresses</a><li>
+                    <li title="Customers"><a href="#">Customers</a><li>
+                    <li title="Historical Accounts"><a href="#">Historical Accounts</a><li>
+                </ul>
+                <a class="btn btn-default top20" path-href="/"><i class="fa fa-home"></i>&nbsp;&nbsp;Return to My Account</a>
+            </div>
+            <div class="col-sm-9 col-lg-10">
+                <div class="tab-pane" id="marketUpdates">
+                    <div class="panel panel-default">
+                        <div class="panel-heading"><h4>Subscription Center</h4></div>
+                        <div class="panel-body">
+                            <p>Direct Energy Business will help keep you informed with these valuable subscription emails and newsletters.</p>
+                            <p>Monthly usage and cost alert emails. Get an alert when usage or cost changes in comparison to the previous year</p>
+                            <p>Learn more about:
+                                <ul>
+                                    <li><a href="" target="_blank">Direct Energy Business Blog</a></li>
+                                    <li><a href="" target="_blank">Daily Market Updates</a></li>
+                                    <li><a href="" target="_blank">Weekly Video Market Updates</a></li>
+                                    <li><a href="" target="_blank">eforecaster Newsletter</a></li>
+                            </ul>
+                            </p>
+                            
+<!--                            <div class="alert alert-success" role="alert" ng-show="updateSuccess">
+                                <strong>Success</strong> Your preferences have been updated.
+                            </div>
+
+                            <div class="row top20">
+                                <div class="col-xs-2 col-sm-1 text-center">
+                                    <i class="fa fa-bullhorn fa-lg"></i>
+                                </div>
+                                <div class="col-xs-10 col-sm-11">
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="marketUpdates" ng-model="currentSetting" ng-click="updated=!updated">Weekly Market Updates email
+                                    </label>
+                                    <div class="top20">
+                                        @Html.Action("Index", "Sitecore", new { contentId = Constants.SitecoreCalloutId.MarketUpdatesTagline })
+                                    </div>
+                                </div>
+                            </div>
+-->
+                            
+                            <div class="row top20">
+                                <div class="col-sm-12">                            
+                                    <!-- Marketo form -->
+
+<!--                                    <script src="//app-sjg.marketo.com/js/forms2/js/forms2.min.js"></script>-->
+                                    <form id="mktoForm_1276"></form>
+                                    <script>MktoForms2.loadForm("//app-sjg.marketo.com", "947-IOX-305", 1276);</script>                
+
+<!--                                    <form id="mktoForm_1356"></form>-->
+<!--                                    <script>MktoForms2.loadForm("//app-sjg.marketo.com", "947-IOX-305", 1356);</script>                -->
+
+                                </div>
+                            </div>
+                            
+<!--
+                            <div class="btn-toolbar top30">
+                                <a href="javascript:void(0)" class="btn btn-primary" ng-click="submit()" ng-disabled="!updated" ng-class="{'btn-disabled':!updated}">Save</a>
+                            </div>
+-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        
+        
+    </div><!-- End Container-->
+
+	</div><!-- End Container fluid-->
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+    <!--  Marketo form fill javascript  -->
+    <script>
+    //print your JSON object dynamically as the mktoLead variable
+    var mktoLead = {  
+        "requestId":"e42b#14272d07d78",
+        "success":true,
+        "result":[  
+            {  
+            "id":50,
+            "firstName":"Kenny",
+            "lastName":"Elkington",
+            "email":"mkto@example.com",
+            "company":"Marketo Inc."
+            }]
+    }
+    </script>
+    
+    <script>
+        MktoForms2.whenReady( function(form) {
+            //set the first result as local variable
+            var mktoLeadFields = mktoLead.result[0];
+            //map your results from REST call to the corresponding field name on the form
+            var prefillFields = { 
+                    "Email" : mktoLeadFields.email
+//                    "FirstName" : mktoLeadFields.firstName,
+//                    "LastName" : mktoLeadFields.lastName,
+//                    "Company" : mktoLeadFields.company
+                    };
+            //pass our prefillFields objects into the form.vals method to fill our fields
+            form.vals(prefillFields);
+            }
+            );
+
+    </script>
+    <script src="//app-sjg.marketo.com/js/forms2/js/forms2.min.js"></script>
+    <form id="mktoForm_1356"></form>
+    <script>
+        MktoForms2.loadForm("//app-sjg.marketo.com", "947-IOX-305", 1356, function (form) { 
+            if (location.href.indexOf("lightboxForm=true") != -1) {
+                MktoForms2.lightbox(form).show();
+            }
+
+				var formEl = form.getFormElem()[0];
+
+				form.onSuccess(function(vals, thankYouURL) {
+						var thanksEl = document.createElement('DIV');
+						thanksEl.innerHTML = 'Thank you for requesting an appointment. We will be getting back to you soon.';
+						formEl.parentNode.replaceChild(thanksEl, formEl);
+						return false;
+				});
+            
+            
+//            $( ".btn-danger" ).click(function() {
+//                MktoForms2.lightbox(form).show();
+//            });            
+            
+        });
+    </script>
+
+
+<!--
+    <form id="mktoForm_1057"></form>
+    <script>
+      MktoForms2.loadForm("//app-sjst.marketo.com", "785-UHP-775", 1057, function (form){ 
+        if(location.href.indexOf("lightboxForm=true") != -1){
+          MktoForms2.lightbox(form).show();
+        }
+      });
+    </script>
+-->
+    </body>
+</html>

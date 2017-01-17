@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Group Selection</title>
+
+    <!-- Table saw references -->
+    <link rel="stylesheet" href="js/libs/tablesaw/stackonly/tablesaw.stackonly.css">
+
+    <link data-require="ng-table@*" data-semver="0.3.0" rel="stylesheet" href="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.css" />
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+     <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+
+<style type="text/css">
+	.row div.de-group-selection-action {
+		padding-top: 25px;
+	}
+</style>
+</head>
+
+  <body class="body-de-myacct-main">
+
+	<nav class="navbar navbar-default de-myacct-menu-wrapper">
+        <div class="container-fluid">
+            <div class="col-md-2">
+	          <a class="navbar-brand" href="high-Nav-DEB-External-Simple.html" title="Direct Energy Business website" target="_self"><img src="img/deb-logo-white.png" alt="logo" class="img-responsive"></a>
+            </div>
+            <div class="col-md-10">
+              <ul class="nav navbar-nav">
+                <p class="navbar-text de-navbar-title">My Account</p>
+              </ul>
+            </div>
+        </div>
+    </nav>    
+	<div class="container"><!-- body content -->
+		<div class="row">
+			<div class="col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">My Account</a></li>
+                    <li class="active">Group Selection</li>
+                </ul>
+            </div>
+        </div>
+
+		<form role="form" method="post" action="" id="de-form-group-selection">
+        <div class="row de-group-selection-row">
+            <div class="col-sm-5">
+                <div class="form-group">
+                  <label class="control-label" for="selProperty">Property</label>
+                    <select id="selProperty" class="form-control de-group-selection-property">
+                        <option value="none"> </option>
+                        <option value="all">All Customers</option>
+                        <option value="state">State / Region</option>
+                        <option value="commodity">Commodity</option>
+                        <option value="utility" >Utility</option>
+                        <option value="product">Product type / name</option>
+                        <option value="source">Source system</option>
+                        <option value="ldc">Utility Account Number (LDC)</option>
+                        <option>Account number</option>
+                        <option value="role">User role</option>
+                    </select>                      
+                </div>
+            </div>
+            <div class="de-group-selection-values">
+                <div class="col-sm-5">
+                    <div class="form-group">
+                        <label class="control-label" for="selValue">Value</label>
+                        <select id="selValue" class="form-control">
+                          <option> </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2 de-group-selection-action">
+                <a href="#" class="btn btn-danger" onclick='RemoveGroupRow(this);'><i class="fa fa-minus"></i>&nbsp;Remove</a>
+            </div>
+        </div>
+		</form>
+	</div><!-- End Container fluid-->
+    <div class="container">
+        <div class="row">
+        	<div class="col-sm-12">
+                <a id="de-group-selection-add" href="#" class="btn btn-success"><i class="fa fa-plus"></i>&nbsp;Add</a>
+            </div>
+        </div>
+        <!--<div class="row">
+        	<div class="col-sm-12">
+            	<div class="btn-toolbar">
+                	<a href="#" class="btn btn-default">Test</a>
+                </div>
+                <span>123 results</span>
+            </div>
+        </div>-->
+    </div>
+
+
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+    <!-- Bootstrap-select JS files. Custom select functions -->
+    <script type="text/javascript" src="js/libs/bootstrap-select/bootstrap-select.js"></script> 
+	<script>
+	    <!-- Enabling all select pickers -->
+		$(document).ready(function() 
+		{ 
+			$('.selectpicker').selectpicker(); 
+		});
+
+		 $(document).ready(function() {
+
+				var valGroupSelectionRow ="<div class='row de-group-selection-row'><div class='col-sm-5'><div class='form-group'><label class='control-label'>Property</label><select class='form-control de-group-selection-property'><option value='none'> </option><option value='all'>All Customers</option><option value='state'>State / Region</option><option value='commodity'>Commodity</option><option value='utility' >Utility</option><option value='product'>Product type / name</option><option value='source'>Source system</option><option value='ldc'>Utility Account Number (LDC)</option><option value='role'>User role</option></select></div></div><div class='de-group-selection-values'><div class='col-sm-5'><div class='form-group'><label class='control-label'>Value</label><select class='form-control'><option></option></select></div></div></div><div class='col-sm-2 de-group-selection-action'><a href='#' class='btn btn-danger' onclick='RemoveGroupRow(this);'><i class='fa fa-minus'></i>&nbsp;Remove</a></div></div>";
+
+				// Group selection row - variables for value displays
+				var valGroupNone = "";
+				var valGroupDisabled = "<div class='col-sm-5'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control' disabled><option>All Customers</option></select></div></div>";
+				var valGroupState = "<div class='col-sm-5'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control selectpicker' multiple data-live-search='true' data-width='100%'><option value='AL'>Alabama</option><option value='AK'>Alaska</option><option value='AZ'>Arizona</option><option value='AR'>Arkansas</option><option value='CA'>California</option><option value='CO'>Colorado</option><option value='CT'>Connecticut</option><option value='DE'>Delaware</option><option value='DC'>District Of Columbia</option><option value='FL'>Florida</option><option value='GA'>Georgia</option><option value='HI'>Hawaii</option><option value='ID'>Idaho</option><option value='IL'>Illinois</option><option value='IN'>Indiana</option><option value='IA'>Iowa</option><option value='KS'>Kansas</option><option value='KY'>Kentucky</option><option value='LA'>Louisiana</option><option value='ME'>Maine</option><option value='MD'>Maryland</option><option value='MA'>Massachusetts</option><option value='MI'>Michigan</option><option value='MN'>Minnesota</option><option value='MS'>Mississippi</option><option value='MO'>Missouri</option><option value='MT'>Montana</option><option value='NE'>Nebraska</option><option value='NV'>Nevada</option><option value='NH'>New Hampshire</option><option value='NJ'>New Jersey</option><option value='NM'>New Mexico</option><option value='NY'>New York</option><option value='NC'>North Carolina</option><option value='ND'>North Dakota</option><option value='OH'>Ohio</option><option value='OK'>Oklahoma</option><option value='OR'>Oregon</option><option value='PA'>Pennsylvania</option><option value='RI'>Rhode Island</option><option value='SC'>South Carolina</option><option value='SD'>South Dakota</option><option value='TN'>Tennessee</option><option value='TX'>Texas</option><option value='UT'>Utah</option><option value='VT'>Vermont</option><option value='VA'>Virginia</option><option value='WA'>Washington</option><option value='WV'>West Virginia</option><option value='WI'>Wisconsin</option><option value='WY'>Wyoming</option></select></div></div>";
+				var valGroupCommodity = "<div class='col-sm-5'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control'><option>Natural Gas</option><option>Electricity</option></select></div></div>";
+				var valGroupUtility = "<div class='col-sm-2'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control selectpicker' data-live-search='true' data-width='100%'><option value='AL'>Alabama</option><option value='AK'>Alaska</option><option value='AZ'>Arizona</option><option value='AR'>Arkansas</option><option value='CA'>California</option><option value='CO'>Colorado</option><option value='CT'>Connecticut</option><option value='DE'>Delaware</option><option value='DC'>District Of Columbia</option><option value='FL'>Florida</option><option value='GA'>Georgia</option><option value='HI'>Hawaii</option><option value='ID'>Idaho</option><option value='IL'>Illinois</option><option value='IN'>Indiana</option><option value='IA'>Iowa</option><option value='KS'>Kansas</option><option value='KY'>Kentucky</option><option value='LA'>Louisiana</option><option value='ME'>Maine</option><option value='MD'>Maryland</option><option value='MA'>Massachusetts</option><option value='MI'>Michigan</option><option value='MN'>Minnesota</option><option value='MS'>Mississippi</option><option value='MO'>Missouri</option><option value='MT'>Montana</option><option value='NE'>Nebraska</option><option value='NV'>Nevada</option><option value='NH'>New Hampshire</option><option value='NJ'>New Jersey</option><option value='NM'>New Mexico</option><option value='NY'>New York</option><option value='NC'>North Carolina</option><option value='ND'>North Dakota</option><option value='OH'>Ohio</option><option value='OK'>Oklahoma</option><option value='OR'>Oregon</option><option value='PA'>Pennsylvania</option><option value='RI'>Rhode Island</option><option value='SC'>South Carolina</option><option value='SD'>South Dakota</option><option value='TN'>Tennessee</option><option value='TX'>Texas</option><option value='UT'>Utah</option><option value='VT'>Vermont</option><option value='VA'>Virginia</option><option value='WA'>Washington</option><option value='WV'>West Virginia</option><option value='WI'>Wisconsin</option><option value='WY'>Wyoming</option></select></div></div><div class='col-sm-3'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control selectpicker' multiple data-live-search='true' data-width='100%'><optgroup label='Electricity'><option>Allegheny Power</option><option>Citizens' Electric Company</option><option>Duquesne Light Company</option><option>First Energy</option><option>PECO Energy</option><option>PP&L</option><option>Penn Power</option><option>Pike County Light & Power Company</option><option>UGI</option><option>Wellsboro Electric Company</option><optgroup label='Natural Gas'><option>Columbia Gas of Pennsylvania, Inc.</option><option>Peoples Natural Gas Company</option><option>Equitable Gas Company</option><option>National Fuel Gas Distribution, Pennsylvania Division</option><option>PECO Energy Company, Gas Division</option><option>PGW (Philadelphia Gas Works)</option><option>UGI Central Penn Gas</option><option>T.W. Phillips</option><option>NUI - Valley Cities Gas</option><option>UGI Penn Natural Gas</option><option>UGI Utilities, Inc.</option></optgroup></select></div></div>";
+				var valGroupProduct = "<div class='col-sm-5'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control'><optgroup label='Electricity products'><option>Power portfolio</option><option>Fixed price electricity</option><option>Variable(Index) price electricity</option></optgroup><optgroup label='Natural gas products'><option>Fixed price natural gas</option><option>Prime</option><option>Variable(Index) price Natural gas</option></optgroup><optgroup label='Energy managements solutions'><option>EnergyAlly</option><option>InvoiceASSURE</option><option>EnergyLIVE</option><option>PowerBuy</option><option>Demand Response</option><option>NYC local laws</option></optgroup>  <optgroup label='Green energy'><option>Make Me Green</option><option>Solar</option></select></div></div>";
+				var valGroupSource = "<div class='col-sm-5'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control'><option>Apollo</option><option>ERM</option><option>Nirvanasoft</option></select></div></div>";
+				var valGroupLdc = "<div class='col-sm-5'><div class='form-group'><label class='control-label' for='selValue'>Value</label><textarea rows='4' class='form-control'></textarea></div></div>";
+				var valGroupRole = "<div class='col-sm-5'><div class='form-group'><label class='control-label' for='selValue'>Value</label><select id='selValue' class='form-control'><option>Broker</option><option>Customer</option><option>Customer Rep</option><option>Third party payer</option></select></div></div>";
+
+				// Group selection - Add row
+				$("#de-group-selection-add").on( "click", function() {
+					$('#de-form-group-selection').append(valGroupSelectionRow);
+					// Checking that only 3 conditions can be added. Disable Add button
+					if($('#de-form-group-selection').children().length == 3) {
+						$(this).attr('disabled','disabled');
+					};
+				});			   
+
+				// Group selection row - property dropdown selection
+//			   $('.de-group-selection-property').change(function(){
+			   $("#de-form-group-selection").on( "change", ".de-group-selection-property", function() {
+//					$(this).parent().parent().siblings('.de-group-selection-values').fadeOut(400);
+
+					if($("option:selected", this).val()=="none" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupNone);
+						}
+					else if($("option:selected", this).val()=="all" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupDisabled);
+					}
+					else if($("option:selected", this).val()=="state" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupState);
+					}
+					else if($("option:selected", this).val()=="commodity" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupCommodity);
+					}
+					else if($("option:selected", this).val()=="utility" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupUtility);
+					}
+					else if($("option:selected", this).val()=="product" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupProduct);
+					}
+					else if($("option:selected", this).val()=="source" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupSource);
+					}
+					else if($("option:selected", this).val()=="ldc" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupLdc);
+					}
+					else if($("option:selected", this).val()=="role" ) {
+						// Add some options
+						$(this).parent().parent().siblings('.de-group-selection-values').html(valGroupRole);
+					}
+					else {
+						// Add some options
+//						$('#selAccounts').append(optAcctsAllSubtext);
+					};
+
+//					$(this).parent().parent().siblings('.de-group-selection-values').fadeIn(400);   
+					$('.selectpicker').selectpicker();
+					
+			   });
+
+		 });
+
+		// Group selection row - delete row
+		function RemoveGroupRow(thisRow){
+            // animation when removing rows
+            $(thisRow).parent().parent().delay(200).fadeOut(400);
+            $(thisRow).animate({
+                "opacity" : "0",
+                },{
+                "complete" : function() {
+                      $(thisRow).parent().parent().remove();
+                    // Checking that only 3 conditions can be added. Enable add button
+                    $('#de-group-selection-add').removeAttr('disabled');
+                }
+            });            
+		}
+
+
+    </script>
+
+  </body>
+</html>

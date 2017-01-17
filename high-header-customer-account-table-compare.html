@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Header Customer Account Selection</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- ** My Account prototype styles ** -->
+<!--    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">-->
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+	<!--ng-grid references-->
+    <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+    
+
+	<style type="text/css">
+		.de-navbar-customer-container h4 {
+			color: #ffffff;
+			margin-left: 1.0em;
+		}
+		.btn-navbar-customer {
+/*			white-space:normal !important;
+			text-wrap: normal;
+*/		}		
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu dt{
+			color: #000000;
+		}
+
+		/* updating hover text for subtext information in dropdowns */
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:hover small, 
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu li:not(.disabled) > a:focus small, 
+		.de-navbar-customer-container .bootstrap-select.btn-group .dropdown-menu li.active:not(.disabled) > a small {
+			color: black;
+		}
+
+		/* Table grid styles */
+		.gridStyle {
+			border: 1px solid #ddd;
+			width: 100%; 
+			height: 400px
+		}
+		.gridStyle .ngTopPanel {
+			background-color: transparent;
+		}
+		.gridStyle .ngRow {
+			border: 1px solid #ddd;
+		}
+		.gridStyle .ngRow.even {
+			background-color: #f9f9f9;
+		}
+		.gridStyle .ngRow .subtotal {
+            font-weight: bold;
+			background-color: #eee;
+		}
+		.gridStyle .ngAggregate,.gridStyle .ngRow.selected {
+			background-color: #f5f5f5;
+		}
+
+	</style>
+    
+</head>
+
+  <body ng-controller="MyCtrl">
+
+    <div class="container-fluid"><!-- body content -->
+     <div class="page-header">
+      <h2>Customer Selection and Account Selection</h2>
+     </div>
+	</div><!-- End Container-->
+<br/>
+    <div class="container-fluid"><!-- body content -->
+    <h4>Multiple Customers &amp; Profiles, large list, both commodities</h4>
+    <div class="container de-navbar-customer-container"><!-- body content -->
+		<div class="row">
+        	<div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selCustomer">Customers</label>
+                <select id="selCustomer" class="selectpicker" data-live-search="false" data-width="100%" data-style="btn-navbar-customer btn-lg" ng-model="gridSelectedId" ng-change="display()">
+                    <option selected>All Customers</option>
+                    <optgroup label="Profiles">
+                        <option>First Profile</option>
+                        <option>Second Profile</option>
+                    </optgroup>
+                    <optgroup label="Customers">
+                        <option>Big Easy Carwash</option>
+                        <option>Medium Easy Carwash</option>
+                        <option>Small Easy Carwash</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <label class="sr-only" for="selAccounts">Accounts</label>
+                <select id="selAccounts" class="selectpicker" data-live-search="true" data-width="100%" data-show-subtext="true">
+                        <option>All accounts</option>
+                        <option>All power</option>
+                        <option>All natural gas</option>
+                        <optgroup label='Power'>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1245086</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option>
+                        </optgroup>
+                        <optgroup label='Natural Gas'>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option>
+                            <option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option>
+                            <option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option>
+                            <option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option>
+                            <option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9123131</option>
+                            <option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9223132</option>
+                        </optgroup>
+                </select>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+            	<div class="row">
+                	<div class="col-sm-12 col-xs-6 text-right">
+                    	Balance Due   $210.05
+                    </div>
+                	<div class="col-sm-12 col-xs-6 text-right">
+                    	Last Payment   $197.23   12/31/2013
+                    </div>
+                </div>
+	            	<button type="button" id="btnPayNow" class="btn btn-primary pull-right"><i class="fa fa-money"></i> Pay Now</button>
+            </div>
+        </div><!-- End Row-->
+	</div><!-- End Container-->
+
+	<br />
+    <h4>ng-grid with jquery ui theme</h4>
+    <div class="container">
+        <form class="form-inline" role="form">
+            <div class="row">
+                <div class="col-sm-8 col-xs-6">
+                    <div class="form-group">
+                        <label for="powerInvoiceFromDate">From</label>
+                        <div class="input-group date datepicker">
+                            <input id="powerInvoiceFromDate" ng-model="powerInvoiceFrom" maxlength="10" class="form-control" type="text">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="powerInvoiceToDate">To</label>
+                        <div class="input-group date datepicker">
+                            <input id="powerInvoiceToDate" ng-model="powerInvoiceTo" class="form-control ng-pristine ng-valid" type="text">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <a id="invoiceUpdateView" ng-click="UpdatePowerBillingView()" class="btn btn-link"><i class="fa fa-chevron-right"></i>Update View</a>
+                    <p ng-show="showErrorMsg" class="text-danger ng-binding ng-hide"></p>
+                </div>
+                <div class="col-sm-4 col-xs-6 text-right">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input ng-model="powerBillingGridOptions.filterOptions.filterText" class="form-control" type="text">
+                            <a class="btn btn-default input-group-addon"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Export</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li id="btn-export-results"><a href="#">Export page to Excel</a></li>
+                          <li id="btn-export-all"><a href="#">Export results to Excel</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <div class="row">
+            <div class="gridStyle" ng-grid="gridOptions"></div>
+        </div>
+        <div class="row">
+            <h4>Message details</h4>
+        	<div class="col-sm-12 well well-lg">
+            	<p>Here is a message</p>
+                <div class="selectedItems">{{mySelections}} here</div>
+            </div>
+            
+        </div>
+    </div><!-- End Container-->
+
+    <h4>plain bootstrap table</h4>
+	<div class="container">
+        <form class="form-inline" role="form">
+            <div class="row">
+                <div class="col-sm-8 col-xs-6">
+                    <div class="form-group">
+                        <label for="powerInvoiceFromDate">From</label>
+                        <div class="input-group date datepicker">
+                            <input id="powerInvoiceFromDate" ng-model="powerInvoiceFrom" maxlength="10" class="form-control" type="text">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="powerInvoiceToDate">To</label>
+                        <div class="input-group date datepicker">
+                            <input id="powerInvoiceToDate" ng-model="powerInvoiceTo" class="form-control ng-pristine ng-valid" type="text">
+                            <span class="input-group-addon">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <a id="invoiceUpdateView" ng-click="UpdatePowerBillingView()" class="btn btn-link"><i class="fa fa-chevron-right"></i>Update View</a>
+                    <p ng-show="showErrorMsg" class="text-danger ng-binding ng-hide"></p>
+                </div>
+                <div class="col-sm-4 col-xs-6 text-right">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input ng-model="powerBillingGridOptions.filterOptions.filterText" class="form-control" type="text">
+                            <a class="btn btn-default input-group-addon"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default">Export</button>
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                          <li id="btn-export-results"><a href="#">Export page to Excel</a></li>
+                          <li id="btn-export-all"><a href="#">Export results to Excel</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </form>
+                    
+        <div id="deb-alert-export-prepare" class="row">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-8">
+                <div class="alert alert-success">
+                    <i class="fa fa-refresh fa-lg"></i> Preparing to export.
+                    Create a Fade in transition example. 
+                </div>
+            </div>
+        </div>
+        <div id="deb-alert-export-fail" class="row">
+            <div class="col-xs-12 col-sm-4 col-sm-offset-8">
+                <div class="alert alert-danger">
+                    <i class="fa fa-exclamation-circle fa-lg"></i> Export failed. Try again. 
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+        	<div class="col-sm-12">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Utility Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Commodity</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <td>Commonwealth Electric</td>
+                                  <td>1-800-592-2000</td>
+                                  <td class="de-tablecell-commodity"><i class="fa fa-lightbulb-o"></i></td>
+                                </tr>
+                                <tr>
+                                  <td>Massachusetts Electric</td>
+                                  <td>1-800-322-3223</td>
+                                  <td class="de-tablecell-commodity"><i class="fa fa-lightbulb-o"></i></td>
+                                </tr>
+                                <tr>
+                                  <td>Boston Edison</td>
+                                  <td>1-800-592-2000</td>
+                                  <td class="de-tablecell-commodity"><i class="fa fa-fire"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+            </div>
+        </div>
+    </div>
+
+
+	</div><!-- End Container fluid-->
+
+<!--<button type="button" ng-click="toggleCol(0)" >Toggle ungrouped customer</button>
+<button type="button" ng-click="toggleCol(1)" >Toggle grouped customer</button>
+<button type="button" ng-click="toggleGroup()" >Toggle group 2</button>
+-->
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+    <!-- Bootstrap-select JS files. Custom select functions -->
+    <script type="text/javascript" src="js/libs/bootstrap-select/bootstrap-select.js"></script> 
+	<script>
+        // functions for showing and hiding export alert messages
+        
+        
+        $('#btn-export-results').click(function() {
+            $('#deb-alert-export-prepare').fadeOut(1500); 
+        });
+        $('#btn-export-all').click(function() {
+            $('#deb-alert-export-fail').fadeOut(1500); 
+        });
+        
+        
+	    // Enabling all select pickers /
+		$(document).ready(function() 
+		{ 
+			$('.selectpicker').selectpicker(); 
+
+		});
+		
+
+	    // Set Options for account selector /
+		$( "#selCustomer" ).change(function() {
+			var optAcctsAllSubtext = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1245086</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9123131</option><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9223132</option></optgroup>";
+			var optAcctsAll = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>1145085</option><option data-icon='fa fa-lightbulb-o'>1245086</option><option data-icon='fa fa-lightbulb-o'>1345087</option><option data-icon='fa fa-lightbulb-o'>1445088</option><option data-icon='fa fa-lightbulb-o'>2145089</option><option data-icon='fa fa-lightbulb-o'>2245090</option><option data-icon='fa fa-lightbulb-o'>2345091</option><option data-icon='fa fa-lightbulb-o'>3145093</option><option data-icon='fa fa-lightbulb-o'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>7123110</option><option data-icon='fa fa-fire'>7223111</option><option data-icon='fa fa-fire'>7323112</option><option data-icon='fa fa-fire'>7423113</option><option data-icon='fa fa-fire'>8123121</option><option data-icon='fa fa-fire'>8223122</option><option data-icon='fa fa-fire'>8323123</option><option data-icon='fa fa-fire'>9123131</option><option data-icon='fa fa-fire'>9223132</option></optgroup>"; 
+
+			var optAcctsBigEasySubtext = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1245086</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option></optgroup>";
+			var optAcctsBigEasy = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>1145085</option><option data-icon='fa fa-lightbulb-o'>1245086</option><option data-icon='fa fa-lightbulb-o'>1345087</option><option data-icon='fa fa-lightbulb-o'>1445088</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>7123110</option><option data-icon='fa fa-fire'>7223111</option><option data-icon='fa fa-fire'>7323112</option><option data-icon='fa fa-fire'>7423113</option></optgroup>";
+			var optAcctsMedEasySubtext = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option></optgroup>";
+			var optAcctsMedEasy = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>2145089</option><option data-icon='fa fa-lightbulb-o'>2245090</option><option data-icon='fa fa-lightbulb-o'>2345091</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>8123121</option><option data-icon='fa fa-fire'>8223122</option><option data-icon='fa fa-fire'>8323123</option></optgroup>";
+			var optAcctsSmlEasySubtext = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9123131</option><option data-icon='fa fa-fire' data-subtext='Small Easy Carwash'>9223132</option></optgroup>";
+			var optAcctsSmlEasy = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>3145093</option><option data-icon='fa fa-lightbulb-o'>3245094</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>9123131</option><option data-icon='fa fa-fire'>9223132</option></optgroup>";
+
+			// Clearing all the options in the account list
+			$( "#selAccounts option" ).remove();
+			// Ensure Accounts select is enabled
+			$('#selAccounts').prop('disabled',false);
+//			$('#selAccounts').selectpicker('refresh');
+
+			// Showing Pay Now button
+			$('#btnPayNow').hide();
+
+
+			if($( "#selCustomer option:selected" ).text()=="All Customers" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsAllSubtext);
+				// All Customers, disable accounts selector
+				//$('#selAccounts').prop('disabled',true);
+				$('#btnPayNow').hide();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="First Profile" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsAllSubtext);
+				$('#btnPayNow').hide();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Second Profile" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsAllSubtext);
+				$('#btnPayNow').hide();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Big Easy Carwash" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsBigEasy);
+				$('#btnPayNow').show();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Medium Easy Carwash" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsMedEasy);
+				$('#btnPayNow').show();
+			}
+			else if($( "#selCustomer option:selected" ).text()=="Small Easy Carwash" ) {
+				// Add some options
+				$('#selAccounts').append(optAcctsSmlEasy);
+				$('#btnPayNow').show();
+			}
+			else {
+//				alert('goodbye');
+				// Add some options
+				$('#selAccounts').append(optAcctsAllSubtext);
+			};
+			
+			// Refresh Accounts select list to display newly added options
+			$('#selAccounts').selectpicker('refresh');				
+
+		});
+		 
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+    <script type="text/javascript" src="http://angular-ui.github.com/ng-grid/lib/ng-grid.debug.js"></script>
+	<script type="text/javascript">
+		var app = angular.module('myApp', ['ngGrid']);
+		app.controller('MyCtrl', function($scope) {
+			$scope.myData = [{Customer: "Big Easy Carwash", BillingAccount: "1145085", UtilityAccount: "11401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1245086", UtilityAccount: "12401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1345087", UtilityAccount: "13401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "1445088", UtilityAccount: "14401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7123110", UtilityAccount: "15401014029121",ServiceLocation: "123 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7223111", UtilityAccount: "16401014029121",ServiceLocation: "345 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7323112", UtilityAccount: "17401014029121",ServiceLocation: "567 N Street Town TX 71723"},
+							{Customer: "Big Easy Carwash", BillingAccount: "7423113", UtilityAccount: "18401014029121",ServiceLocation: "789 N Street Town TX 71723"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2145089", UtilityAccount: "21401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2245090", UtilityAccount: "22401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "2345091", UtilityAccount: "23401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8123121", UtilityAccount: "24401014029122",ServiceLocation: "1123 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8223122", UtilityAccount: "25401014029122",ServiceLocation: "4056 Sesame Street Town TX 77710"},
+							{Customer: "Medium Easy Carwash", BillingAccount: "8323123", UtilityAccount: "26401014029122",ServiceLocation: "7089 Sesame Street Town TX 77710"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3145093", UtilityAccount: "31401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "3245094", UtilityAccount: "32401014029123",ServiceLocation: "2034 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9123131", UtilityAccount: "33401014029123",ServiceLocation: "1023 First Ave Town TX 73325"},
+							{Customer: "Small Easy Carwash", BillingAccount: "9223132", UtilityAccount: "34401014029123",ServiceLocation: "2034 First Ave Town TX 73325"}];
+			$scope.gridOptions = { 
+				data: 'myData',
+				groups: ['Customer'],
+				selectedItems: $scope.mySelections,
+				multiSelect: false,
+				showGroupPanel: false,
+				jqueryUITheme: true,
+                enablePaging: true,
+                showFooter: true,
+                pagingOptions: $scope.pagingOptions,
+                rowTemplate:'<div style="height: 100%" ng-class="{subtotal: row.getProperty(\'Customer\') ==\'Big Easy Carwash\'}"><div ng-style="{ \'cursor\': row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell ">' +
+                           '<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }"> </div>' +
+                           '<div ng-cell></div>' +
+                     '</div></div>',
+                columnDefs: [
+					{field:'Customer', displayName:'Customer Name'},
+					{field: 'BillingAccount', displayName: 'Billing Account'},
+					{field:'UtilityAccount', displayName:'Utility Account', cellClass:'ngCellText text-center', cellTemplate: '<div><a href="#"><i class="fa fa-angle-double-down"></i>&nbsp;{{row.entity[col.field]}}</a></div>', width: "20%" },
+					{field:'ServiceLocation', displayName:'Service Location'}
+				]
+			};
+            $scope.pagingOptions = {
+                pageSizes: [10, 25, 50],
+                pageSize: 10,
+                currentPage: 1
+            };	
+			$scope.toggleCol= function(i) {
+			   $scope.gridOptions.$gridScope.columns[i].toggleVisible()
+			};
+			$scope.toggleGroup= function() {
+			   $scope.gridOptions.groupBy('Customer');
+//			   $scope.gridOptions.$gridScope.columns[1].toggleVisible()
+//			   $scope.gridOptions.showGroupPanel = false;
+			};
+			$scope.changeCustomer = function() {
+				// $scope.gridOptions.groups = [];
+				// $scope.gridOptions.groups = [''];
+				// ???
+			};			
+			$scope.display = function () {
+//				console.log("User selected grid : " + $scope.gridSelectedId);
+
+				if ($scope.gridSelectedId == 'First Profile') {
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.groupBy('Customer');
+				   $scope.gridOptions.$gridScope.columns[0].visible = true;
+				   $scope.gridOptions.$gridScope.columns[1].visible = true;
+				} else if ($scope.gridSelectedId == 'All Customers') {
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.groupBy('Customer');
+				   $scope.gridOptions.$gridScope.columns[0].visible = true;
+				   $scope.gridOptions.$gridScope.columns[1].visible = true;
+				} else if ($scope.gridSelectedId == 'Second Profile'){
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.groupBy('Customer');
+				   $scope.gridOptions.$gridScope.columns[0].visible = true;
+				   $scope.gridOptions.$gridScope.columns[1].visible = true;
+				}
+				else {
+				   $scope.gridOptions.groupBy(null);
+				   $scope.gridOptions.$gridScope.columns[0].visible = false;
+				}
+
+			};
+		});
+
+	</script>  
+
+  </body>
+</html>

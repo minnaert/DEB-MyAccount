@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - main secondary template</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/sass/main.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+	<!-- ** My Account prototype styles ** -->
+<!--    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">-->
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+
+
+</style>
+</head>
+
+  <body class="body-de-myacct-main">
+
+
+<nav class="navbar navbar-inverse de-nav-header-main" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#de-nav-header-main-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="#" title="Direct Energy Business website" target="_self"><img src="img/deb_logo.jpg" alt="logo" class="img-responsive"></a>
+      <a class="navbar-brand" href="#">My Account</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="de-nav-header-main-collapse">
+      <ul class="nav navbar-nav de-nav-contact">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-question-circle"></i> Need Help? <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+			<li><a href="#" title="Send Message"><i class="fa fa-envelope fa-lg"></i> Send Message</a></li>
+			<li class="divider"></li>
+			<li><a href="#" title="Power Phone"><i class="fa fa-lightbulb-o fa-lg"></i> 1-888-925-9115</a></li>
+			<li><a href="#" title="Gas Phone"><i class="fa fa-fire fa-lg"></i> 1-888-437-7265</a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="nav navbar-nav navbar-right de-nav-user">
+		  <p class="navbar-text">John Doe <a href="#" class="navbar-link">Log out</a></p>
+                <div id="de-nav-secondary" class="row">
+                    <div class="col-xs-12">
+                        <ul class="nav nav-pills" role="tablist">
+                            <li><a href="#" title="Messages" role="tab" data-toggle="pill"><i class="fa fa-envelope fa-lg"></i> <span class="badge">42</span></a></li>
+                            <li><a href="#" title="Preferences" role="tab" data-toggle="pill"><i class="fa fa-cog fa-lg"></i> Preferences</a></li>
+                            <li><a href="~/Views/Demo/SupportMain.cshtml" title="Support" role="tab" data-toggle="pill"><i class="fa fa-question-circle fa-lg"></i> Support</a></li>
+                        </ul>
+                    </div>
+                </div>
+      </div>
+	</div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+	    
+	<div class="container-fluid"><!-- body content -->
+		<div class="row">
+			<div class="col-sm-12">
+            	<div class="well well-lg">
+                	Support, preferences and messages would go in here somewhere
+                    <br>
+                                <div class="row">
+                                    <div class="col-xs-10">
+                                        <p class="de-panel-table-label">Latest Power Invoices</p>
+                                    </div>
+                                    <div class="col-xs-2 text-right">
+                                        <button type="button" class="btn btn-link">More Invoices <i class="fa fa-angle-double-right"></i></button>
+                                    </div>
+                                </div>
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Invoice #</th>
+                                            <th>Invoice Date</th>
+                                            <th>Amount Due</th>
+                                            <th>Due Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                   
+					<!-- Common button display -->                                       
+                    <div class="btn-toolbar text-right">
+                    	<a href="#" class="btn btn-link">Cancel</a>
+                    	<a href="#" class="btn btn-default">Previous</a>
+                    	<a href="#" class="btn btn-primary">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div><!-- End Container fluid-->
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+
+  </body>
+</html>

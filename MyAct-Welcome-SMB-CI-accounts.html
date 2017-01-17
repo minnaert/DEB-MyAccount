@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Header Customer Account Selection</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<!-- ** My Account prototype styles ** -->
+<!--    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">-->
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+
+	<style type="text/css">
+
+        .progress-welcome { 
+			list-style: none; 
+			overflow: hidden; 
+			font: 18px Helvetica, Arial, Sans-Serif;
+            background-color: lightgray;
+            padding: 0;
+        }
+		.progress-welcome li a {
+			color: white;
+			text-decoration: none; 
+			padding: 8px 0 8px 10px;
+			background: lightgray;                   /* fallback color */
+			background: lightgray; 
+			position: relative; 
+			display: block;
+            width: 100%;
+		}
+		.progress-welcome li:first-child a {
+			padding-left: 10px;
+		}
+		.progress-welcome li:last-child a {
+			background: transparent !important;
+			color: #f05d21;
+			pointer-events: none;
+			cursor: default;
+		}
+
+        
+        @media (min-width: 800px) {
+		.progress-welcome li { 
+			float: left; 
+            width: calc(100%/3);
+            text-align: center
+		}
+		.progress-welcome li a {
+			padding: 10px 0 10px 55px;
+		}
+		.progress-welcome li a:after { 
+			content: " "; 
+			display: block; 
+			width: 0; 
+			height: 0;
+			border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+			border-bottom: 50px solid transparent;
+			border-left: 30px solid lightgray;
+			position: absolute;
+			top: 50%;
+			margin-top: -50px; 
+			left: 100%;
+			z-index: 2; 
+		}	
+		.progress-welcome li a:before { 
+			content: " "; 
+			display: block; 
+			width: 0; 
+			height: 0;
+			border-top: 50px solid transparent;           /* Go big on the size, and let overflow hide */
+			border-bottom: 50px solid transparent;
+			border-left: 30px solid white;
+			position: absolute;
+			top: 50%;
+			margin-top: -50px; 
+			margin-left: 3px;
+			left: 100%;
+			z-index: 1; 
+		}	
+          /* end breakpoint */
+        }        
+
+		.progress-welcome li:last-child a:after { border: 0; }
+        
+        .progress-welcome li.active a {
+            background-color: #f05d21;
+        }
+		.progress-welcome li.active a:after { border-left-color: #f05d21; }
+        
+      </style>
+    
+</head>
+
+  <body>
+
+      <div class="container-fluid"><!-- body content -->
+          <div class="container de-nav-customer-container"><!-- body content -->
+
+            <!-- progress indicator for welcome page -->
+              <div class="row">
+                <div class="col-sm-12">
+                    <ul class="progress-welcome">
+                        <li class="active"><a href="#">1. Welcome</a></li>
+                        <li class="active"><a href="#">2. Available Accounts</a></li>
+                        <li><a href="#">3. Summary</a></li>
+                    </ul>
+                </div>
+              </div>
+              <div class="row">
+                <ol class="faq">
+                    <li>How much wood would a wood chuck chuck if a wood chuck could chuck wood?</li>
+                    <li>What is the air-speed velocity of an unladen swallow?</li>
+                    <li>Why did the chicken cross the road?</li>
+                </ol>              
+              </div>
+
+              <style type="text/css">
+                  .de-welcome-cards {
+                    display: table;
+                    table-layout: fixed;
+                    border-spacing: 1.25rem 1.25rem;
+                  }
+                  .de-welcome-cards .de-well{
+                      display: table-cell;
+                      text-align: center;
+                      color: #f05d21;
+                      border-right: solid 2px #ddd;
+                  }
+                  .de-welcome-cards .de-well:last-child{
+                      border-right: none;
+                  }
+                  .de-welcome-cards .de-well i{
+                      display: block;
+                      margin-bottom: 0.2em;
+                  }
+
+              </style>
+              
+                <div class="row">
+                    <div class="col-sm-12 col-md-8 col-md-offset-2 de-welcome-cards">
+                        <div class="de-well"><i class="fa fa-bar-chart fa-3x"></i>Monitor Energy Usage</div>
+                        <div class="de-well"><i class="fa fa-usd fa-3x"></i>View balances</div>
+                        <div class="de-well"><i class="fa fa-bullhorn fa-3x"></i>Receive Alerts &amp; Updates</div>
+                        <div class="de-well"><i class="fa fa-mouse-pointer fa-3x"></i>Manage Your Account</div>
+                        <div class="de-well"><i class="fa fa-file-text-o fa-3x"></i>View Current Contract</div>
+                    </div>
+                </div>              
+              
+              
+              <div class="row">
+                <div class="col-sm-6 col-md-8">
+                    <h3>Which Accounts do you want to see?</h3>
+                </div>
+            </div>
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="list-group">
+                            <a href="javascript:void(0)" class="list-group-item">
+                                <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="selectAccount('S')">Small Business Accounts <i class="fa fa-lg fa-arrow-circle-right"></i></button>
+
+                                <h4>Customers</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item" ng-repeat="customer in SMB ">
+                                        <strong>{{customer.Name}}</strong>
+                                        <div class="row">
+                                            <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: {{customer.PowerCount}}</div>
+                                            <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: {{customer.GasCount}}</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="list-group">
+                            <a href="javascript:void(0)" class="list-group-item">
+                                <button type="button" class="btn btn-primary btn-lg btn-block" ng-click="selectAccount('C')">Commercial Accounts <i class="fa fa-lg fa-arrow-circle-right"></i></button>
+                                <h4>Customers</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item" ng-repeat="customer in commercial ">
+                                        <strong>{{customer.Name}}</strong>
+                                        <div class="row">
+                                            <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: {{customer.PowerCount}}</div>
+                                            <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: {{customer.GasCount}}</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </a>
+                        </div>
+                    </div>
+                </div><!-- End Row-->
+            </div>
+        </div><!-- End Container-->
+
+      
+        <div class="container de-nav-customer-container"><!-- body content -->
+            <div class="row">
+                <div class="col-sm-6 col-md-8">
+                    <h3>Which Accounts do you want to see?</h3>
+                    <div class="alert alert-danger"><h4>Welcome <strong>Firstname LastName</strong></h4>You have access to many customers and accounts. Which customer or account would you like to work with first?</div>
+                </div>
+            </div>
+            <div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <h2>Profiles</h2>
+                        <div class="btn-toolbar text-right">
+                            <a href="#" class="btn btn-default"><i class="fa fa-plus-circle"></i> Add a New Profile</a>
+                        </div>
+                        <div class="list-group top10">
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">West Customers: 3</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 6</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">East Customers: 2</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 45</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 0</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">North Customers: 12</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 2</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 72</div>
+                            </div>
+                          </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <h2>Customers</h2>
+                        <div class="btn-toolbar text-right">
+                            <a href="#" class="btn btn-default"><i class="fa fa-search"></i> Customer Search</a>
+                        </div>
+                        <div class="list-group top10">
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Big Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Bigger Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Biggest Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Medium Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Mediumer Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Mediumest Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Big Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                          <a href="#" class="list-group-item" ng-repeat="profiles in User">
+                            <h4 class="list-group-item-heading col-sm-11">Big Easy Carwash</h4>
+                            <i class="fa fa-lg fa-arrow-circle-right"></i>
+                            <div class="row">
+                                <div class="col-xs-6"><i class="fa fa-lightbulb-o"></i> Power: 12</div>
+                                <div class="col-xs-6"><i class="fa fa-fire"></i> Natural Gas: 20</div>
+                            </div>
+                          </a>
+                        </div>                        
+                    </div>
+                </div><!-- End Row-->
+            </div>
+        </div><!-- End Container-->
+        
+      
+      
+      </div><!-- End Container fluid-->
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+
+	<script>
+
+		 
+    </script>
+
+  </body>
+</html>

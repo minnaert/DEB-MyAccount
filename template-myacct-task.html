@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - main secondary template</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+<!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+ 
+	<!-- Bootstrap validator -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/css/bootstrapValidator.min.css"/>
+
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+<style type="text/css">
+</style>
+</head>
+
+  <body class="body-de-myacct-main">
+
+	<nav class="navbar navbar-default de-myacct-menu-wrapper">
+        <div class="container-fluid">
+            <div class="col-md-2">
+	          <a class="navbar-brand" href="high-Nav-DEB-External-Simple.html" title="Direct Energy Business website" target="_self"><img src="img/deb-logo-white.png" alt="logo" class="img-responsive"></a>
+<!--                <img src="http://placehold.it/70x70" class="img-responsive" style="position:relative;top:10px">                        -->
+            </div>
+            <div class="col-md-10">
+              <ul class="nav navbar-nav">
+                <p class="navbar-text de-navbar-title">My Account</p>
+              </ul>
+            </div>
+        </div>
+    </nav>    
+	<div class="container-fluid"><!-- body content -->
+		<div class="row">
+			<div class="col-sm-12">
+                <ul class="breadcrumb">
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Preferences</a></li>
+                    <li class="active">Edit This Thing</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+        	<div class="col-sm-6 col-sm-offset-3">
+            	<h4>Form validation behavior</h4>
+                <ul>
+					<li>field validation will display inline errors</li>
+                	<li>user name is required</li>
+                	<li>password and confirm password must match</li>
+                    <li>using "error" as a password will display a form level error</li>
+                    <li>passwords have a strength meter</li>
+                </ul>
+            </div>
+            <div class="row">
+            	<div class="col-sm-6 col-sm-offset-3">
+                	<div id="de-form-submission-message" class="alert alert-danger hidden">
+                    	The user name or password you entered was not found.
+                    </div>
+                </div>
+            </div>
+			<form role="form" class="form-login" method="post" action="" id="form-login">
+            <div class="row">
+            	<div class="col-sm-6 col-sm-offset-3">
+                    <div class="form-group">
+                      <label class="control-label" for="inputUsername">User name</label>
+                      <input type="text" class="form-control" name="inputUsername" id="inputUsername">
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                              <label class="control-label" for="inputPassword">Password</label>
+                              <input type="password" class="form-control" name="inputPassword" id="inputPassword">
+                            </div>
+                        </div>
+                        <div id="de-pwd-strength" class="col-xs-4">
+                            <div class="form-group">
+                                <label>&nbsp;</label>
+                                <div class="form-control-static">
+                                    <div class="pwstrength_viewport_progress"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="form-group">
+                              <label class="control-label" for="inputConfirmPassword">Confirm password</label>
+                              <input type="password" class="form-control" name="inputConfirmPassword" id="inputConfirmPassword">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="alert alert-success">
+                        <p><i class="fa fa-check-circle"></i>&nbsp;Account Verified. You can continue registration.</p>
+                        <p><i class="fa fa-check-circle"></i>&nbsp;Account verified and ready for registration.</p>
+                    </div>
+                </div>
+            </div>
+                
+            </form>               
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="thumbnail">
+                    <img src="img/eforecaster-current-issue.png" alt="eforecaster newsletter">
+                    <div class="caption">
+                        <button type="button" class="btn btn-primary btn-lg btn-block">Read The Latest Issue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="btn-toolbar text-right">
+                    <button type="button" class="btn btn-link"> Cancel</button>
+                    <button type="button" id="SubmitButton" class="btn btn-primary">Save</button>            
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 1em;">
+            <div class="col-sm-6 col-sm-offset-3">
+                <div class="alert alert-success">
+                    Saving...
+                </div>
+            </div>
+        </div>
+
+      </div><!-- End Container fluid-->
+
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+	<!-- jquery password strength -->
+	<script src="js/libs/jquery.pwstrength.bootstrap/dist/pwstrength-bootstrap-1.2.0.js"></script>
+
+	<!-- Bootstrap validator -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>   
+
+    <script type="text/javascript">
+		// Form validation functions
+
+		$(document).ready(function() {
+			$('#form-login').bootstrapValidator({
+				// To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
+/*				feedbackIcons: {
+		            required: 'glyphicon glyphicon-asterisk',
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'
+				},
+*/				fields: {
+					inputUsername: {
+						message: 'The username is not valid',
+						validators: {
+							notEmpty: {
+								message: 'The username is required and cannot be empty'
+							},
+							stringLength: {
+								min: 6,
+								max: 30,
+								message: 'The username must be more than 6 and less than 30 characters long'
+							},
+							regexp: {
+								regexp: /^[a-zA-Z0-9]+$/,
+								message: 'The username can only consist of letters and numbers'
+							},
+							different: {
+								field: 'inputPassword',
+								message: 'User name and Password cannot be the same'
+							}
+						}
+					},
+					inputPassword: {
+						validators: {
+							notEmpty: {
+								message: 'The password is required and cannot be empty'
+							},
+							different: {
+								field: 'inputUsername',
+								message: 'The password cannot be the same as user name'
+							},
+							stringLength: {
+								min: 8,
+								message: 'The password must have at least 8 characters'
+							},
+							identical: {
+								field: 'inputConfirmPassword',
+                                message: 'Passwords do not match'
+							}
+						}
+					},
+					inputConfirmPassword: {
+						validators: {
+							notEmpty: {
+								message: 'The password is required and cannot be empty'
+							},
+							different: {
+								field: 'inputUsername',
+								message: 'The password cannot be the same as user name'
+							},
+							stringLength: {
+								min: 8,
+								message: 'The password must have at least 8 characters'
+							},
+							identical: {
+								field: 'inputPassword',
+								message: 'Passwords do not match'
+							}
+						}
+					}
+				}
+			});
+		});
+
+
+
+		
+		// displaying form submission error messages
+		$('#SubmitButton').click( function() {
+		  if ($('#inputPassword').val()=='error') {
+			$('#de-form-submission-message').removeClass('hidden')
+			return false;
+		  } ;
+		});
+		
+		// password strength meter
+        $(document).ready(function () {
+
+			$('#inputPassword').pwstrength({
+                bootstrap3: true,
+				ui: { showVerdictsInsideProgressBar: true, container: "#de-pwd-strength", viewports: {
+                    progress: ".pwstrength_viewport_progress"
+                } }
+								
+			});
+        });
+
+	</script>
+  </body>
+</html>

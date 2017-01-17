@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Header Customer Account Selection</title>
+
+    <!-- Reference to DEB Styleguide customized Bootstrap core CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/bootstrap/bootstrap.css" rel="stylesheet">
+    <!-- Reference to DEB Styleguide PATTERNS CSS -->
+    <link href="http://torwed50:92/StyleGuide-Boilerplate/Content/sass/main.css" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <!--    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ** My Account prototype styles ** -->
+    <!--    <link rel="stylesheet" type="text/css" href="css/de-myaccount.css">-->
+
+    <!-- Bootstrap Select css files. Custom select functions  -->
+    <link rel="stylesheet" href="js/libs/bootstrap-select/bootstrap-select.css">
+    <!--ng-grid references-->
+    <link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
+
+
+    <style type="text/css">
+        .de-nav-customer-container .de-form-customer-label {
+            min-height: 22px;
+            /*            margin-bottom: 1px;
+*/
+        }
+        .de-nav-customer-container.dual-commodity .de-form-customer-label label {
+            padding-top: 18px;
+            margin-bottom: 1px;
+        }
+        .de-nav-customer-container .de-form-customer-label .de-form-customer-balance {
+            font-weight: bold;
+            margin-bottom: 1px;
+        }
+    </style>
+
+</head>
+
+<body ng-controller="MyCtrl">
+
+    <div class="container">
+        <!-- body content -->
+        <div class="page-header">
+            <h2>Customer Selection and Account Selection</h2>
+        </div>
+    </div>
+    <!-- End Container-->
+    <br/>
+    <div class="container">
+        <!-- body content -->
+        <h4>Multiple Customers &amp; Profiles, large list, both commodities</h4>
+        <div class="de-nav-customer-containerdual-commodity">
+            <!-- body content -->
+            <div class="row">
+                <div class="col-md-6 col-sm-4 col-xs-6 de-form-customer-label">
+                    <label class="" for="selCustomer">Customers</label>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6 de-form-customer-label">
+                    <label class="" for="selAccounts">Accounts</label>
+                </div>
+                <div class="col-md-3 col-sm-4 hidden-xs de-form-customer-label text-right">
+                    <div class="de-form-customer-balance de-customer-total-power">Power Balance Due $210.05</div>
+                    <div class="de-form-customer-balance de-customer-total-gas">Natural Gas Balance Due $210.05</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-4 col-xs-6">
+                    <select id="selCustomer" class="selectpicker" data-live-search="false" data-width="100%" data-style="btn-nav-customer" ng-model="gridSelectedId" ng-change="display()">
+                        <option selected>All Customers</option>
+                        <optgroup label="Profiles">
+                            <option>First Profile</option>
+                            <option>Second Profile</option>
+                        </optgroup>
+                        <optgroup label="Customers">
+                            <option>Big Easy Carwash</option>
+                            <option>Medium Easy Carwash</option>
+                            <option>Small Easy Carwash</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-6">
+                    <select id="selAccounts" class="selectpicker" data-live-search="true" data-width="100%" data-show-subtext="true" data-style="btn-nav-customer">
+                        <option>All accounts</option>
+                        <option>All power</option>
+                        <option>All natural gas</option>
+                        <optgroup label="Power">
+                            <option data-icon="fa fa-lightbulb-o">1111111</option>
+                            <option data-icon="fa fa-lightbulb-o">1111112</option>
+                            <option data-icon="fa fa-lightbulb-o">1111113</option>
+                        </optgroup>
+                        <optgroup label="Natural Gas">
+                            <option data-icon="fa fa-fire">2222222</option>
+                            <option data-icon="fa fa-fire">2222223</option>
+                            <option data-icon="fa fa-fire">2222224</option>
+                        </optgroup>
+                        <!--                        <option>All accounts</option>
+                        <option>All power</option>
+                        <option>All natural gas</option>-->
+                        <!--<option>All accounts</option>
+                        <optgroup label='Power'>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>124508</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>9123131</option>
+                            <option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>9223132</option>
+                        </optgroup>
+                        <optgroup label='Natural Gas'>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option>
+                            <option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option>
+                            <option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option>
+                            <option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option>
+                            <option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option>
+                        </optgroup>-->
+                    </select>
+                </div>
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-6 text-right hidden-lg hidden-md hidden-sm de-customer-total-power">Power Balance Due $210.05</div>
+                        <div class="col-sm-12 col-xs-6 text-right hidden-lg hidden-md hidden-sm de-customer-total-gas">Natural Gas Balance Due $210.05</div>
+                        <div class="col-sm-12 col-xs-6 text-right de-customer-total-power">Last Power Payment$197.23<small>12/31/2013</small>
+                        </div>
+                        <div class="col-sm-12 col-xs-6 text-right de-customer-total-gas">Last Natural Gas Payment$197.23<small>12/31/2013</small>
+                        </div>
+                    </div>
+                    <a id="btnPayNow" class="btn btn-primary pull-right" href="#"><i class="fa fa-money"></i> Pay Now</a>
+                </div>
+
+            </div>
+            <!-- End Row-->
+        </div>
+        <!-- End Container-->
+
+        <br />
+        <div class="container">
+            <div class="row">
+               <div class="col-sm-12">
+                    <div class="gridStyle" ng-grid="gridOptions"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 top10">
+                    <div class="alert alert-danger" role="alert">
+                        The maximum number of rows is displayed. To view all of the results, you must export the data.
+                    </div>                
+                </div>
+            </div>
+        </div>
+        <!-- End Container-->
+
+    </div>
+    <!-- End Container fluid-->
+
+    <div class="container-fluid">
+        <!-- body content -->
+        <h4>Over 25 Customers</h4>
+        <div class="container de-nav-customer-container">
+            <!-- body content -->
+            <div class="row">
+                <div class="col-sm-4 col-xs-6">
+                    <label class="sr-only" for="selCustomer">Customers</label>
+                    <select id="selCustomer25" class="selectpicker" data-live-search="true" data-width="100%" data-style="btn-navbar-customer btn-lg">
+                        <optgroup label="Profiles">
+                            <option>First Profile</option>
+                            <option>Second Profile</option>
+                        </optgroup>
+                        <optgroup label="Customers">
+                            <option>American Auto Wash, Inc.</option>
+                            <option>Arizona Auto Wash</option>
+                            <option>Autobell Car Wash</option>
+                            <option>Beacon Bay Enterprises</option>
+                            <option>Brown Bear Car Wash</option>
+                            <option>Car Pool, Inc.</option>
+                            <option>Car Spa, Inc.</option>
+                            <option>Car Wash Headquarters</option>
+                            <option>Carnett’s Car Washes</option>
+                            <option>Danny’s Family Carousel Car Wash</option>
+                            <option>Delta Sonic</option>
+                            <option>Elephant Car Wash</option>
+                            <option>Fabulous Freddy’s</option>
+                            <option>Forster Brothers Auto Wash</option>
+                            <option>Fuller’s Car Wash</option>
+                            <option>Golden Nozzle Car Wash</option>
+                            <option>Goo Goo Car Wash</option>
+                            <option>Haffner’s Car Care Group</option>
+                            <option>Hoffman Car Wash</option>
+                            <option>Kaady Car Wash</option>
+                            <option>Lage Car Wash</option>
+                            <option>Letavis Cloth Wash</option>
+                            <option>Mace Security</option>
+                            <option>Mike’s Express Car Wash</option>
+                            <option>Minuteman Car Wash</option>
+                            <option>Mister Car Wash</option>
+                            <option>Mr Wash Car Wash</option>
+                            <option>Mr. Sparkle</option>
+                            <option>Octopus Car Wash</option>
+                            <option>Original $2 Car Wash</option>
+                            <option>Peterson’s Soft Cloth</option>
+                            <option>Prime Shine Car Wash</option>
+                            <option>Regal Auto Wash</option>
+                            <option>Scrub A Dub</option>
+                            <option>ScrubaDub</option>
+                            <option>Shammy Shine</option>
+                            <option>Shur Kleen</option>
+                            <option>Splash Car Wash</option>
+                            <option>Super Car Wash</option>
+                            <option>Super Shine Auto Wash</option>
+                            <option>Terrible Herbst</option>
+                            <option>Triangle Car Wash</option>
+                            <option>Turtle Wax</option>
+                            <option>Ursus Management Group</option>
+                            <option>Wash Depot</option>
+                            <option>Wash Tub Car Wash</option>
+                            <option>Washman, LLC</option>
+                            <option>Waterway Gas & Wash Co.</option>
+                            <option>White Glove of Delaware</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!--<button type="button" ng-click="toggleCol(0)" >Toggle ungrouped customer</button>
+<button type="button" ng-click="toggleCol(1)" >Toggle grouped customer</button>
+<button type="button" ng-click="toggleGroup()" >Toggle group 2</button>
+-->
+        <!-- Bootstrap core JavaScript
+            ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <!-- jQuery CDN -->
+        <script src="http://code.jquery.com/jquery.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <!-- Bootstrap-select JS files. Custom select functions -->
+        <script type="text/javascript" src="js/libs/bootstrap-select/bootstrap-select.js"></script>
+        <script>
+            <!-- Enabling all select pickers -->
+            $(document).ready(function () {
+                $('.selectpicker').selectpicker();
+                $('#btnPayNow').hide();
+                /* Hiding both commodity total fields */
+                $('.de-customer-total-power').hide(); /*Hiding all of the gas related totals*/
+                $('.de-customer-total-gas').hide(); /*Hiding all of the gas related totals*/
+                /* remove dual-commoduity spacing */
+                $('.de-nav-customer-container').removeClass('dual-commodity');
+            });
+
+
+             <!-- Set Options for account selector -->
+            $("#selCustomer").change(function () {
+                var optAcctsAllSubtext = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1245086</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>9123131</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>9223132</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option></optgroup>";
+                var optAcctsAll = "<option>Select an account</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>1145085</option><option data-icon='fa fa-lightbulb-o'>1245086</option><option data-icon='fa fa-lightbulb-o'>1345087</option><option data-icon='fa fa-lightbulb-o'>1445088</option><option data-icon='fa fa-lightbulb-o'>2145089</option><option data-icon='fa fa-lightbulb-o'>2245090</option><option data-icon='fa fa-lightbulb-o'>2345091</option><option data-icon='fa fa-lightbulb-o'>3145093</option><option data-icon='fa fa-lightbulb-o'>3245094</option><option data-icon='fa fa-lightbulb-o'>9123131</option><option data-icon='fa fa-lightbulb-o'>9223132</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>7123110</option><option data-icon='fa fa-fire'>7223111</option><option data-icon='fa fa-fire'>7323112</option><option data-icon='fa fa-fire'>7423113</option><option data-icon='fa fa-fire'>8123121</option><option data-icon='fa fa-fire'>8223122</option><option data-icon='fa fa-fire'>8323123</option></optgroup>";
+
+                var optAcctsBigEasySubtext = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1145085</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1245086</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1345087</option><option data-icon='fa fa-lightbulb-o' data-subtext='Big Easy Carwash'>1445088</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7123110</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7223111</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7323112</option><option data-icon='fa fa-fire' data-subtext='Big Easy Carwash'>7423113</option></optgroup>";
+                var optAcctsBigEasy = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>1145085</option><option data-icon='fa fa-lightbulb-o'>1245086</option><option data-icon='fa fa-lightbulb-o'>1345087</option><option data-icon='fa fa-lightbulb-o'>1445088</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>7123110</option><option data-icon='fa fa-fire'>7223111</option><option data-icon='fa fa-fire'>7323112</option><option data-icon='fa fa-fire'>7423113</option></optgroup>";
+                var optAcctsMedEasySubtext = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2145089</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2245090</option><option data-icon='fa fa-lightbulb-o' data-subtext='Medium Easy Carwash'>2345091</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8123121</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8223122</option><option data-icon='fa fa-fire' data-subtext='Medium Easy Carwash'>8323123</option></optgroup>";
+                var optAcctsMedEasy = "<option>All accounts</option><option>All power</option><option>All natural gas</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>2145089</option><option data-icon='fa fa-lightbulb-o'>2245090</option><option data-icon='fa fa-lightbulb-o'>2345091</option></optgroup><optgroup label='Natural Gas'><option data-icon='fa fa-fire'>8123121</option><option data-icon='fa fa-fire'>8223122</option><option data-icon='fa fa-fire'>8323123</option></optgroup>";
+                var optAcctsSmlEasySubtext = "<option>All accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3145093</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>3245094</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>9123131</option><option data-icon='fa fa-lightbulb-o' data-subtext='Small Easy Carwash'>9223132</option></optgroup>";
+                var optAcctsSmlEasy = "<option>All accounts</option><optgroup label='Power'><option data-icon='fa fa-lightbulb-o'>3145093</option><option data-icon='fa fa-lightbulb-o'>3245094</option><option data-icon='fa fa-lightbulb-o'>9123131</option><option data-icon='fa fa-lightbulb-o'>9223132</option></optgroup>";
+
+                // Clearing all the options in the account list
+                $("#selAccounts option").remove();
+                // Ensure Accounts select is enabled
+                $('#selAccounts').prop('disabled', false);
+                //			$('#selAccounts').selectpicker('refresh');
+
+                // Hiding Pay Now button
+                $('#btnPayNow').hide();
+                /* Showing both commodity total fields */
+                $('.de-customer-total-power').show(); /*Hiding all of the gas related totals*/
+                $('.de-customer-total-gas').show(); /*Hiding all of the gas related totals*/
+                /* remove dual-commoduity spacing */
+                $('.de-nav-customer-container').addClass('dual-commodity');
+
+
+                if ($("#selCustomer option:selected").text() == "All Customers") {
+                    // Add some options
+                    $('#selAccounts').append(optAcctsAllSubtext);
+                    // All Customers, disable accounts selector
+                    //$('#selAccounts').prop('disabled',true);
+                    $('#btnPayNow').hide();
+                    /* Hiding both commodity total fields */
+                    $('.de-customer-total-power').hide(); /*Hiding all of the gas related totals*/
+                    $('.de-customer-total-gas').hide(); /*Hiding all of the gas related totals*/
+                } else if ($("#selCustomer option:selected").text() == "First Profile") {
+                    // Add some options
+                    $('#selAccounts').append(optAcctsAllSubtext);
+                    $('#btnPayNow').hide();
+                } else if ($("#selCustomer option:selected").text() == "Second Profile") {
+                    // Add some options
+                    $('#selAccounts').append(optAcctsAllSubtext);
+                    $('#btnPayNow').hide();
+                } else if ($("#selCustomer option:selected").text() == "Big Easy Carwash") {
+                    // Add some options
+                    $('#selAccounts').append(optAcctsBigEasy);
+                    $('#btnPayNow').show();
+                } else if ($("#selCustomer option:selected").text() == "Medium Easy Carwash") {
+                    // Add some options
+                    $('#selAccounts').append(optAcctsMedEasy);
+                    $('#btnPayNow').show();
+                } else if ($("#selCustomer option:selected").text() == "Small Easy Carwash") {
+                    // Add some options
+                    $('#selAccounts').append(optAcctsSmlEasy);
+                    $('#btnPayNow').show();
+                    $('.de-customer-total-gas').hide(); /*Hiding all of the gas related totals*/
+                    /* remove dual-commoduity spacing */
+                    $('.de-nav-customer-container').removeClass('dual-commodity');
+                } else {
+                    //				alert('goodbye');
+                    // Add some options
+                    $('#selAccounts').append(optAcctsAllSubtext);
+                };
+
+                // Refresh Accounts select list to display newly added options
+                $('#selAccounts').selectpicker('refresh');
+
+            });
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
+        <script type="text/javascript" src="http://angular-ui.github.com/ng-grid/lib/ng-grid.debug.js"></script>
+        <script type="text/javascript">
+            var app = angular.module('myApp', ['ngGrid']);
+            app.controller('MyCtrl', function ($scope) {
+                $scope.myData = [{
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "1145085",
+                        UtilityAccount: "11401014029121",
+                        ServiceLocation: "123 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "1245086",
+                        UtilityAccount: "12401014029121",
+                        ServiceLocation: "345 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "1345087",
+                        UtilityAccount: "13401014029121",
+                        ServiceLocation: "567 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "1445088",
+                        UtilityAccount: "14401014029121",
+                        ServiceLocation: "789 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "7123110",
+                        UtilityAccount: "15401014029121",
+                        ServiceLocation: "123 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "7223111",
+                        UtilityAccount: "16401014029121",
+                        ServiceLocation: "345 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "7323112",
+                        UtilityAccount: "17401014029121",
+                        ServiceLocation: "567 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Big Easy Carwash",
+                        BillingAccount: "7423113",
+                        UtilityAccount: "18401014029121",
+                        ServiceLocation: "789 N Street Town TX 71723"
+                    },
+                    {
+                        Customer: "Medium Easy Carwash",
+                        BillingAccount: "2145089",
+                        UtilityAccount: "21401014029122",
+                        ServiceLocation: "1123 Sesame Street Town TX 77710"
+                    },
+                    {
+                        Customer: "Medium Easy Carwash",
+                        BillingAccount: "2245090",
+                        UtilityAccount: "22401014029122",
+                        ServiceLocation: "4056 Sesame Street Town TX 77710"
+                    },
+                    {
+                        Customer: "Medium Easy Carwash",
+                        BillingAccount: "2345091",
+                        UtilityAccount: "23401014029122",
+                        ServiceLocation: "7089 Sesame Street Town TX 77710"
+                    },
+                    {
+                        Customer: "Medium Easy Carwash",
+                        BillingAccount: "8123121",
+                        UtilityAccount: "24401014029122",
+                        ServiceLocation: "1123 Sesame Street Town TX 77710"
+                    },
+                    {
+                        Customer: "Medium Easy Carwash",
+                        BillingAccount: "8223122",
+                        UtilityAccount: "25401014029122",
+                        ServiceLocation: "4056 Sesame Street Town TX 77710"
+                    },
+                    {
+                        Customer: "Medium Easy Carwash",
+                        BillingAccount: "8323123",
+                        UtilityAccount: "26401014029122",
+                        ServiceLocation: "7089 Sesame Street Town TX 77710"
+                    },
+                    {
+                        Customer: "Small Easy Carwash",
+                        BillingAccount: "3145093",
+                        UtilityAccount: "31401014029123",
+                        ServiceLocation: "1023 First Ave Town TX 73325"
+                    },
+                    {
+                        Customer: "Small Easy Carwash",
+                        BillingAccount: "3245094",
+                        UtilityAccount: "32401014029123",
+                        ServiceLocation: "2034 First Ave Town TX 73325"
+                    },
+                    {
+                        Customer: "Small Easy Carwash",
+                        BillingAccount: "9123131",
+                        UtilityAccount: "33401014029123",
+                        ServiceLocation: "1023 First Ave Town TX 73325"
+                    },
+                    {
+                        Customer: "Small Easy Carwash",
+                        BillingAccount: "9223132",
+                        UtilityAccount: "34401014029123",
+                        ServiceLocation: "2034 First Ave Town TX 73325"
+                    }];
+                $scope.gridOptions = {
+                    data: 'myData',
+                    groups: ['Customer'],
+                    showGroupPanel: false,
+                    jqueryUITheme: true,
+                    columnDefs: [
+                        {
+                            field: 'Customer',
+                            displayName: 'Customer Name'
+                        },
+                        {
+                            field: 'BillingAccount',
+                            cellTemplate: '<div class="text-center"><a><i class="fa fa-file-pdf-o de-tablecell-commodity"></i>{{row.entity[col.field]}}</a></div>'
+                        },
+                        {
+                            field: 'UtilityAccount',
+                            displayName: 'Utility Account'
+                        },
+                        {
+                            field: 'ServiceLocation',
+                            displayName: 'Service Location'
+                        }
+    ]
+                };
+                $scope.toggleCol = function (i) {
+                    $scope.gridOptions.$gridScope.columns[i].toggleVisible()
+                };
+                $scope.toggleGroup = function () {
+                    $scope.gridOptions.groupBy('Customer');
+                    //			   $scope.gridOptions.$gridScope.columns[1].toggleVisible()
+                    //			   $scope.gridOptions.showGroupPanel = false;
+                };
+                $scope.changeCustomer = function () {
+                    // $scope.gridOptions.groups = [];
+                    // $scope.gridOptions.groups = [''];
+                    // ???
+                };
+                $scope.display = function () {
+                    //				console.log("User selected grid : " + $scope.gridSelectedId);
+
+                    if ($scope.gridSelectedId == 'First Profile') {
+                        $scope.gridOptions.groupBy(null);
+                        $scope.gridOptions.groupBy('Customer');
+                        $scope.gridOptions.$gridScope.columns[0].visible = true;
+                        $scope.gridOptions.$gridScope.columns[1].visible = true;
+                    } else if ($scope.gridSelectedId == 'All Customers') {
+                        $scope.gridOptions.groupBy(null);
+                        $scope.gridOptions.groupBy('Customer');
+                        $scope.gridOptions.$gridScope.columns[0].visible = true;
+                        $scope.gridOptions.$gridScope.columns[1].visible = true;
+                    } else if ($scope.gridSelectedId == 'Second Profile') {
+                        $scope.gridOptions.groupBy(null);
+                        $scope.gridOptions.groupBy('Customer');
+                        $scope.gridOptions.$gridScope.columns[0].visible = true;
+                        $scope.gridOptions.$gridScope.columns[1].visible = true;
+                    } else {
+                        $scope.gridOptions.groupBy(null);
+                        $scope.gridOptions.$gridScope.columns[0].visible = false;
+                    }
+
+                };
+            });
+        </script>
+
+</body>
+
+</html>

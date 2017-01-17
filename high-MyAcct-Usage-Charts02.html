@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="bootstrap/assets/ico/favicon.png">
+
+    <title>DE - My Account - Chart Examples</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+<!-- deb.com css -->
+<!--<link rel="stylesheet" type="text/css" href="css/bundle.css">
+
+<link rel="stylesheet" type="text/css" href="css/css.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+-->
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+
+	<style type="text/css">
+		.de-panel-notice {
+			color: #555;
+			padding: 15px;
+		}
+			.de-panel-notice i {
+				color: #005776;
+				font-size: 18px;
+			}		
+	</style>
+</head>
+
+  <body>
+    
+    <div class="container-fluid">
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!-- Home Tab pane -->
+          <div class="tab-pane active" id="home">
+          	<div class="container">
+            </div>
+	      	  <h2>Home</h2>
+              <div class="row">
+                <div class="col-sm-12">
+                	<div class="panel panel-default">
+                        <div class="panel-heading">Usage</div>
+                          <div class="panel-body">
+							<p>Power Usage</p>
+                            <div class="row hidden-print"><!-- Print button and controls. Don't display for printing -->
+                            	<div class="col-sm-12 text-right">
+                                    <div id='png'></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            	<div class="col-sm-12">
+                                    <div class="chart-wrapper">
+                                        <!--Div that will hold the pie chart-->
+                                        <div id="chart_div"></div>
+                                        <div class="text-center text-muted">The different data in the chart can be hidden by clicking the colors in the legend above.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+								<div class="de-panel-notice"><i class="fa fa-info-circle"></i> All natural gas usage is displayed in decatherms (Dth). Individual invoices may display other units of measure. Learn more about units of measure conversion with the <a href="http://www.business.directenergy.com/understanding-energy/energy-tools/conversion-calculator" target="_blank">Conversion calculator</a>
+                                <p>The amounts shown for spend are only energy related costs and do not include delivery costs, taxes or additional fees.</p>
+                                </div>	                            
+                            </div>
+                            <div class="row hidden-print">
+                            	<div class="col-sm-12">
+                                	<div class="alert alert-warning">
+										There is no usage for the selected accounts.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row hidden-print">
+                            	<div class="col-sm-12">
+                                	<div class="alert alert-info">
+										A usage chart is available when a single customer selected. The usage chart cannot be displayed for multiple customers at the same time.
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+                    </div>
+                </div>
+              </div>
+              
+          </div>
+        </div>
+
+
+    </div> <!-- /container -->
+
+<!-- Bootstrap core JavaScript
+            ================================================== --> 
+    <!-- Placed at the end of the document so the pages load faster --> 
+    <!-- jQuery CDN --> 
+    <script src="http://code.jquery.com/jquery.js"></script> 
+    <!-- Latest compiled and minified JavaScript --> 
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+   
+      // Load the Visualization API and the piechart package.
+       google.load("visualization", "1", {packages: ["corechart"]});
+     
+function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Month');
+//    data.addColumn('number', 'current usage');
+//    data.addColumn('number', 'previous year usage');
+//    data.addColumn('number', 'current spend');
+//    data.addColumn('number', 'previous year spend');
+    data.addColumn('number', '2015 usage');
+//    data.addColumn('number', '2014 usage');
+    data.addColumn('number', '2015 spend');
+//    data.addColumn('number', '2014 spend');
+ 
+	data.addRows([
+        //gas usage data
+//	  ['January', 156000, 157500, 130.00, 140.00],
+//	  ['February', 163000, 169300, 145.00, 160.00],
+//	  ['March', 174000, 181400, 120.00, 105.00],
+//	  ['April', 92000, 111000, 135.00, 168.00],
+//	  ['May', 67000, 71000, 70.00, 80.00],
+//	  ['June', 38000, 42000, 45.00, 40.00],
+//	  ['July', 16000, 13600, 25.00, 30.00],
+//	  ['August', 11000, 12000, 25.00, 26.00],
+//	  ['September', null, 21800, null, 50.00],
+//	  ['October', null, 47000, null, 35.00],
+//	  ['November', null, 53900, null, 40.00],
+//	  ['December', null, 84800, null, 90.00]
+        //power usage data
+	  ['January', 56000, 57500, 70.00, 80.00],
+	  ['February', 63000, 69300, 100.00, 110.00],
+	  ['March', 74000, 81400, 120.00, 105.00],
+	  ['April', 92000, 111000, 135.00, 168.00],
+	  ['May', 117000, 128700, 170.00, 210.00],
+	  ['June', 138000, 124200, 220.00, 255.00],
+	  ['July', 126000, 138600, 200.00, 175.00],
+	  ['August', 151000, 120800, 260.00, 255.00],
+	  ['September', null, 112800, null, 150.00],
+	  ['October', null, 87000, null, 135.00],
+	  ['November', null, 53900, null, 140.00],
+	  ['December', null, 74800, null, 90.00],
+
+//	  ['January', 56000, null, 70.00, null],
+//	  ['February', 63000, null, 100.00, null],
+//	  ['March', 74000, null, 120.00, null],
+//	  ['April', 92000, null, 135.00, null]
+//	  ['October', null, 87000, null, 135.00],
+//	  ['November', null, 53900, null, 140.00],
+//	  ['December', null, 74800, null, 90.00]
+	]);
+ 
+    
+    // Instantiate and draw our chart, passing in some options.
+	var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));	
+    
+    // create columns array
+    var columns = [];
+    // display these data series by default
+    var defaultSeries = [1, 2, 3, 4];
+    var series = {};
+
+for (var i = 0; i < data.getNumberOfColumns(); i++) {
+
+        if (i == 0 || defaultSeries.indexOf(i) > -1) {
+            // if the column is the domain column or in the default list, display the series
+            columns.push(i);
+        }
+        else {
+            // otherwise, hide it
+            columns.push({
+                label: data.getColumnLabel(i),
+                type: data.getColumnType(i),
+                sourceColumn: i,
+                calc: function () {
+                    return null;
+                }
+            });
+        }
+        if (i > 0) {
+            columns.push({
+                calc: 'stringify',
+                sourceColumn: i,
+                type: 'string',
+                role: 'default'
+            });
+            // set the default series option
+            series[i - 1] = {};
+			series = {0:{targetAxisIndex:0, type: "bars", color:"#F05D21"},1:{targetAxisIndex:0, type: "bars", color:"#005776"},2:{targetAxisIndex:1, type: "line", color:"#f57e24"},3:{targetAxisIndex:1, type: "line", color:"#0072bc"}};
+			
+            if (defaultSeries.indexOf(i) == -1) {
+                // backup the default color (if set)
+                if (typeof(series[i - 1].color) !== 'undefined') {
+                    series[i - 1].backupColor = series[i - 1].color;
+                }
+                series[i - 1].color = '#CCCCCC';
+            }
+        }
+    }
+    
+    var options = {
+        height: '350',
+		colors:['#F05D21','#005776','#f57e24','#0072bc'],
+		legend:{position: 'bottom'},
+        series: series,
+//    	seriesType: "bars",
+//		series:{0:{targetAxisIndex:0},1:{targetAxisIndex:0},2:{targetAxisIndex:1,type: "line"},3:{targetAxisIndex:1,type: "line"}}, 
+		hAxis: {title: 'Meter Read Start Date'},
+		vAxes:{0:{title:'Usage (Dth)'},1:{title:'Spend ($)'}}		  
+//		vAxes:{0:{title:'Usage (kWh)'},1:{title:'Spend ($)'}}		  
+//	    series: {2: {type: "line"},3: {type: "line"}}
+	    }
+    
+    function showHideSeries () {
+        var sel = chart.getSelection();
+        // if selection length is 0, we deselected an element
+        if (sel.length > 0) {
+            // if row is undefined, we clicked on the legend
+            if (sel[0].row == null) {
+                var col = sel[0].column;
+                if (typeof(columns[col]) == 'number') {
+                    var src = columns[col];
+                    
+                    // hide the data series
+                    columns[col] = {
+                        label: data.getColumnLabel(src),
+                        type: data.getColumnType(src),
+                        sourceColumn: src,
+                        calc: function () {
+                            return null;
+                        }
+                    };
+                    
+                    // grey out the legend entry
+                    series[src - 1].color = '#CCCCCC';
+                }
+                else {
+                    var src = columns[col].sourceColumn;
+                    
+                    // show the data series
+                    columns[col] = src;
+                    series[src - 1].color = null;
+                }
+                var view = new google.visualization.DataView(data);
+                view.setColumns(columns);
+                chart.draw(view, options);
+            }
+        }
+    }
+    
+    google.visualization.events.addListener(chart, 'select', showHideSeries);
+    
+    // create a view with the default columns
+    var view = new google.visualization.DataView(data);
+    view.setColumns(columns);
+    chart.draw(view, options);
+
+	// Creating Printable version of chart
+	document.getElementById('png').outerHTML = '<a href="' + chart.getImageURI() + '" target="_blank" class="btn btn-default" title="Printable version"><i class="fa fa-print fa-lg"></i></a>';
+
+}
+
+
+google.load('visualization', '1', {packages: ['corechart']});
+google.setOnLoadCallback(drawChart);
+
+    </script>
+
+  </body>
+</html>
