@@ -139,6 +139,50 @@
                 </div>
                 
             </div>
+<style type="text/css">
+    .de-trigger-weighted-avg > div {
+        background-color: #cccccc;
+    }
+    .de-trigger-weighted-avg div:first-child .input-group {
+        background-color: #fbbb96;
+    }
+    .de-trigger-weighted-avg div:first-child .input-group label {
+        padding-bottom: 1rem;
+        padding-left: 0.5rem;
+        padding-top: 10px;
+    }
+    .de-trigger-weighted-avg div:last-child .input-group {
+        padding-bottom: 1rem;
+        padding-top: 10px;
+    }
+    .de-trigger-weighted-avg .input-group-addon{
+        background-color: #F05D21;
+        border-radius: 0;
+    }
+            </style>
+
+			<div class="row top10 de-trigger-weighted-avg">
+				<div class="col-sm-6">
+
+<!--
+					<div class="checkbox">
+						<label><input type="checkbox" ng-click="showWeightedAverage()" ng-model="applyWeightedAverage" />Apply Buy at Market Weighted Average Price to this request&nbsp;<a popover="@Html.Action("HelpText", "Sitecore", new { contentId = Constants.SitecoreCalloutIdSettings.GetSettingByName("Trigger-Hover-Buy-Market").Result })" popover-trigger="mouseenter" popover-placement="right" popover-append-to-body="true"><i class="fa fa-question-circle"></i></a></label>
+					</div>
+-->
+
+					<div class="input-group input-group-lg">
+						<span class="input-group-addon">
+							<input type="checkbox" id="de-trigger-checkbox-weighted-average" ng-click="showWeightedAverage()" ng-model="applyWeightedAverage" />
+						</span>
+						<label for="de-trigger-checkbox-weighted-average">Apply Buy at Market Weighted Average Price to this request&nbsp;<a popover="@Html.Action("HelpText", "Sitecore", new { contentId = Constants.SitecoreCalloutIdSettings.GetSettingByName("Trigger-Hover-Buy-Market").Result })" popover-trigger="mouseenter" popover-placement="right" popover-append-to-body="true"><i class="fa fa-question-circle"></i></a></label>
+					</div><!-- /input-group -->
+				</div>
+				<div class="col-sm-6">
+					<div class="input-group input-group-lg" ng-show="applyWeightedAverage">
+						<label><strong>Weighted Average Buy at Market Price&nbsp;${{weightedAverage | number:3}}</strong></label>
+					</div>
+				</div>
+			</div>
         </div>
 
 
